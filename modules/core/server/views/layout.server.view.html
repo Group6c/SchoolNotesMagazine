@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" ng-strict-di>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <title page-title></title>
+  <meta name="description" content="{{description}}">
+  <meta name="fragment" content="!">
+
+  <!-- Apple META -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!-- Facebook META -->
+  <meta property="fb:app_id" content="{{facebookAppId}}">
+  <meta property="og:site_name" content="{{title}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{url}}">
+  <meta property="og:image" content="{{logo}}">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter META -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="{{twitterUsername}}">
+  <meta name="twitter:title" content="{{title}}">
+  <meta name="twitter:description" content="{{description}}">
+  <meta name="twitter:image" content="{{logo}}">
+
+  <!-- Fav Icon -->
+  <link href="/{{favicon}}" rel="shortcut icon" type="image/x-icon">
+
+  <!-- Manifest -->
+  <link href="/manifest.json" rel="manifest">
+
+  <!-- Application CSS Files -->
+  <!-- {% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %} -->
+  {{#each cssFiles}}<link rel="stylesheet" href="/{{this}}">{{/each}}
+
+
+  <link rel="icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/favicon.ico" />
+<link rel="stylesheet" href="css/stuck.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/touchTouch.css">
+
+</head>
+
+<body class="ng-cloak">
+  <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'"></header>
+  <section class="test">
+      {{{block "content"}}}
+  </section>
+  <footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="grid_12">  
+        <div class="socials">
+          <a href="#" class="fa fa-twitter"></a>
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-google-plus"></a>
+          <a href="#" class="fa fa-pinterest"></a>
+        </div>
+        <div class="copyright"><span class="brand">Bliss </span> &copy; <span id="copyright-year"></span> | <a href="#">Privacy Policy</a> <div>Website designed by <a href="http://www.templatemonster.com/" rel="nofollow">TemplateMonster.com</a></div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <noscript>
+    <style>
+      [ng\:cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: block !important;
+      }
+    </style>
+    <div class="alert alert-warning">
+      <strong>This page requires JavaScript.</strong> Please enable it in your browser.
+    </div>
+  </noscript>
+
+  <!--Embedding The User Object-->
+  <script type="text/javascript">
+    var user = {{{ user }}};
+    var env = "{{ env }}";
+  </script>
+
+  <!--Load The Socket.io File-->
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+
+  <!--Application JavaScript Files-->
+    {{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
+  
+  <!--owasp config sync-->
+  <script type="text/javascript">
+    var sharedConfig = {{{ sharedConfig }}};
+    owaspPasswordStrengthTest.config(sharedConfig.owasp);
+  </script>
+
+  {{#if livereload}}
+  <!--Livereload script rendered -->
+  <script type="text/javascript" src="{{host}}:35729/livereload.js"></script>
+  {{/if}}
+</body>
+
+</html>

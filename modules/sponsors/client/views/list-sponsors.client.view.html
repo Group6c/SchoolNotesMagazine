@@ -1,0 +1,60 @@
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+            <img src="http://u.cubeupload.com/Cen3031group6c/coollogocom15658366.png" alt="Logo alt">
+          </a>
+        </h1>
+          <div class="navigation">
+            <nav>
+              <ul class="sf-menu">
+               <li class="current"><a ui-sref="home">home</a></li>
+               <li><a href="/menu">menu</a></li>
+
+               <li><a ui-sref=".calendar">calendar</a></li>
+               <li><a ui-sref=".articles">articles</a></li>
+               <li><a ui-sref=".quests">quests</a></li>
+               <li><a ui-sref=".game">games</a></li>
+               <li class="current"><a href="/sponsor">sponsors</a></li>
+               <li><a ui-sref=".contact">contact us</a></li>
+               
+               
+             </ul>
+             
+            </nav>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+
+<section>
+  <div class="page-header">
+    <h1>Our Proud Sponsors</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="sponsor in sponsors"
+       ui-sref="sponsors.view({ sponsorId: sponsor._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="sponsor.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="sponsor.user" ng-bind="sponsor.user.displayName"></span>
+        <span ng-if="!sponsor.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="sponsor.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="sponsors.$resolved && !sponsors.length">
+    No Sponsors yet.
+  </div>
+</section>

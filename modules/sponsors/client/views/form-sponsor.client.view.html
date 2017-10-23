@@ -1,0 +1,158 @@
+<header>
+<!--==============================
+            Stuck menu
+=================================-->
+  <section id="stuck_container">
+    <div class="container">
+      <div class="row">
+        <div class="grid_12">
+        <h1>
+          <a href="index.html">
+            <img src="http://u.cubeupload.com/Cen3031group6c/coollogocom15658366.png" alt="Logo alt">
+          </a>
+        </h1>
+          <div class="navigation">
+            <nav>
+              <ul class="sf-menu">
+               <li class="current"><a ui-sref="home">home</a></li>
+               <li><a href="/menu">menu</a></li>
+
+               <li><a ui-sref=".calendar">calendar</a></li>
+               <li><a ui-sref=".articles">articles</a></li>
+               <li><a ui-sref=".quests">quests</a></li>
+               <li><a ui-sref=".game">games</a></li>
+               <li class="current"><a href="/sponsor">sponsors</a></li>
+               <li><a ui-sref=".contact">contact us</a></li>
+               
+               
+             </ul>
+             
+            </nav>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</header>
+<section>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya" rel="stylesheet">
+    <link rel="stylesheet" href="sponsor.css">
+    <div class="page-header">
+      <h1>Advertise with Us!</h1>
+    </div>
+  </head>
+  <div>
+    <form id = "form.sponsorForm" name="form.sponsorForm" class="form-horizontal" ng-submit="save(form.sponsorForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group col-sm-4" show-errors>
+          <label class="control-label" for="name">*Business Name:</label>
+          <input name="name" type="text" ng-model="sponsor.name" id="name" class="form-control" placeholder="e.g. School Notes Magazine" required>
+          <div ng-messages="form.sponsorForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Sponsor name is required.</p>
+          </div>
+          <br/>
+          <label class="control-label" for="zipcode">*Zip Code:</label>
+          <input name="zipcode" type="text" ng-model="sponsor.zipcode" id="zipcode" class="form-control" style="width:100px" placeholder="e.g. 32608" required>
+          <div ng-messages="form.sponsorForm.zipcode.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">A zip code is required.</p>
+          </div>
+          <br/>
+          <label class="control-label" for="contact">Name of Contact:</label>
+          <input  type="text" ng-model="sponsor.contact" id="contact" class="form-control" placeholder="e.g. Jane Doe">
+          <br/>
+          <label class="control-label" for="email">Email:</label>
+          <input name="email" type="text" ng-model="sponsor.email" id="email" class="form-control" placeholder="e.g. jdoe2012@internet.com">
+          <br/>
+          <label class="control-label" for="phone">Phone:</label>
+          <input name="phone" type="text" ng-model="sponsor.phone" id="phone" class="form-control" placeholder="e.g. (352)555-4444" >
+        </div>
+        <div class="col-sm-2"></div>
+        <div class="form-group col-sm-6">
+          <label class="control-label" for="message">Your Message:</label>
+          <textarea name="message"  type="text" ng-model="sponsor.message"  id="message" class="form-control" placeholder="Tell us about your business!"></textarea>
+          <br/>
+          <div ng-show="error" class="text-danger">
+            <strong ng-bind="error"></strong>
+          </div>
+          <!--<div class="btn btn-default">-->
+            <!--<span>Browse</span>-->
+            <!--<input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required/>-->
+            <!--<img class="mythumbnail" ng-src="{{ thumbnail || sponsor.thumbnail  }}" />-->
+          <!--</div>-->
+          <!--<input id="uploadFile" placeholder="Choose File" disabled="disabled" />-->
+          <!--<div class="fileUpload btn btn-default">-->
+            <!--<span>Upload</span>-->
+            <!--<input id="upload" type="file" ng-model="sponsor.upload" class="upload" name="files[]" multiple/>-->
+            <!--<output id="list"></output>-->
+          <!--</div>-->
+        </div>
+      </fieldset>
+      <br/>
+      <!--<div class="well">-->
+
+        <!--<form>-->
+          <!--<label>UPLOAD ARTWORK (3 MB MIN)*</label> <br>-->
+          <!--<label class="btn btn-success">Browse-->
+            <!--<input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required>-->
+          <!--</label>-->
+        <!--</form>-->
+        <!--<div style="font-size:10px;">Max file size: 20MB</div>-->
+        <!--<div ng-show="uploading" class="progress">-->
+          <!--<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">-->
+            <!--<span class="sr-only"></span>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<img class="mythumbnail" ng-src="{{ thumbnail || sponsor.thumbnail  }}" />-->
+        <!--&lt;!&ndash;|| 'modules/artsubmissions/client/img/default.png'&ndash;&gt;-->
+
+        <!--<br>-->
+        <!--<button class="btn btn-primary" ng-disabled="uploading" ng-click="uploadSubmit();">Upload</button><br><br>-->
+        <!--<div ng-show="message">-->
+          <!--<div ng-class="alert">{{ message }}</div>-->
+        <!--</div>-->
+
+      <!--</div>-->
+
+    <!--</form>-->
+  <!--</div>-->
+<br>
+  <div class="well">
+
+    <!--<form>-->
+      <label>UPLOAD ADVERTISEMENT (3 MB MIN)*</label> <br>
+      <label class="btn btn-success">Browse
+        <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
+      </label>
+    <!--</form>-->
+    <div style="font-size:10px;">Max file size: 20MB</div>
+    <div ng-show="uploading" class="progress">
+      <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+        <span class="sr-only"></span>
+      </div>
+    </div>
+
+    <img class="mythumbnail" ng-src="{{ thumbnail || sponsor.thumbnail  }}" />
+    <!--|| 'modules/artsubmissions/client/img/default.png'-->
+
+    <br>
+    <!--<button class="btn btn-primary" ng-disabled="uploading" ng-click="uploadSubmit();">Upload</button><br><br>-->
+    <!--<div ng-show="message">-->
+      <!--<div ng-class="alert">{{ message }}</div>-->
+    <!--</div>-->
+
+  </div>
+  {{sponsor.thumbnail}}
+
+  <br/>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary" id="send-btn">Submit</button>
+  </div>
+  <div ng-show="error" class="text-danger">
+    <strong ng-bind="error" ng-class="alert">{{message}}</strong>
+  </div>
+  </form>
+    </div>
+</section>
