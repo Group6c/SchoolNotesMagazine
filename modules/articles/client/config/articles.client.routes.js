@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('articles.routes')
+    .module('articles')
     .config(routeConfig);
 
   routeConfig.$inject = ['$stateProvider'];
@@ -16,20 +16,49 @@
       })
       .state('articles.list', {
         url: '',
-        templateUrl: '/modules/articles/client/views/list-articles.client.view.html',
+        templateUrl: 'modules/articles/client/views/list-articles.client.view.html',
         controller: 'ArticlesListController',
-        controllerAs: 'vm'
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Articles List'
+        }
       })
-      .state('articles.view', {
-        url: '/:articleId',
-        templateUrl: '/modules/articles/client/views/view-article.client.view.html',
+      .state('articles.create', {
+        url: '/create',
+        templateUrl: 'modules/articles/client/views/form-article.client.view.html',
+        controller: 'ArticlesController',
+        controllerAs: 'vm',
+        resolve: {
+          articleResolve: newArticle
+        },
+        data: {
+          roles: ['user', 'admin'],
+          pageTitle: 'Articles Create'
+        }
+      })
+      .state('articles.edit', {
+        url: '/:articleId/edit',
+        templateUrl: 'modules/articles/client/views/form-article.client.view.html',
         controller: 'ArticlesController',
         controllerAs: 'vm',
         resolve: {
           articleResolve: getArticle
         },
         data: {
-          pageTitle: '{{ articleResolve.title }}'
+          roles: ['user', 'admin'],
+          pageTitle: 'Edit Article {{ articleResolve.name }}'
+        }
+      })
+      .state('articles.view', {
+        url: '/:articleId',
+        templateUrl: 'modules/articles/client/views/view-article.client.view.html',
+        controller: 'ArticlesController',
+        controllerAs: 'vm',
+        resolve: {
+          articleResolve: getArticle
+        },
+        data: {
+          pageTitle: 'Article {{ articleResolve.name }}'
         }
       });
   }
@@ -40,5 +69,11 @@
     return ArticlesService.get({
       articleId: $stateParams.articleId
     }).$promise;
+  }
+
+  newArticle.$inject = ['ArticlesService'];
+
+  function newArticle(ArticlesService) {
+    return new ArticlesService();
   }
 }());

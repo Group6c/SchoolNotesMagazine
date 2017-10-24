@@ -1,78 +1,78 @@
 'use strict';
 
 /**
- * Module dependencies
+ * Module dependencies.
  */
 var path = require('path'),
   mongoose = require('mongoose'),
   Article = mongoose.model('Article'),
-  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+  errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
+  _ = require('lodash');
 
 /**
- * Create an article
+ * Create a Article
  */
-exports.create = function (req, res) {
+exports.create = function(req, res) {
   var article = new Article(req.body);
   article.user = req.user;
 
-  article.save(function (err) {
+  article.save(function(err) {
     if (err) {
-      return res.status(422).send({
+      return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.jsonp(article);
     }
   });
 };
 
 /**
- * Show the current article
+ * Show the current Article
  */
-exports.read = function (req, res) {
+exports.read = function(req, res) {
   // convert mongoose document to JSON
   var article = req.article ? req.article.toJSON() : {};
 
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  article.isCurrentUserOwner = !!(req.user && article.user && article.user._id.toString() === req.user._id.toString());
+  article.isCurrentUserOwner = req.user && article.user && article.user._id.toString() === req.user._id.toString();
 
-  res.json(article);
+  res.jsonp(article);
 };
 
 /**
- * Update an article
+ * Update a Article
  */
-exports.update = function (req, res) {
+exports.update = function(req, res) {
   var article = req.article;
 
-  article.title = req.body.title;
-  article.content = req.body.content;
+  article = _.extend(article, req.body);
 
-  article.save(function (err) {
+  article.save(function(err) {
     if (err) {
-      return res.status(422).send({
+      return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.jsonp(article);
     }
   });
 };
 
 /**
- * Delete an article
+ * Delete an Article
  */
-exports.delete = function (req, res) {
+exports.delete = function(req, res) {
   var article = req.article;
 
-  article.remove(function (err) {
+  article.remove(function(err) {
     if (err) {
-      return res.status(422).send({
+      return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(article);
+      res.jsonp(article);
     }
   });
 };
@@ -80,14 +80,14 @@ exports.delete = function (req, res) {
 /**
  * List of Articles
  */
-exports.list = function (req, res) {
-  Article.find().sort('-created').populate('user', 'displayName').exec(function (err, articles) {
+exports.list = function(req, res) {
+  Article.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
     if (err) {
-      return res.status(422).send({
+      return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
       });
     } else {
-      res.json(articles);
+      res.jsonp(articles);
     }
   });
 };
@@ -95,7 +95,7 @@ exports.list = function (req, res) {
 /**
  * Article middleware
  */
-exports.articleByID = function (req, res, next, id) {
+exports.articleByID = function(req, res, next, id) {
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
@@ -108,7 +108,7 @@ exports.articleByID = function (req, res, next, id) {
       return next(err);
     } else if (!article) {
       return res.status(404).send({
-        message: 'No article with that identifier has been found'
+        message: 'No Article with that identifier has been found'
       });
     }
     req.article = article;

@@ -49,8 +49,7 @@
       // create mock article
       mockArticle = new ArticlesService({
         _id: '525a8422f6d0f87f0e407a33',
-        title: 'An Article about MEAN',
-        content: 'MEAN rocks!'
+        name: 'Article Name'
       });
 
       // Mock logged in user
@@ -74,12 +73,10 @@
         mockArticleList = [mockArticle, mockArticle];
       });
 
-      it('should send a GET request and return all articles', inject(function (ArticlesService) {
+      it('should send a GET request and return all Articles', inject(function (ArticlesService) {
         // Set POST response
-        $httpBackend.expectGET('/api/articles').respond(mockArticleList);
+        $httpBackend.expectGET('api/articles').respond(mockArticleList);
 
-        // Ignore parent template get on state transition
-        $httpBackend.whenGET('/modules/core/client/views/home.client.view.html').respond(200, '');
 
         $httpBackend.flush();
 
