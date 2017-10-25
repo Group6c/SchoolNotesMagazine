@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Contests</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="contest in vm.contests"
+       ui-sref="contests.view({ contestId: contest._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="contest.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="contest.user" ng-bind="contest.user.displayName"></span>
+        <span ng-if="!contest.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.contests.$resolved && !vm.contests.length">
+    No Contests yet, why don't you <a ui-sref="contests.create">create one</a>?
+  </div>
+</section>
