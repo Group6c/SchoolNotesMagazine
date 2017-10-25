@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Our Proud Sponsors</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="sponsor in sponsors"
+       ui-sref="sponsors.view({ sponsorId: sponsor._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="sponsor.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="sponsor.user" ng-bind="sponsor.user.displayName"></span>
+        <span ng-if="!sponsor.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="sponsor.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="sponsors.$resolved && !sponsors.length">
+    No Sponsors yet.
+  </div>
+</section>

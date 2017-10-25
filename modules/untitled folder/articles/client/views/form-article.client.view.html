@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.article._id ? 'Edit Article' : 'New Article'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.articleForm" class="form-horizontal" ng-submit="vm.save(vm.form.articleForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="title">Title</label>
+          <input name="title" type="text" ng-model="vm.article.title" id="title" class="form-control" placeholder="Title" required>
+          
+            </div>
+          <div class="form-group" show-errors>
+          <label class="control-label" for="body">Body</label>
+          <textarea name="body" type="text" ng-model="vm.article.body" id="title" class="form-control" placeholder="Body" required></textarea>
+          
+          </div>
+          <div class="form-group" show-errors>
+          <label class="control-label" for="tags">Tags</label>
+          <input name="tags" type="text" ng-model="vm.article.tags" id="title" class="form-control" placeholder="Tags" required>
+          
+            
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
