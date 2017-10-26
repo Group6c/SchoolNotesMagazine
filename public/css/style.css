@@ -304,7 +304,7 @@ header h1 a {
     display: inline-block;
     overflow: hidden;
     font-size: 0;
-    line-height: 0;    
+    line-height: 0;
     text-indent: -999px;
     transition: 0s ease;
     -o-transition: 0s ease;
@@ -322,7 +322,7 @@ header h1 a img {
 .test{
     padding-bottom: 114px;
     background-color:#fff;
-    
+
 }
 
 .page1 .content {
@@ -673,7 +673,7 @@ header h1 a img {
 }
 
 .map_block+.map_block {
-   padding-top: 24px; 
+   padding-top: 24px;
 }
 
 .map_block  .map_title {
@@ -778,7 +778,7 @@ header h1 a img {
     border: none;
     text-indent: -999px;
     z-index: 20;
-    background: url(../images/totop.png) no-repeat left 0; 
+    background: url(../images/totop.png) no-repeat left 0;
     transition: 0s ease;
     -o-transition: 0s ease;
     -webkit-transition: 0s ease;
@@ -819,7 +819,7 @@ header h1 a img {
 
     .clear.height1 {
         height: 10px !important;
-    } 
+    }
 }
 @media only screen and (max-width: 979px) {
 
@@ -848,11 +848,11 @@ header h1 a img {
         margin-left: 0;
         margin-top: 30px;
     }
-    
-     .map figure,  
-     .map figure iframe,  
+
+     .map figure,
+     .map figure iframe,
      #form input,
-     #form textarea,  
+     #form textarea,
      #form .success {
         width: 100% !important;
         float: none !important;
@@ -883,7 +883,7 @@ header h1 a img {
 }
 
 @media only screen and (max-width: 767px) {
-  
+
     .banner>img {
         width: 100%;
     }
@@ -965,14 +965,14 @@ header h1 a img {
 
 
 @media only screen and (max-width: 479px) {
-    
+
 
     .tmSelect.auto, .tmSelect2.auto {
         width: 180px;
-    } 
+    }
 
     .blog table {
-    } 
+    }
 
     .blog table td:first-child  .fa {
         display: block;
