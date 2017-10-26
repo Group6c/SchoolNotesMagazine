@@ -25,7 +25,7 @@
     menuService.addSubMenuItem('topbar', 'sponsors', {
       title: 'Become a Sponsor',
       state: 'sponsors.create',
-      roles: ['user']
+      roles: ['user', 'admin']
     });
 
     menuService.addSubMenuItem('topbar', 'sponsors', {

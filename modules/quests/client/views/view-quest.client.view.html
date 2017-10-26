@@ -1,0 +1,27 @@
+<section>
+  <div class="page-header">
+    <h1 ng-bind="vm.quest.name"></h1>
+    <div ng-bind="vm.quest.description"><h3><span ng-bind="vm.quest.name"></span></h3></div>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.quest.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="quests.edit({ questId: vm.quest._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.quest.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.quest.user"
+            ng-bind="vm.quest.user.displayName"></span>
+      <span ng-if="!vm.quest.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.quest.content"></p>
+</section>

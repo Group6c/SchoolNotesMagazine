@@ -15,7 +15,7 @@
       </small>
       <hr>
       <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <p>{{post.body | limitTo: 150}}</p>
+      <p>{{article.body | limitTo: 150}}</p>
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.articles.$resolved && !vm.articles.length">

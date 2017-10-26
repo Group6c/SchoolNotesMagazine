@@ -1,0 +1,52 @@
+<body ng-controller="SponsorsManageController">
+<link rel="stylesheet" type="text/css" href="/modules/core/client/css/core.css">
+<section>
+  <div class="page-header col-sm-12">
+    <h1>Manage Site Advertisements</h1>
+  </div>
+</section>
+
+<!-- The Modal -->
+<div id="adModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <span>
+    <p>Where would you like this advertisement to go?</p>
+    <button class="btn" id="left-btn" style="align-self:left" ng-click="left();">Left</button>
+    <button class="btn" id="right-btn" style="align-self:right" ng-click="right();">Right</button>
+    </span>
+  </div>
+</div>
+
+<span class="ad" style="position:absolute;padding: 10px;left: 84%;">
+    <!--<img class="thumbs" src="/modules/sponsors/client/img/3_17_dominos.jpg">-->
+    <img class="thumbs" ng-src="{{rightAd}}" style="width: 250px;height: auto;">
+</span>
+<span class="ad" style="position:absolute; padding: 10px;right: 84%;">
+    <!--<img class="thumbs" src="/modules/sponsors/client/img/3_17_UFHealth.jpg">-->
+    <img class="thumbs" ng-src="{{leftAd}}" style="width: 250px;height: auto;">
+</span>
+<section>
+  <span class="col-sm-12">
+    <span class="list-group">
+      <a ng-repeat="sponsor in sponsors"
+         class="col-sm-3" style="padding:10px">
+        <small>
+          <!--Posted on-->
+          <!--<span ng-bind="sponsor.created | date:'mediumDate'"></span>-->
+          <!--by-->
+          <span ng-if="sponsor.user" ng-bind="sponsor.user.displayName"></span>
+          <span ng-if="!sponsor.user">Deleted User</span>
+        </small>
+        <h4 class="list-group-item-heading" ng-bind="sponsor.name"></h4>
+        <img class="thumbs" ng-src={{sponsor.thumbnail}} ng-click="makeAd(sponsor);" style="width: 250px;height: auto;">
+      </a>
+    </span>
+    </span>
+  <div class="alert alert-warning text-center" ng-if="sponsors.$resolved && !sponsors.length">
+    No Ads yet.
+  </div>
+</section>
+</body>

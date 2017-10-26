@@ -1,0 +1,23 @@
+<section>
+  <div class="page-header">
+    <h1>Quests</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="quest in vm.quests"
+       ui-sref="quests.view({ questId: quest._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="quest.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="quest.user" ng-bind="quest.user.displayName"></span>
+        <span ng-if="!quest.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="quest.name"></h4>
+      <p>{{quest.description | limitTo:150}}</p>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.quests.$resolved && !vm.quests.length">
+    No Quests yet, why don't you <a ui-sref="quests.create">create one</a>?
+  </div>
+</section>
