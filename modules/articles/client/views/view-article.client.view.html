@@ -45,10 +45,11 @@
           <table>
           <tbody>
             <tr>
-              <td><time datetime="2014-01-01">
-                <span class="fa fa-calendar"></span>
-                January 20, 2014   
-              </time> </td>
+              <td>
+                <span class="fa fa-calendar"
+                ng-bind="vm.article.created | date:'mediumDate'"></span>
+                
+              </td>
               <td><a href="#"><div class="fa fa-user"></div> Admin</a></td>
               <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
             </tr>
