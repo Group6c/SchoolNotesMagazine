@@ -16,6 +16,16 @@ var ContestSchema = new Schema({
     required: 'Please fill Contest name',
     trim: true
   },
+  description: {
+    type: String,
+    default: '',
+    required: 'Please fill Contest description',
+    trim: true
+  },
+  Dates:{
+    type: Date,
+    default:''
+  },
   created: {
     type: Date,
     default: Date.now

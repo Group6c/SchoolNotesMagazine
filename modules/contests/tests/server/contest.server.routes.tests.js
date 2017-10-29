@@ -1,7 +1,7 @@
 'use strict';
 
 var should = require('should'),
-  request = require('supertest'),
+  recontest = require('supertest'),
   path = require('path'),
   mongoose = require('mongoose'),
   User = mongoose.model('User'),
@@ -25,7 +25,7 @@ describe('Contest CRUD tests', function () {
   before(function (done) {
     // Get application
     app = express.init(mongoose);
-    agent = request.agent(app);
+    agent = recontest.agent(app);
 
     done();
   });
@@ -196,8 +196,8 @@ describe('Contest CRUD tests', function () {
 
     // Save the contest
     contestObj.save(function () {
-      // Request Contests
-      request(app).get('/api/contests')
+      // Recontest Contests
+      recontest(app).get('/api/contests')
         .end(function (req, res) {
           // Set assertion
           res.body.should.be.instanceof(Array).and.have.lengthOf(1);
@@ -215,7 +215,7 @@ describe('Contest CRUD tests', function () {
 
     // Save the Contest
     contestObj.save(function () {
-      request(app).get('/api/contests/' + contestObj._id)
+      recontest(app).get('/api/contests/' + contestObj._id)
         .end(function (req, res) {
           // Set assertion
           res.body.should.be.instanceof(Object).and.have.property('name', contest.name);
@@ -228,7 +228,7 @@ describe('Contest CRUD tests', function () {
 
   it('should return proper error for single Contest with an invalid Id, if not signed in', function (done) {
     // test is not a valid mongoose Id
-    request(app).get('/api/contests/test')
+    recontest(app).get('/api/contests/test')
       .end(function (req, res) {
         // Set assertion
         res.body.should.be.instanceof(Object).and.have.property('message', 'Contest is invalid');
@@ -240,7 +240,7 @@ describe('Contest CRUD tests', function () {
 
   it('should return proper error for single Contest which doesnt exist, if not signed in', function (done) {
     // This is a valid mongoose Id but a non-existent Contest
-    request(app).get('/api/contests/559e9cd815f80b4c256a8f41')
+    recontest(app).get('/api/contests/559e9cd815f80b4c256a8f41')
       .end(function (req, res) {
         // Set assertion
         res.body.should.be.instanceof(Object).and.have.property('message', 'No Contest with that identifier has been found');
@@ -303,7 +303,7 @@ describe('Contest CRUD tests', function () {
     // Save the Contest
     contestObj.save(function () {
       // Try deleting Contest
-      request(app).delete('/api/contests/' + contestObj._id)
+      recontest(app).delete('/api/contests/' + contestObj._id)
         .expect(403)
         .end(function (contestDeleteErr, contestDeleteRes) {
           // Set message assertion

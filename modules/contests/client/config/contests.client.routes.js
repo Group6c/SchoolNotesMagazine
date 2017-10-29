@@ -16,7 +16,7 @@
       })
       .state('contests.list', {
         url: '',
-        templateUrl: 'modules/contests/client/views/list-contests.client.view.html',
+        templateUrl: 'modules/contests/client/views/list-contest.client.view.html',
         controller: 'ContestsListController',
         controllerAs: 'vm',
         data: {
@@ -32,7 +32,7 @@
           contestResolve: newContest
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user'],
           pageTitle: 'Contests Create'
         }
       })
@@ -45,7 +45,7 @@
           contestResolve: getContest
         },
         data: {
-          roles: ['user', 'admin'],
+          roles: ['user'],
           pageTitle: 'Edit Contest {{ contestResolve.name }}'
         }
       })
