@@ -27,6 +27,9 @@ var ArticleSchema = new Schema({
     default: '',
     trim: true
   },
+  thumbnail: {
+    type: String
+  },
   created: {
     type: Date,
     default: Date.now
