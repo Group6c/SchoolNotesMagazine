@@ -9,7 +9,6 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
-
 var multer = require('multer');
 
 var storage = multer.diskStorage({
@@ -18,15 +17,17 @@ var storage = multer.diskStorage({
   },
   filename: function (req, file, cb) {
     if(!file.originalname.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
+      console.log("filename error");
       var err = new Error();
       err.code = 'filetype'; // to check on file type
       return cb(err);
     } else {
+      console.log("produced filename");
       var day = new Date();
       var d = day.getDay();
       var h = day.getHours();
       var fileNamee = d + '_' + h + '_' + file.originalname;
-      // console.log(fileNamee);
+      console.log("filename produced is: " + fileNamee);
       cb(null, fileNamee);
     }
   }
@@ -38,6 +39,7 @@ var upload = multer({
 }).single('myfile'); // name in form
 
 exports.uploads = function (req, res) {
+  console.log("in uploads");
   upload(req, res, function (err) {
     if (err) {
       if (err.code === 'LIMIT_FILE_SIZE') {
@@ -50,6 +52,7 @@ exports.uploads = function (req, res) {
       }
     } else {
       if (!req.file) {
+        console.log("reached here with !rep.file");
         var article = new Article(req.body);
         article.user = req.user;
 
@@ -64,6 +67,7 @@ exports.uploads = function (req, res) {
         });
       }
       else if (req.file) {
+        console.log("reached here with req.file");
         res.json({ success: true, message: 'File was uploaded!' });
       }
 
@@ -111,6 +115,11 @@ exports.update = function(req, res) {
   var article = req.article;
 
   article = _.extend(article, req.body);
+
+  // article.title = req.body.title;
+  // article.body = req.body.body;
+  // article.tags = req.body.tags;
+  // article.thumbnail = req.body.thumbnail;
 
   article.save(function(err) {
     if (err) {
