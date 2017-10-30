@@ -39,30 +39,24 @@
            <span ng-if="!vm.article.user">Deleted User</span>
             <span ng-bind="vm.article.created | date:'mediumDate'"></span>
           <br>
-          <img src="images/page4_img1.jpg" alt="">
+          <img src="{{vm.article.thumbnail}}" alt="">
           <div ng-bind="vm.article.body"><h3><span ng-bind="vm.article.title"></span></h3></div>
           
           <table>
           <tbody>
             <tr>
               <td>
-                <span class="fa fa-calendar"
+                <div class="fa fa-calendar"></div><span
                 ng-bind="vm.article.created | date:'mediumDate'"></span>
                 
               </td>
-              <td><a href="#"><div class="fa fa-user"></div> Admin</a></td>
+              <td><div class="fa fa-user"></div><span ng-if="vm.article.user"
+            ng-bind="vm.article.user.displayName"></span></td>
+            <td colspan="2"><div class="fa fa-tag"></div> <strong>{{vm.article.tags}}</strong></td>
               <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
             </tr>
-            <tr>
-              <td><div class="fa fa-bookmark"></div> Uncategorized  </td>
-              <td colspan="2"><div class="fa fa-tag"></div> <strong>{{vm.article.tags}}</strong></td>
-            </tr>
-            <tr>
-              <td><div class="fa fa-comments"></div> No comments   </td>
-              <td colspan="2"><div class="fa fa-eye"></div>182
-              <div class="fa fa-thumbs-up"></div>0
-              <div class="fa fa-thumbs-down"></div>0</td>
-            </tr>
+            
+            
           </tbody>
         </table>
         </div>

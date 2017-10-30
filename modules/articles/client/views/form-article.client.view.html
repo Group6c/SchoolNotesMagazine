@@ -38,7 +38,7 @@
       </div>
     </div>
 
-    <img class="mythumbnail" ng-src="{{ thumbnail || article.thumbnail  }}" />
+    <img class="mythumbnail" ng-src="{{ thumbnail || vm.article.thumbnail  }}" />
     <!--|| 'modules/artsubmissions/client/img/default.png'-->
 
     <br>
@@ -48,7 +48,7 @@
     <!--</div>-->
 
   </div>
-  {{article.thumbnail}}
+  {{vm.article.thumbnail}}
 
   <br/>
         <div class="form-group">

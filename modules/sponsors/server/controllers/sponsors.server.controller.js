@@ -21,6 +21,7 @@ var storage = multer.diskStorage({
       err.code = 'filetype'; // to check on file type
       return cb(err);
     } else {
+      //console.log("filename made");
       var day = new Date();
       var d = day.getDay();
       var h = day.getHours();
@@ -37,6 +38,7 @@ var upload = multer({
 }).single('myfile'); // name in form
 
 exports.uploads = function (req, res) {
+  //console.log("entered uploads");
   upload(req, res, function (err) {
     if (err) {
       if (err.code === 'LIMIT_FILE_SIZE') {
@@ -51,7 +53,7 @@ exports.uploads = function (req, res) {
       if (!req.file) {
         var sponsor = new Sponsor(req.body);
         sponsor.user = req.user;
-
+        //console.log("!req.file"); 
         sponsor.save(function (err) {
           if (err) {
             return res.status(400).send({
@@ -63,6 +65,7 @@ exports.uploads = function (req, res) {
         });
       }
       else if (req.file) {
+       // console.log("req.file");
         res.json({ success: true, message: 'File was uploaded!' });
       }
 
