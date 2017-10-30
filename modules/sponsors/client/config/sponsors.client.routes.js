@@ -28,7 +28,7 @@
         templateUrl: 'modules/sponsors/client/views/form-sponsor.client.view.html',
         controller: 'SponsorsController',
         directive: 'fileModel',
-        // controllerAs: 'vm',
+        controllerAs: 'vm',
         resolve: {
           sponsorResolve: newSponsor
         },

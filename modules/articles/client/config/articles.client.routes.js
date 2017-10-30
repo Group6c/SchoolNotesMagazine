@@ -27,7 +27,7 @@
         url: '/create',
         templateUrl: 'modules/articles/client/views/form-article.client.view.html',
         controller: 'ArticlesController',
-        //controllerAs: 'vm',
+        controllerAs: 'vm',
         directive: 'fileModel',
         resolve: {
           articleResolve: newArticle
