@@ -9,7 +9,7 @@
   ContestsService.$inject = ['$resource'];
 
   function ContestsService($resource) {
-    return $resource('api/contests/:contestId', {
+    return $resource('/api/contests/:contestId', {
       contestId: '@_id'
     }, {
       update: {

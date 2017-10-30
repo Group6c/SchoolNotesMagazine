@@ -17,6 +17,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    console.log("contestid" + contest._id);
 
     // Remove existing Contest
     function remove() {

@@ -73,7 +73,7 @@
         mockContestList = [mockContest, mockContest];
       });
 
-      it('should send a GET request and return all Contests', inject(function (ContestsService) {
+      it('should send a GET recontest and return all Contests', inject(function (ContestsService) {
         // Set POST response
         $httpBackend.expectGET('api/contests').respond(mockContestList);
 
