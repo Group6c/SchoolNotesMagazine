@@ -1,6 +1,6 @@
-<section>11111111dasda
+<section>
   <div class="page-header">
-    <h1 ng-bind="vm.contest.name"></h1>
+<div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">      <h1 ng-bind="vm.contest.name"></h1> </div>
     <div ng-bind="vm.contest.description"><h3><span ng-bind="vm.contest.name"></span></h3></div>
   </div>
   <div class="pull-right"
@@ -15,12 +15,11 @@
   </div>
   <small>
     <em class="text-muted">
-      Posted on
-      <span ng-bind="vm.contest.created | date:'mediumDate'"></span>
-      by
-      <span ng-if="vm.contest.user"
-            ng-bind="vm.contest.user.displayName"></span>
-      <span ng-if="!vm.contest.user">Deleted User</span>
+  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;">      Posted on</div>
+  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >      <span ng-bind="vm.contest.created | date:'mediumDate'"></span></div>
+      <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" > by</div>
+<div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >     <span ng-if="vm.contest.user" ng-bind="vm.contest.user.displayName"></span> </div>
+<div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >      <span ng-if="!vm.contest.user">Deleted User</span> </div>
     </em>
   </small>
   <p class="lead" ng-bind="vm.contest.content"></p>
