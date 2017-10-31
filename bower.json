@@ -1,11 +1,6 @@
 {
-<<<<<<< HEAD
   "name": "mean",
   "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js",
-=======
-  "name": "meanjs",
-  "description": "Fullstack JavaScript with MongoDB, Express, AngularJS, and Node.js.",
->>>>>>> e64f7d40f35ab26752b0d0c6c1b781e75a7d2a4b
   "homepage": "http://meanjs.org/",
   "license": "MIT",
   "dependencies": {
@@ -33,8 +28,4 @@
       "main": []
     }
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> e64f7d40f35ab26752b0d0c6c1b781e75a7d2a4b
