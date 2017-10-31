@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  // Articles controller
+  // Articles controller,
   angular
     .module('articles')
     .controller('ArticlesController', ArticlesController)
@@ -38,6 +38,7 @@
     vm.save = save;
 
     var upload = function(file){
+      console.log("upload called");
       var fd = new FormData();
       fd.append('myfile', file.upload);
       return $http.post('/api/articles/', fd, {
@@ -50,14 +51,17 @@
     $scope.file = {};
 
     $scope.uploadSubmit = function () {
+      console.log("uploadsubmit called");
       $scope.uploading = true;
       upload($scope.file).then(function (data) {
         if(data.data.success) {
+          console.log("datadatasuccess");
           $scope.uploading = false;
           $scope.alert = 'alert alert-success';
           $scope.message = data.data.message;
           $scope.file = {};
         } else {
+          console.log("failed");
           $scope.uploading = false;
           $scope.alert = 'alert alert-danger';
           $scope.message = data.data.message;
@@ -77,10 +81,11 @@
             // Render thumbnail.
             $scope.thumbnail = {};
             $scope.thumbnail = e.target.result;
+            //console.log("thumbail is" + $scope.thumbnail);
             var day = new Date();
             var d = day.getDay();
             var h = day.getHours();
-            $scope.article.thumbnail = 'modules/articles/client/img/' + d + '_' + h + '_' + files[0].name;
+            vm.article.thumbnail = 'modules/articles/client/img/' + d + '_' + h + '_' + files[0].name;
             $scope.uploading = false;
             $scope.message = false;
           });
@@ -113,6 +118,7 @@
       }
 
       function successCallback(res) {
+        $scope.uploadSubmit();
         $state.go('articles.view', {
           articleId: res._id
         });
