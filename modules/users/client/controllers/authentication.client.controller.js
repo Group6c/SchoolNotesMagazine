@@ -80,7 +80,6 @@
     function onUserSigninSuccess(response) {
       // If successful we assign the response to the global user model
       vm.authentication.user = response;
-      console.log(response);
       Notification.info({ message: 'Welcome ' + response.firstName });
       // And redirect to the previous or home page
       $state.go($state.previous.state.name || 'home', $state.previous.params);
