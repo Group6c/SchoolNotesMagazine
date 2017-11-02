@@ -26,6 +26,13 @@
           </div>
         </div>
         <div class="form-group" show-errors>
+          <label for="zipcode">Zip Code</label>
+          <input type="text" id="zipcode" name="zipcode" class="form-control" ng-model="vm.credentials.zipcode" placeholder="Zip Code" required>
+          <div ng-messages="vm.userForm.zipcode.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Zip Code is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
           <label for="username">Username</label>
           <input type="text" id="username" name="username" class="form-control" ng-model="vm.credentials.username" ng-pattern="vm.usernameRegex" placeholder="Username" lowercase required>
           <div ng-messages="vm.userForm.username.$error" role="alert">

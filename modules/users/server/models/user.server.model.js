@@ -30,6 +30,9 @@ var validateLocalStrategyEmail = function (email) {
   return ((this.provider !== 'local' && !this.updated) || validator.isEmail(email, { require_tld: false }));
 };
 
+var validateLocalStrategyZipCode = function (zipcode) {
+  return /^\d{5}$/.test(zipcode);
+};
 /**
  * A Validation function for username
  * - at least 3 characters
@@ -78,6 +81,12 @@ var UserSchema = new Schema({
     trim: true,
     default: '',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
+  },
+  zipcode: {
+    type: Number,
+    trim: true,
+    default: '',
+    validate: [validateLocalStrategyZipCode, 'Please fill a valid zip code']
   },
   username: {
     type: String,
