@@ -16,7 +16,7 @@
       })
       .state('tests.list', {
         url: '',
-        templateUrl: 'modules/tests/client/views/list-tests.client.view.html',
+        templateUrl: '/modules/tests/client/views/list-tests.client.view.html',
         controller: 'TestsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('tests.create', {
         url: '/create',
-        templateUrl: 'modules/tests/client/views/form-test.client.view.html',
+        templateUrl: '/modules/tests/client/views/form-test.client.view.html',
         controller: 'TestsController',
         controllerAs: 'vm',
         resolve: {
@@ -38,7 +38,7 @@
       })
       .state('tests.edit', {
         url: '/:testId/edit',
-        templateUrl: 'modules/tests/client/views/form-test.client.view.html',
+        templateUrl: '/modules/tests/client/views/form-test.client.view.html',
         controller: 'TestsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,7 +51,7 @@
       })
       .state('tests.view', {
         url: '/:testId',
-        templateUrl: 'modules/tests/client/views/view-test.client.view.html',
+        templateUrl: '/modules/tests/client/views/view-test.client.view.html',
         controller: 'TestsController',
         controllerAs: 'vm',
         resolve: {

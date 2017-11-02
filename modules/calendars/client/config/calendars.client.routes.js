@@ -16,7 +16,7 @@
       })
       .state('calendars.list', {
         url: '',
-        templateUrl: 'modules/calendars/client/views/list-calendars.client.view.html',
+        templateUrl: '/modules/calendars/client/views/list-calendars.client.view.html',
         controller: 'CalendarsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('calendars.create', {
         url: '/create',
-        templateUrl: 'modules/calendars/client/views/form-calendar.client.view.html',
+        templateUrl: '/modules/calendars/client/views/form-calendar.client.view.html',
         controller: 'CalendarsController',
         controllerAs: 'vm',
         resolve: {
@@ -38,7 +38,7 @@
       })
       .state('calendars.edit', {
         url: '/:calendarId/edit',
-        templateUrl: 'modules/calendars/client/views/form-calendar.client.view.html',
+        templateUrl: '/modules/calendars/client/views/form-calendar.client.view.html',
         controller: 'CalendarsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,7 +51,7 @@
       })
       .state('calendars.view', {
         url: '/:calendarId',
-        templateUrl: 'modules/calendars/client/views/view-calendar.client.view.html',
+        templateUrl: '/modules/calendars/client/views/view-calendar.client.view.html',
         controller: 'CalendarsController',
         controllerAs: 'vm',
         resolve: {

@@ -16,7 +16,7 @@
       })
       .state('contests.list', {
         url: '',
-        templateUrl: 'modules/contests/client/views/list-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/list-contest.client.view.html',
         controller: 'ContestsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('contests.create', {
         url: '/create',
-        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
@@ -38,7 +38,7 @@
       })
       .state('contests.edit', {
         url: '/:contestId/edit',
-        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,7 +51,7 @@
       })
       .state('contests.view', {
         url: '/:contestId',
-        templateUrl: 'modules/contests/client/views/view-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/view-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
