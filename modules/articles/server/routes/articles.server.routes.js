@@ -18,9 +18,6 @@ module.exports = function(app) {
     .put(articles.update)
     .delete(articles.delete);
 
-  app.route('/upload/image')
-    .post(articles.postImage);
-
   // Finish by binding the Article middleware
   app.param('articleId', articles.articleByID);
 };
