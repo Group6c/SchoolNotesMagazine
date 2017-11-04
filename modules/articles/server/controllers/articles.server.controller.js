@@ -16,7 +16,8 @@ var multiparty = require('multiparty'),
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './modules/articles/client/img/'); // where to store it
+    cb(null, './modules/articles/client/img/');
+    console.log("storage called"); // where to store it
   },
   filename: function (req, file, cb) {
     if(!file.originalname.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
@@ -74,9 +75,24 @@ exports.uploads = function (req, res) {
         });
       }
       else if (req.file) {
-        console.log("req" + req);
+        console.log("req.file " + req.file);
+        var article = new Article(req.body);
+        article.user = req.user;
+        article.thumbnail.data = fs.readFileSync(req.file.path);
+        article.thumbnail.contentType = "image/png";
+        console.log(article);
+        //res.setHeader("Content-Type", "text/html");
+        article.save(function (err) {
+          if (err) {
+            return res.status(400).send({
+              message: errorHandler.getErrorMessage(err)
+            });
+          } else {
+            res.jsonp(article);
+          }
+        });
         console.log("reached here with req.file");
-        console.log(req.file);
+       // console.log(req.file);
         res.json({ success: true, message: 'File was uploaded!' });
       }
 

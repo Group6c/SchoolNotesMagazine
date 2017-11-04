@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-
+//var fs = require('fs');
   // Articles controller,
   angular
     .module('articles')
@@ -118,11 +118,15 @@
       if (vm.article._id) {
         vm.article.$update(successCallback, errorCallback);
       } else {
-        vm.article.$save(successCallback, errorCallback);
+        // vm.article.thumbnail.data = fs.readFileSync(vm.article.thumb);
+        //vm.article.thumbnail.contentType = "image/png";
+        console.log(JSON.stringify(vm.article, null, 4));
+        //$scope.uploadSubmit();
+        //vm.article.$save(successCallback, errorCallback);
       }
 
       function successCallback(res) {
-        $scope.uploadSubmit();
+        
         $state.go('articles.view', {
           articleId: res._id
         });
