@@ -11,8 +11,7 @@ var path = require('path'),
 
 
 var multer = require('multer');
-var uuid = require('node-uuid'),
-    multiparty = require('multiparty'),
+var multiparty = require('multiparty'),
     fs = require('fs');
 
 var storage = multer.diskStorage({
@@ -44,7 +43,7 @@ var upload = multer({
 
 exports.uploads = function (req, res) {
   console.log("in uploads");
-  
+  console.log("req" + req);
   upload(req, res, function (err) {
     if (err) {
       if (err.code === 'LIMIT_FILE_SIZE') {
@@ -57,6 +56,7 @@ exports.uploads = function (req, res) {
       }
     } else {
       if (!req.file) {
+        
         console.log("reached here with !req.file");
         var article = new Article(req.body);
         article.user = req.user;
@@ -74,6 +74,7 @@ exports.uploads = function (req, res) {
         });
       }
       else if (req.file) {
+        console.log("req" + req);
         console.log("reached here with req.file");
         console.log(req.file);
         res.json({ success: true, message: 'File was uploaded!' });
