@@ -89,7 +89,12 @@
             var day = new Date();
             var d = day.getDay();
             var h = day.getHours();
+            // vm.article.thumbnail = {data: $scope.thumbnail,
+            //   contentType: "image/png",
+            //   path: 'modules/sponsors/client/img/' + d + '_' + h + '_' + files[0].name
+            // };// $scope.thumbnail;
             vm.article.thumbnail = 'modules/articles/client/img/' + d + '_' + h + '_' + files[0].name;
+
             $scope.uploading = false;
             $scope.message = false;
           });
@@ -121,8 +126,8 @@
         // vm.article.thumbnail.data = fs.readFileSync(vm.article.thumb);
         //vm.article.thumbnail.contentType = "image/png";
         console.log(JSON.stringify(vm.article, null, 4));
-        //$scope.uploadSubmit();
-        //vm.article.$save(successCallback, errorCallback);
+        $scope.uploadSubmit();
+        vm.article.$save(successCallback, errorCallback);
       }
 
       function successCallback(res) {

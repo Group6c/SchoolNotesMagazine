@@ -61,7 +61,8 @@ exports.uploads = function (req, res) {
         console.log("reached here with !req.file");
         var article = new Article(req.body);
         article.user = req.user;
-        //article.thumbnail.data = fs.readFileSync(req.files.userPhoto.path);
+        console.log("reqbodythumbnail" + req.body.thumbnail);
+        article.thumbnail.data = fs.readFileSync(req.body.thumbnail);
         article.thumbnail.contentType = "image/png";
         console.log(article);
         article.save(function (err) {
@@ -76,22 +77,22 @@ exports.uploads = function (req, res) {
       }
       else if (req.file) {
         console.log("req.file " + req.file);
-        var article = new Article(req.body);
-        article.user = req.user;
-        article.thumbnail.data = fs.readFileSync(req.file.path);
-        article.thumbnail.contentType = "image/png";
-        console.log(article);
-        //res.setHeader("Content-Type", "text/html");
-        article.save(function (err) {
-          if (err) {
-            return res.status(400).send({
-              message: errorHandler.getErrorMessage(err)
-            });
-          } else {
-            res.jsonp(article);
-          }
-        });
-        console.log("reached here with req.file");
+        // var article = new Article(req.body);
+        // article.user = req.user;
+        // article.thumbnail.data = fs.readFileSync(req.file.path);
+        // article.thumbnail.contentType = "image/png";
+        // console.log(article);
+        // //res.setHeader("Content-Type", "text/html");
+        // article.save(function (err) {
+        //   if (err) {
+        //     return res.status(400).send({
+        //       message: errorHandler.getErrorMessage(err)
+        //     });
+        //   } else {
+        //     res.jsonp(article);
+        //   }
+        // });
+        // console.log("reached here with req.file");
        // console.log(req.file);
         res.json({ success: true, message: 'File was uploaded!' });
       }
