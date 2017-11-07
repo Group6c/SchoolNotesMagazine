@@ -61,9 +61,9 @@ exports.uploads = function (req, res) {
         console.log("reached here with !req.file");
         var article = new Article(req.body);
         article.user = req.user;
-        console.log("reqbodythumbnail" + req.body.thumbnail);
-        article.thumbnail.data = fs.readFileSync(req.body.thumbnail);
-        article.thumbnail.contentType = "image/png";
+        console.log("reqbodyimageString" + req.body.imageString);
+        article.thumbnail = req.body.imageString;
+        //article.thumbnail.contentType = "image/png";
         console.log(article);
         article.save(function (err) {
           if (err) {
@@ -182,6 +182,7 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
+  console.log("article list");
   Article.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
     if (err) {
       return res.status(400).send({
@@ -197,7 +198,7 @@ exports.list = function(req, res) {
  * Article middleware
  */
 exports.articleByID = function(req, res, next, id) {
-
+console.log("articlebyID " + id);
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
       message: 'Article is invalid'

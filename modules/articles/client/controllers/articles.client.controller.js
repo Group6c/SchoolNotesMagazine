@@ -94,7 +94,7 @@
             //   path: 'modules/sponsors/client/img/' + d + '_' + h + '_' + files[0].name
             // };// $scope.thumbnail;
             vm.article.thumbnail = 'modules/articles/client/img/' + d + '_' + h + '_' + files[0].name;
-
+            vm.article.imageString = $scope.thumbnail;
             $scope.uploading = false;
             $scope.message = false;
           });

@@ -1,4 +1,5 @@
 <section>
+  
   <!-- <div class="page-header">
     <h1><span ng-bind="vm.article.title"></span></h1>
     <div ng-bind="vm.article.body"><h3><span ng-bind="vm.article.title"></span></h3></div>
@@ -39,7 +40,7 @@
            <span ng-if="!vm.article.user">Deleted User</span>
             <span ng-bind="vm.article.created | date:'mediumDate'"></span>
           <br>
-          <img src="{{vm.article.thumbnail}}" alt="">
+          <img ng-src="data:image/png;base64,{{vm.article.thumbnail}}">
           <div ng-bind="vm.article.body"><h3><span ng-bind="vm.article.title"></span></h3></div>
           
           <table>
