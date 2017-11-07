@@ -11,7 +11,7 @@
     "url": "https://github.com/meanjs/mean.git"
   },
   "engines": {
-    "node": ">=6.10.0",
+    "node": "6.11.1",
     "npm": ">=3.10.8"
   },
   "scripts": {
@@ -79,6 +79,7 @@
     "helmet": "^3.8.2",
     "imagemin-pngquant": "~5.0.0",
     "jasmine-core": "~2.7.0",
+    "livereload": "^0.6.3",
     "lodash": "~4.17.4",
     "lusca": "^1.5.2",
     "method-override": "^2.3.10",
