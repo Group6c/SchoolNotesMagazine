@@ -61,7 +61,7 @@ exports.uploads = function (req, res) {
         console.log("reached here with !req.file");
         var article = new Article(req.body);
         article.user = req.user;
-        console.log("reqbodyimageString" + req.body.imageString);
+        //console.log("reqbodyimageString" + req.body.imageString);
         article.thumbnail = req.body.imageString;
         //article.thumbnail.contentType = "image/png";
         console.log(article);
