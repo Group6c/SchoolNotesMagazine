@@ -1,0 +1,109 @@
+<section>
+  <!-- <div class="page-header">
+    <h1><span ng-bind="vm.event.title"></span></h1>
+    <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
+    <br>
+    <p>Tags: <strong>{{vm.event.tags}}</strong></p>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.event.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="events.edit({ eventId: vm.event._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.event.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span>
+      <span ng-if="!vm.event.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.event.content"></p> -->
+<!-- Bliss Template  -->
+<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_7">
+        <div class="blog">
+          <div class="blog_title"><a href="#"><span ng-bind="vm.event.title"></span></a></div>
+          By 
+            <span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span>
+           <span ng-if="!vm.event.user">Deleted User</span>
+            <span ng-bind="vm.event.created | date:'mediumDate'"></span>
+          <br>
+          <img src="{{vm.event.thumbnail}}" alt="">
+          <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
+          
+          <table>
+          <tbody>
+            <tr>
+              <td>
+                <div class="fa fa-calendar"></div><span
+                ng-bind="vm.event.created | date:'mediumDate'"></span>
+                
+              </td>
+              <td><div class="fa fa-user"></div><span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span></td>
+            <td colspan="2"><div class="fa fa-tag"></div> <strong>{{vm.event.tags}}</strong></td>
+              <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
+            </tr>
+            
+            
+          </tbody>
+        </table>
+        </div>
+      </div>
+      <div class="grid_4 preffix_1">
+        <h2>Categories</h2>
+        <ul class="list">
+          <li><a href="#">Herem ipsum dolor </a></li>
+          <li><a href="#">sit Komet,tetur </a></li>
+          <li><a href="#">Odipiscingt</a></li>
+          <li><a href="#">In mollis eratttis </a></li>
+          <li><a href="#">Neque Loacilisis, sit </a></li>
+          <li><a href="#">Amet ultret</a></li>
+          <li><a href="#">Icies erat rutrums </a></li>
+        </ul>
+        <h2>Recent Posts</h2>
+        <div class="block3">
+          <img src="images/page4_img4.jpg" alt="" class="img_inner noresize fleft">
+          <div class="extra_wrapper">
+            <div class="text1 color1">
+              <time datetime="2014-01-01">20-05-2014</time>
+              <a href="#">Hivamus at magnate </a>
+            </div>Rehoncus. Aliquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnec <a href="#" class="color1">[...]</a>
+          </div>
+        </div>
+        <div class="block3">
+          <img src="images/page4_img5.jpg" alt="" class="img_inner noresize fleft">
+          <div class="extra_wrapper">
+            <div class="text1 color1">
+              <time datetime="2014-01-01">25-05-2014</time>
+              <a href="#">Livamus aot magte </a>
+            </div>Tehoncus. Aliquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnece <a href="#" class="color1">[...]</a>
+          </div>
+        </div>
+        <div class="block3">
+          <img src="images/page4_img6.jpg" alt="" class="img_inner noresize fleft">
+          <div class="extra_wrapper">
+            <div class="text1 color1">
+              <time datetime="2014-01-01">28-05-2014</time>
+              <a href="#">Kivamus aagnateme </a>
+            </div>
+            Mehoncusiquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnec dert <a href="#" class="color1">[...]</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bliss Template Ends -->
+</section>
