@@ -11,5 +11,6 @@
     var vm = this;
 
     vm.events = EventsService.query();
+    console.log(vm.events);
   }
 }());

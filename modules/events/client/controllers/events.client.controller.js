@@ -25,9 +25,9 @@
     };
   }
 
-  EventsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'eventResolve', '$timeout', '$http'];
+  EventsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'eventResolve', '$timeout', '$http', 'EventsService'];
 
-  function EventsController ($scope, $state, $window, Authentication, event, $timeout, $http) {
+  function EventsController ($scope, $state, $window, Authentication, event, $timeout, $http, EventsService) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -37,6 +37,7 @@
     vm.remove = remove;
     vm.save = save;
 
+    vm.events = EventsService.query();
     var upload = function(file){
       console.log("upload called");
       var fd = new FormData();
@@ -86,6 +87,7 @@
             var d = day.getDay();
             var h = day.getHours();
             vm.event.thumbnail = 'modules/events/client/img/' + d + '_' + h + '_' + files[0].name;
+            vm.event.imageString = $scope.thumbnail;
             $scope.uploading = false;
             $scope.message = false;
           });
@@ -114,11 +116,13 @@
       if (vm.event._id) {
         vm.event.$update(successCallback, errorCallback);
       } else {
+        console.log(JSON.stringify(vm.event, null, 4));
+        $scope.uploadSubmit();
         vm.event.$save(successCallback, errorCallback);
       }
 
       function successCallback(res) {
-        $scope.uploadSubmit();
+        //$scope.uploadSubmit();
         $state.go('events.view', {
           eventId: res._id
         });

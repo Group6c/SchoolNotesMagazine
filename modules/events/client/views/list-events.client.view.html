@@ -14,7 +14,7 @@
         <span ng-if="!event.user">Deleted User</span>
       </small>
       <span class="block3">
-          <img src="images/page4_img4.jpg" alt="" class="img_inner noresize fleft">
+          <img data-ng-src="{{event.thumbnail}}" alt="" class="img_inner noresize fleft" width="200px" height="120px">
           <span class="extra_wrapper">
             <span class="text1 color1">
               <time datetime="2014-01-01">20-05-2014</time>
@@ -29,16 +29,5 @@
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.events.$resolved && !vm.events.length">
     No events yet, why don't you <a ui-sref="events.create">create one</a>?
-  </div>
-  <div class="grid_4 preffix_1">
-    <div class="block3">
-      <img src="images/page4_img5.jpg" alt="" class="img_inner noresize fleft">
-      <div class="extra_wrapper">
-        <div class="text1 color1">
-          <time datetime="2014-01-01">25-05-2014</time>
-          <a href="#">Livamus aot magte </a>
-        </div>Tehoncus. Aliquam nibh tegestas id ictum ado. Praesentertoaucibus maleada faucibusnece <a href="#" class="color1">[...]</a>
-      </div>
-    </div>
   </div>
 </section>

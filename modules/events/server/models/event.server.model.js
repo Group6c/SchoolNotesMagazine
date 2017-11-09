@@ -22,7 +22,12 @@ var EventSchema = new Schema({
     required: 'Please fill Body',
     trim: true
   },
-  tags: {
+  date: {
+    type: String,
+    default: '',
+    trim: true
+  },
+  address: {
     type: String,
     default: '',
     trim: true

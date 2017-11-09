@@ -52,10 +52,14 @@ exports.uploads = function (req, res) {
       }
     } else {
       if (!req.file) {
-        console.log("reached here with !rep.file");
-        var event = new Event(req.body);
+        
+        console.log("reached here with !req.file");
+        var event= new Event(req.body);
         event.user = req.user;
-
+        //console.log("reqbodyimageString" + req.body.imageString);
+        event.thumbnail = req.body.imageString;
+        //event.thumbnail.contentType = "image/png";
+        console.log(event);
         event.save(function (err) {
           if (err) {
             return res.status(400).send({

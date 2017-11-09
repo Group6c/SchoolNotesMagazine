@@ -12,12 +12,19 @@
             </div>
           <div class="form-group" show-errors>
           <label class="control-label" for="body">Body</label>
-          <textarea name="body" type="text" ng-model="vm.event.body" id="title" class="form-control" placeholder="Body" required></textarea>
+          <textarea name="body" type="text" ng-model="vm.event.body" id="title" class="form-control" placeholder="Description" required></textarea>
           
           </div>
           <div class="form-group" show-errors>
-          <label class="control-label" for="tags">Tags</label>
-          <input name="tags" type="text" ng-model="vm.event.tags" id="title" class="form-control" placeholder="Tags" required>
+          <label class="control-label" for="date">Date</label>
+          <input name="date" type="text" ng-model="vm.event.date" id="title" class="form-control" placeholder="Date" required>
+          
+            
+        </div>
+
+        <div class="form-group" show-errors>
+          <label class="control-label" for="address">Address</label>
+          <input name="address" type="text" ng-model="vm.event.address" id="title" class="form-control" placeholder="Address" required>
           
             
         </div>
