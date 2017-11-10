@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'events', {
       title: 'Create Event',
       state: 'events.create',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

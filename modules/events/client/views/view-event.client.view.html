@@ -32,14 +32,14 @@
     <div class="row">
       <div class="grid_7">
         <div class="blog">
-          <div class="blog_title"><a href="#"><span ng-bind="vm.event.title"></span></a></div>
+          <div class="blog_title"><a href="#"><strong><span ng-bind="vm.event.title"></span></strong></a></div>
           By 
             <span ng-if="vm.event.user"
             ng-bind="vm.event.user.displayName"></span>
            <span ng-if="!vm.event.user">Deleted User</span>
             <span ng-bind="vm.event.created | date:'mediumDate'"></span>
           <br>
-          <img data-ng-src="{{vm.event.thumbnail}}">
+          <img data-ng-src="{{vm.event.thumbnail}}" height="300px">
           <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
           
           <table>
@@ -53,8 +53,10 @@
               </td>
               <td><div class="fa fa-user"></div><span ng-if="vm.event.user"
             ng-bind="vm.event.user.displayName"></span></td>
+            </tr>
+
+            <tr>
             <td colspan="2"><div class="fa fa-location-arrow"></div><strong> {{vm.event.address}}</td></strong>
-              <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
             </tr>
             
             
@@ -67,14 +69,17 @@
         
         <h2>Recent Posts</h2>
         <div ng-repeat="ev in vm.events">
+          <div class="text1 color1">
+              <time datetime="2014-01-01">{{ev.date}}</time>
+              <br>
+              <a ui-sref="events.view({ eventId: ev._id })" ><strong>{{ev.title}}</strong> </a>
+            </div>
         <div class="block3">
-          <img data-ng-src="{{ev.thumbnail}}" alt="" class="img_inner noresize fleft">
+          <img data-ng-src="{{ev.thumbnail}}" width="auto" height="50px">
           <div class="extra_wrapper">
-            <div class="text1 color1">
-              <time datetime="2014-01-01">20-05-2014</time>
-              <a href="#">Hivamus at magnate </a>
-            </div>{{ev.body}} <a href="#" class="color1">[...]</a>
+            {{ev.body | limitTo: 150}} <a ui-sref="events.view({ eventId: ev._id })" class="color1">[...]</a>
           </div>
+          <br>
         </div>
         </div>
       </div>
