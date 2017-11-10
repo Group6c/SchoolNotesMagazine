@@ -37,7 +37,8 @@
             <span ng-if="vm.event.user"
             ng-bind="vm.event.user.displayName"></span>
            <span ng-if="!vm.event.user">Deleted User</span>
-            <span ng-bind="vm.event.created | date:'mediumDate'"></span>
+           ~
+            <span ng-bind="vm.event.date | date:'mediumDate'"></span>
           <br>
           <img data-ng-src="{{vm.event.thumbnail}}" height="300px">
           <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
@@ -67,20 +68,22 @@
       
       <div class="grid_4 preffix_1">
         
-        <h2>Recent Posts</h2>
-        <div ng-repeat="ev in vm.events">
-          <div class="text1 color1">
-              <time datetime="2014-01-01">{{ev.date}}</time>
+        <h2>Upcoming Events</h2>
+        <div ng-repeat="ev in (vm.events | limitTo: 3)">
+          <div ng-hide="ev.title == vm.event.title">
+              <div class="text1 color1">
+                  <time datetime="ev.date">{{ev.date}}</time>
+                  <br>
+                  <a ui-sref="events.view({ eventId: ev._id })" ><strong>{{ev.title}}</strong> </a>
+              </div>
+            <div class="block3">
+              <img data-ng-src="{{ev.thumbnail}}" width="auto" height="50px" class="img_inner fleft inn__1">
+              <div class="extra_wrapper">
+                {{ev.body | limitTo: 150}} <a ui-sref="events.view({ eventId: ev._id })" class="color1">[...]</a>
+              </div>
               <br>
-              <a ui-sref="events.view({ eventId: ev._id })" ><strong>{{ev.title}}</strong> </a>
             </div>
-        <div class="block3">
-          <img data-ng-src="{{ev.thumbnail}}" width="auto" height="50px">
-          <div class="extra_wrapper">
-            {{ev.body | limitTo: 150}} <a ui-sref="events.view({ eventId: ev._id })" class="color1">[...]</a>
           </div>
-          <br>
-        </div>
         </div>
       </div>
       </div>
