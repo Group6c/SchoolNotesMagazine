@@ -50,9 +50,9 @@
   </div>
   {{vm.article.thumbnail}}
 
-  <br/>
+  <br>
         <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}</button>
+          <input type="button" class="btn btn-default">{{vm.article._id ? 'Update' : 'Create'}}
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>

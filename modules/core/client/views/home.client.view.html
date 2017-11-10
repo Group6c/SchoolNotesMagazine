@@ -1,5 +1,19 @@
 <section ng-controller="HomeController">
 <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div><br><br>
+
+ <!--  <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation"> -->
+    
+
+    <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
+      <li><button class="buttonPic circle"  onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'"><img src="images/button1.png"></button></li>
+
+      <li><button class="buttonPic circle"  onclick="window.location.href='/articles'"><img src="images/button2.png"></button></li>
+
+      <li><button class="buttonPic circle"  onclick="window.location.href='/contests'"><img src="images/button3.png"></button></li>
+    </ul>
+<!--   </nav> -->
+
+
   <div class="row">
     <div class="grid_12">
           <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >

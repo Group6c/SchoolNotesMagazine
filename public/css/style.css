@@ -979,6 +979,14 @@ header h1 a img {
 }
 
 /* self-made */
+.buttonPic{
+    background-size: 100px 130px;
+    height: 104px;  
+    width: 104px
+}
+.circle {
+    border-radius: 50%;
+}
 
 .test{
     padding-bottom: 114px;
