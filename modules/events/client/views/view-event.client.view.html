@@ -46,13 +46,14 @@
           <tbody>
             <tr>
               <td>
+                <strong>
                 <div class="fa fa-calendar"></div><span
-                ng-bind="vm.event.created | date:'mediumDate'"></span>
+                ng-bind="vm.event.date | date:'mediumDate'"></span></strong>
                 
               </td>
               <td><div class="fa fa-user"></div><span ng-if="vm.event.user"
             ng-bind="vm.event.user.displayName"></span></td>
-            <td colspan="2"><div class="fa fa-tag"></div> <strong>{{vm.event.tags}}</strong></td>
+            <td colspan="2"><div class="fa fa-location-arrow"></div><strong> {{vm.event.address}}</td></strong>
               <td><a href="#"><span class="fa fa-link"></span> Permalink</a></td>
             </tr>
             
