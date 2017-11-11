@@ -3,14 +3,31 @@
 
  <!--  <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation"> -->
     
-
-    <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
-      <li><button class="buttonPic circle"  onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'"><img src="images/button1.png"></button></li>
-
-      <li><button class="buttonPic circle"  onclick="window.location.href='/articles'"><img src="images/button2.png"></button></li>
-
-      <li><button class="buttonPic circle"  onclick="window.location.href='/contests'"><img src="images/button3.png"></button></li>
-    </ul>
+  <div class="row" ng-if="vm.menu.shouldRender(vm.authentication.user);">
+    <div class="grid_4" >
+      <div class="banner" >
+        <!-- <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);"> -->
+          <div class="gall_block">
+            <button class="buttonPic circle"  onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'" ><img src="images/button1.png" width="300em" height="auto" display="block" margin="auto"></button>
+          </div>
+      </div>
+    </div>
+    <div class="grid_4" >
+      <div class="banner" >
+        <div class="gall_block">
+          <button class="buttonPic circle"  onclick="window.location.href='/articles'"><img src="images/button2.png" width="300em" height="auto"></button>
+        </div>
+      </div>
+    </div>
+    <div class="grid_4" >
+      <div class="banner" >
+        <div class="gall_block">
+          <button class="buttonPic circle"  onclick="window.location.href='/contests'"><img src="images/button3.png" width="300em" height="auto"></button>
+        </div>
+      </div>
+    </div>
+        <!-- </ul> -->
+  </div>
 <!--   </nav> -->
 
 
