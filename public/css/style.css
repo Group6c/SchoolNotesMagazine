@@ -980,6 +980,19 @@ header h1 a img {
 
 /* self-made */
 
+.buttonPic{
+    background-color:#85C1E9;
+    background-size: 100px 130px;
+    height: 250px;  
+    width: 250px
+}
+.circle {
+    border-radius: 50%;
+}
+.square {
+    border-radius: 2px;
+}
+
 .test{
     padding-bottom: 114px;
     background-color:#fff;
@@ -991,7 +1004,7 @@ header h1 a img {
 }
 .selfevents{
     width: 360px;
-    height: 110px;
+    height: 250px;
     overflow: auto;
     font:30px/35px 'Economica', sans-serif;
 }
@@ -999,6 +1012,14 @@ header h1 a img {
     font:40px/48px 'Economica', sans-serif;
     color:#0066ff;
 }
+
 ::-webkit-scrollbar { 
     display: none; 
+}
+.middlebutton{
+    height: 270px;
+    width:100%;
+    background-color:#0066ff;
+    color:white;
+    font: 50px/60px 'Economica', sans-serif;
 }

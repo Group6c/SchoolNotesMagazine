@@ -113,7 +113,7 @@
       }
 
       function successCallback(res) {
-        $scope.uploadSubmit();
+        //$scope.uploadSubmit();
         js_send();
         $state.go('sponsors.view', {
           sponsorId: res._id
