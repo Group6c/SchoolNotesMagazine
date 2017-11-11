@@ -13,7 +13,7 @@
       title: 'Articles',
       state: 'articles',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // Add the dropdown list item
@@ -25,8 +25,7 @@
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'articles', {
       title: 'Create Article',
-      state: 'articles.create',
-      roles: ['user']
+      state: 'articles.create'
     });
   }
 }());
