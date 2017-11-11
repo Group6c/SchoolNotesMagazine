@@ -981,6 +981,7 @@ header h1 a img {
 /* self-made */
 
 .buttonPic{
+    background-color:#85C1E9;
     background-size: 100px 130px;
     height: 250px;  
     width: 250px
