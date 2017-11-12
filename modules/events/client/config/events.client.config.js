@@ -13,7 +13,7 @@
       title: 'Events',
       state: 'events',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // Add the dropdown list item
@@ -25,8 +25,7 @@
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'events', {
       title: 'Create Event',
-      state: 'events.create',
-      roles: ['admin']
+      state: 'events.create'
     });
   }
 }());

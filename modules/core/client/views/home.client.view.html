@@ -22,13 +22,27 @@
         <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >
           <center><br><br>
             <div class="row">
-              <div ng-repeat="event in (hc.events | limitTo: 3)" >
+              <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
                 <div class="grid_4" >
-                  <button class="buttonPic square"  onclick="window.location.href='/articles'" ><img data-ng-src="{{event.thumbnail}}" style="height: 200px; width: 250px" >
-                  </button>
+                  <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
+                    <img data-ng-src="{{event.thumbnail}}"  style="height: 200px; width: 250px" alt="" >
+                  </a>
                 </div>
               </div>
-            </div></center><br><br>
+            </div>
+     
+        <!-- <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)">
+          <div class="grid_4" >
+              <a ui-sref="events.view({ eventId: event._id })">
+                <img data-ng-src="{{event.thumbnail}}"  alt="" class="img-responsive">
+              </a>
+          <div class="clear"></div><br> 
+          </div>
+        </div> -->
+
+
+
+          </center><br><br>
           </div>
       </div>
     </div>
