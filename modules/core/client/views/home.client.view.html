@@ -8,7 +8,7 @@
       <button class="buttonPic circle"  onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'" ><img src="images/button1.png" ></button>
     </div>
     <div class="grid_4" >
-      <button class="buttonPic circle"  onclick="window.location.href='/articles'"><img src="images/button2.png" ></button>
+      <button class="buttonPic circle"  onclick="window.location.href='/events'"><img src="images/button2.png" ></button>
     </div>
     <div class="grid_4" >
       <button class="buttonPic circle"  onclick="window.location.href='/contests'"><img src="images/button3.png" ></button>
@@ -22,16 +22,12 @@
         <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >
           <center><br><br>
             <div class="row">
-              <div class="grid_4" >
-                <button class="buttonPic square"  onclick="window.location.href='/articles'" ><img style="height: 200px; width: 250px" src="images/eventP1.png" ></button>
+              <div ng-repeat="event in (hc.events | limitTo: 3)" >
+                <div class="grid_4" >
+                  <button class="buttonPic square"  onclick="window.location.href='/articles'" ><img data-ng-src="{{event.thumbnail}}" style="height: 200px; width: 250px" >
+                  </button>
+                </div>
               </div>
-              <div class="grid_4" >
-                <button class="buttonPic square"  onclick="window.location.href='/articles'"><img src="images/eventP2.png" ></button>
-              </div>
-              <div class="grid_4" >
-                <button class="buttonPic square"  onclick="window.location.href='/articles'"><img src="images/eventp3.png" ></button>
-              </div>
-                  <!-- </ul> -->
             </div></center><br><br>
           </div>
       </div>
