@@ -26,7 +26,7 @@
     menuService.addSubMenuItem('topbar', 'contests', {
       title: 'Create Contest',
       state: 'contests.create',
-      roles: ['user']
+      roles: ['admin']
     });
   }
 }());

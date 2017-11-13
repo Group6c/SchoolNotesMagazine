@@ -14,6 +14,9 @@
             <br><br>
           <label class="control-label" for="description">Description</label>
           <textarea  name="description" type="text" ng-model="vm.contest.description" id="title" class="form-control" placeholder="Description" required></textarea>
+
+          <label class="control-label" for="date">Date</label>
+          <textarea  name="date" type="text" ng-model="vm.contest.date" id="title" class="form-control" placeholder="Date" required></textarea>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-default">{{vm.contest._id ? 'Update' : 'Create'}}</button>

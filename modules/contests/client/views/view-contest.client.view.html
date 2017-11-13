@@ -1,7 +1,9 @@
-<section>11111111dasda
+<section>
   <div class="page-header">
     <h1 ng-bind="vm.contest.name"></h1>
     <div ng-bind="vm.contest.description"><h3><span ng-bind="vm.contest.name"></span></h3></div>
+    <h1>Due by: </h1>
+    <h1 ng-bind="vm.contest.date"></h1>
   </div>
   <div class="pull-right"
        ng-show="vm.contest.isCurrentUserOwner">
