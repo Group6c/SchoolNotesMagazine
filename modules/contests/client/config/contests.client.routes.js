@@ -16,7 +16,7 @@
       })
       .state('contests.list', {
         url: '',
-        templateUrl: '/modules/contests/client/views/list-contest.client.view.html',
+        templateUrl: 'modules/contests/client/views/list-contest.client.view.html',
         controller: 'ContestsListController',
         controllerAs: 'vm',
         data: {
@@ -25,34 +25,81 @@
       })
       .state('contests.create', {
         url: '/create',
-        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
           contestResolve: newContest
         },
         data: {
-          roles: ['user'],
+          roles: ['admin'],
           pageTitle: 'Contests Create'
         }
       })
       .state('contests.edit', {
         url: '/:contestId/edit',
-        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
           contestResolve: getContest
         },
         data: {
-          roles: ['user'],
+          roles: ['admin'],
           pageTitle: 'Edit Contest {{ contestResolve.name }}'
         }
       })
       .state('contests.view', {
         url: '/:contestId',
-        templateUrl: '/modules/contests/client/views/view-contest.client.view.html',
+        templateUrl: 'modules/contests/client/views/view-contest.client.view.html',
         controller: 'ContestsController',
+        controllerAs: 'vm',
+        resolve: {
+          contestResolve: getContest
+        },
+        data: {
+          pageTitle: 'Contest {{ contestResolve.name }}'
+        }
+      })
+      .state('contests.listSubmissions', {
+        url: '',
+        templateUrl: 'modules/contests/client/views/list-submissions.client.view.html',
+        controller: 'ContestsListController',
+        controllerAs: 'vm',
+        data: {
+          pageTitle: 'Submissions List'
+        }
+      })
+      .state('contests.createSubmission', {
+        url: '/:contestId/createsubmission',
+        templateUrl: 'modules/contests/client/views/form-submission.client.view.html',
+        controller: 'SubmissionsController',
+        controllerAs: 'vm',
+        resolve: {
+          contestResolve: getContest
+        },
+        data: {
+          roles: ['user'],
+          pageTitle: 'Submissions Create'
+        }
+      })
+      // .state('contests.edit', {
+      //   url: '/:contestId/edit',
+      //   templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
+      //   controller: 'ContestsController',
+      //   controllerAs: 'vm',
+      //   resolve: {
+      //     contestResolve: getContest
+      //   },
+      //   data: {
+      //     roles: ['admin'],
+      //     pageTitle: 'Edit Contest {{ contestResolve.name }}'
+      //   }
+      // })
+      .state('contests.viewSubmissions', {
+        url: '/:contestId/viewsubmissions',
+        templateUrl: 'modules/contests/client/views/view-submission.client.view.html',
+        controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {
           contestResolve: getContest
