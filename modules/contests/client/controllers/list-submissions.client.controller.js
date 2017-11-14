@@ -1,15 +1,15 @@
-// (function () {
-//   'use strict';
+(function () {
+  'use strict';
 
-//   angular
-//     .module('contests')
-//     .controller('SubmissionsListController', SubmissionsListController);
+  angular
+    .module('contests')
+    .controller('SubmissionsListController', SubmissionsListController);
 
-//   SubmissionsListController.$inject = ['SubmissionsService'];
+  SubmissionsListController.$inject = ['SubmissionsService'];
 
-//   function SubmissionsListController(SubmissionsService) {
-//     var vm = this;
+  function SubmissionsListController(SubmissionsService) {
+    var vm = this;
 
-//     vm.submissions = SubmissionsService.query();
-//   }
-// }());
+    vm.submissions = SubmissionsService.query();
+  }
+}());

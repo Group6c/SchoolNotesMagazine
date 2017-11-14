@@ -17,11 +17,11 @@ module.exports = function(app) {
     .put(contests.update)
     .delete(contests.delete);
 
-    app.route('/api/contests/:contestId/submissions').all(contestsPolicy.isAllowed)
+    app.route('/api/contests/submissions').all(contestsPolicy.isAllowed)
     .get(contests.listSubmission)
     .post(contests.createSubmission);
 
-  app.route('/api/contests/:contestId/submissions/:submissionId').all(contestsPolicy.isAllowed)
+  app.route('/api/contests/submissions/:submissionId').all(contestsPolicy.isAllowed)
     .get(contests.readSubmission)
     .put(contests.updateSubmission)
     .delete(contests.deleteSubmission);

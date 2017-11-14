@@ -62,21 +62,21 @@
         }
       })
       .state('contests.listSubmissions', {
-        url: '',
+        url: '/submission',
         templateUrl: 'modules/contests/client/views/list-submissions.client.view.html',
-        controller: 'ContestsListController',
+        controller: 'SubmissionsListController',
         controllerAs: 'vm',
         data: {
           pageTitle: 'Submissions List'
         }
       })
       .state('contests.createSubmission', {
-        url: '/:contestId/createsubmission',
+        url: '/submission/create',
         templateUrl: 'modules/contests/client/views/form-submission.client.view.html',
         controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {
-          contestResolve: getContest
+          submissionResolve: getSubmission
         },
         data: {
           roles: ['user'],
@@ -97,15 +97,15 @@
       //   }
       // })
       .state('contests.viewSubmissions', {
-        url: '/:contestId/viewsubmissions',
+        url: '/:submissionId',
         templateUrl: 'modules/contests/client/views/view-submission.client.view.html',
         controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {
-          contestResolve: getContest
+          submissionResolve: getSubmission
         },
         data: {
-          pageTitle: 'Contest {{ contestResolve.name }}'
+          pageTitle: 'Submission {{ submissionResolve.name }}'
         }
       });
   }
@@ -123,4 +123,20 @@
   function newContest(ContestsService) {
     return new ContestsService();
   }
+
+
+  getSubmission.$inject = ['$stateParams', 'SubmissionsService'];
+
+  function getSubmission($stateParams, SubmissionsService) {
+    return SubmissionsService.get({
+      submissionId: $stateParams.submissionId
+    }).$promise;
+  }
+
+  newSubmission.$inject = ['SubmissionsService'];
+
+  function newSubmission(SubmissionsService) {
+    return new SubmissionsService();
+  }
+
 }());

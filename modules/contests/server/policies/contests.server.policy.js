@@ -42,28 +42,28 @@ exports.invokeRolesPolicies = function () {
   }, {
     roles: ['user', 'admin'],
     allows: [{
-      resources: '/api/contests/:contestId/submissions',
+      resources: '/api/contests/submissions',
       permissions: '*'
     }, {
-      resources: '/api/contests/:contestId/submissions/:submissionId',
+      resources: '/api/contests/submissions/:submissionId',
       permissions: '*'
     }]
   }, {
     roles: ['user'],
     allows: [{
-      resources: '/api/contests/:contestId/submissions',
+      resources: '/api/contests/submissions',
       permissions: ['get', 'post']
     }, {
-      resources: '/api/contests/:contestId/submissions/:submissionId',
+      resources: '/api/contests/submissions/:submissionId',
       permissions: ['get']
     }]
   }, {
     roles: ['guest'],
     allows: [{
-      resources: '/api/contests/:contestId/submissions',
+      resources: '/api/contests/submissions',
       permissions: ['get']
     }, {
-      resources: '/api/contests/:contestId/submissions/:submissionId',
+      resources: '/api/contests/submissions/:submissionId',
       permissions: ['get']
     }]
   }]);
