@@ -24,9 +24,13 @@
             <div class="row">
               <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
                 <div class="grid_4" >
+                  <h3>{{event.title}}</h3>
+                  <br>
                   <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
-                    <img data-ng-src="{{event.thumbnail}}"  style="height: 200px; width: 250px" alt="" >
+                    <img data-ng-src="{{event.thumbnail}}"  style="height: 200px; width: auto" alt="" >
                   </a>
+                  <br><br>
+                  {{event.body | limitTo: 50}}...
                 </div>
               </div>
             </div>
