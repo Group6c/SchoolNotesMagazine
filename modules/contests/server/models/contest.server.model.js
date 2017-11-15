@@ -26,6 +26,10 @@ var ContestSchema = new Schema({
     type: Date,
     default:''
   },
+  //contest pic
+  thumbnail: {
+    type: String
+  },
   created: {
     type: Date,
     default: Date.now
@@ -34,6 +38,62 @@ var ContestSchema = new Schema({
     type: Schema.ObjectId,
     ref: 'User'
   }
-});
 
+});
+//submission schema
+var SubmissionSchema = new Schema({
+  //use user from that schema to link
+  studentFirstName:{
+    type: String,
+    default: ''
+  },
+  studentLastName:{
+    type: String,
+    default: ''
+  },
+  teacherFirstName:{
+    type: String,
+    default: ''
+  },
+  teacherLastName:{
+    type: String,
+    default: ''
+  },
+  school:{
+    type: String,
+    default:''
+  },
+  grade:{
+    type: String,
+    default:''
+  },
+  email:{
+    type: String,
+    default:''
+  },
+  description: {
+    type: String,
+    default: ''
+  },
+  notes: {
+    type: String,
+    default: ''
+  },
+  picId: {
+    type: Schema.ObjectId,
+    ref: "Contest"
+  },
+  picture:{
+    type: String
+    default: ''
+  },
+  art:{
+    type: String
+    default: ''
+  },
+  created:{
+    type: Date,
+    default: Date.now
+  }
+});
 mongoose.model('Contest', ContestSchema);

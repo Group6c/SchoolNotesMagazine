@@ -22,7 +22,9 @@
 
   <div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4></div>
       <p>{{contest.description | limitTo:150}}</p>
-      <div style = "padding-left: 2px"> <button  class="submitButton" onclick="window.location.href='/articles'">Upload Submission</button> </div>
+      <div style = "padding-left: 2px"> <button  class="submitButton" >Upload Submission        <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
+</button>
+      </div>
     </a>
   </div>
 
