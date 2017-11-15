@@ -16,14 +16,16 @@
           <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;">Posted on</div>
 
   <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" ><span ng-bind="contest.created | date:'mediumDate'"></span>  by</div>
-
   <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" > <span ng-if="contest.user" ng-bind="contest.user.displayName"></span></div>
         <span ng-if="!contest.user">Deleted User</span>
       </small>
+
   <div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4></div>
       <p>{{contest.description | limitTo:150}}</p>
+      <div style = "padding-left: 2px"> <button  class="submitButton" onclick="window.location.href='/articles'">Upload Submission</button> </div>
     </a>
   </div>
+
   <div class="alert alert-warning text-center" ng-if="vm.contests.$resolved && !vm.contests.length">
     No Contests yet, why don't you <a ui-sref="contests.create">create one</a>?
   </div>
