@@ -32,7 +32,7 @@
           contestResolve: newContest
         },
         data: {
-          roles: ['user'],
+          roles: ['admin'],
           pageTitle: 'Contests Create'
         }
       })
@@ -45,7 +45,7 @@
           contestResolve: getContest
         },
         data: {
-          roles: ['user'],
+          roles: ['admin'],
           pageTitle: 'Edit Contest {{ contestResolve.name }}'
         }
       })
