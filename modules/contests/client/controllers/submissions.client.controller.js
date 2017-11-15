@@ -6,9 +6,9 @@
     .module('contests')
     .controller('SubmissionsController', SubmissionsController);
 
-  SubmissionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'contestResolve'];
+  SubmissionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'submissionResolve'];
 
-  function SubmissionsController ($scope, $state, $window, Authentication, contest) {
+  function SubmissionsController ($scope, $state, $window, Authentication, submission) {
     var vm = this;
 
     vm.authentication = Authentication;

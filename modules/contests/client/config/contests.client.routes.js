@@ -16,7 +16,7 @@
       })
       .state('contests.list', {
         url: '',
-        templateUrl: 'modules/contests/client/views/list-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/list-contest.client.view.html',
         controller: 'ContestsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('contests.create', {
         url: '/create',
-        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
@@ -38,7 +38,7 @@
       })
       .state('contests.edit', {
         url: '/:contestId/edit',
-        templateUrl: 'modules/contests/client/views/form-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/form-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,11 +51,12 @@
       })
       .state('contests.view', {
         url: '/:contestId',
-        templateUrl: 'modules/contests/client/views/view-contest.client.view.html',
+        templateUrl: '/modules/contests/client/views/view-contest.client.view.html',
         controller: 'ContestsController',
         controllerAs: 'vm',
         resolve: {
           contestResolve: getContest
+          //submissionResolve: getSubmission
         },
         data: {
           pageTitle: 'Contest {{ contestResolve.name }}'
@@ -63,7 +64,7 @@
       })
       .state('contests.listSubmissions', {
         url: '/submission',
-        templateUrl: 'modules/contests/client/views/list-submissions.client.view.html',
+        templateUrl: '/modules/contests/client/views/list-submissions.client.view.html',
         controller: 'SubmissionsListController',
         controllerAs: 'vm',
         data: {
@@ -72,11 +73,11 @@
       })
       .state('contests.createSubmission', {
         url: '/submission/create',
-        templateUrl: 'modules/contests/client/views/form-submission.client.view.html',
+        templateUrl: '/modules/contests/client/views/form-submission.client.view.html',
         controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {
-          submissionResolve: getSubmission
+          submissionResolve: newSubmission
         },
         data: {
           roles: ['user'],
@@ -98,7 +99,7 @@
       // })
       .state('contests.viewSubmissions', {
         url: '/:submissionId',
-        templateUrl: 'modules/contests/client/views/view-submission.client.view.html',
+        templateUrl: '/modules/contests/client/views/view-submission.client.view.html',
         controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {

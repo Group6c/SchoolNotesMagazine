@@ -33,12 +33,16 @@ exports.create = function(req, res) {
  */
 exports.read = function(req, res) {
   // convert mongoose document to JSON
+  console.log("In read");
   var contest = req.contest ? req.contest.toJSON() : {};
 
+  console.log("var contest");
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
   contest.isCurrentUserOwner = req.user && contest.user && contest.user._id.toString() === req.user._id.toString();
+  console.log("contest.isCurrentUserOwner");
   res.jsonp(contest);
+  console.log("res.jsonp(contest);");
 };
 
 /**
@@ -81,6 +85,7 @@ exports.delete = function(req, res) {
  * List of Contests
  */
 exports.list = function(req, res) {
+  console.log("in list");
   Contest.find().sort('-created').populate('user', 'displayName').exec(function(err, contests) {
     if (err) {
       return res.status(400).send({
@@ -96,7 +101,7 @@ exports.list = function(req, res) {
  * Contest middleware
  */
 exports.contestByID = function(req, res, next, id) {
-
+  console.log("In contestByID");
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
       message: 'Contest is invalid'
@@ -118,19 +123,20 @@ exports.contestByID = function(req, res, next, id) {
 
 
 
-  exports.createSubmission = function(req, res) {
-  // var contest = new Contest(req.body);
-  // contest.user = req.user;
+exports.createSubmission = function(req, res) {
+  console.log("In create Submission");
+  var submission = new Submission(req.body);
+  submission.user = req.user;
 
-  // contest.save(function(err) {
-  //   if (err) {
-  //     return res.status(400).send({
-  //       message: errorHandler.getErrorMessage(err)
-  //     });
-  //   } else {
-  //     res.jsonp(contest);
-  //   }
-  // });
+  submission.save(function(err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(submission);
+    }
+  });
 };
 
 /**
@@ -138,18 +144,20 @@ exports.contestByID = function(req, res, next, id) {
  */
 exports.readSubmission = function(req, res) {
   // convert mongoose document to JSON
-  // var contest = req.contest ? req.contest.toJSON() : {};
+  console.log("In read Submission");
+  var submission = req.submission ? req.submission.toJSON() : {};
 
-  // // Add a custom field to the Article, for determining if the current User is the "owner".
-  // // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
-  // contest.isCurrentUserOwner = req.user && contest.user && contest.user._id.toString() === req.user._id.toString();
-  // res.jsonp(contest);
+  // Add a custom field to the Article, for determining if the current User is the "owner".
+  // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
+  submission.isCurrentUserOwner = req.user && submission.user && submission.user._id.toString() === req.user._id.toString();
+  res.jsonp(submission);
 };
 
 /**
  * Update a Contest
  */
 exports.updateSubmission = function(req, res) {
+  console.log("In update Submission");
   // var contest = req.contest;
 
   // contest = _.extend(contest, req.body);
@@ -169,6 +177,7 @@ exports.updateSubmission = function(req, res) {
  * Delete an Contest
  */
 exports.deleteSubmission = function(req, res) {
+  console.log("In delete Submission");
   // var contest = req.contest;
 
   // contest.remove(function(err) {
@@ -186,6 +195,7 @@ exports.deleteSubmission = function(req, res) {
  * List of Contests
  */
 exports.listSubmission = function(req, res) {
+  console.log("In list Submission");
   // Contest.find().sort('-created').populate('user', 'displayName').exec(function(err, contests) {
   //   if (err) {
   //     return res.status(400).send({
@@ -201,7 +211,7 @@ exports.listSubmission = function(req, res) {
  * Contest middleware
  */
 exports.submissionByID = function(req, res, next, id) {
-
+console.log("In SubmissionbyID");
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
       message: 'Submission is invalid'
