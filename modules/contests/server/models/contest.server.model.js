@@ -22,6 +22,9 @@ var ContestSchema = new Schema({
     required: 'Please fill Contest description',
     trim: true
   },
+  thumbnail: {
+    type: String
+  },
   date:{
     type: String,
     default:''
@@ -43,16 +46,50 @@ var SubmissionSchema = new Schema({
     required: 'Please fill Submission name',
     trim: true
   },
-  // description: {
-  //   type: String,
-  //   default: '',
-  //   required: 'Please fill Contest description',
-  //   trim: true
-  // },
-  // date:{
-  //   type: String,
-  //   default:''
-  // },
+  studentFirstName:{
+    type: String,
+    default: ''
+  },
+  studentLastName:{
+    type: String,
+    default: ''
+  },
+  teacherFirstName:{
+    type: String,
+    default: ''
+  },
+  teacherLastName:{
+    type: String,
+    default: ''
+  },
+  school:{
+    type: String,
+    default:''
+  },
+  grade:{
+    type: String,
+    default:''
+  },
+  email:{
+    type: String,
+    default:''
+  },
+  description: {
+    type: String,
+    default: ''
+  },
+  notes: {
+    type: String,
+    default: ''
+  },
+  picture:{
+    type: String,
+    default: ''
+  },
+  art:{
+    type: String,
+    default: ''
+  },
   created: {
     type: Date,
     default: Date.now

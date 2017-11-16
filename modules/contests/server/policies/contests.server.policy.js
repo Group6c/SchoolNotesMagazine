@@ -40,7 +40,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get']
     }]
   }, {
-    roles: ['user', 'admin'],
+    roles: ['admin'],
     allows: [{
       resources: '/api/contests/submissions',
       permissions: '*'
@@ -52,10 +52,10 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/contests/submissions',
-      permissions: ['get', 'post']
+      permissions: '*'
     }, {
       resources: '/api/contests/submissions/:submissionId',
-      permissions: ['get']
+      permissions: '*'
     }]
   }, {
     roles: ['guest'],
