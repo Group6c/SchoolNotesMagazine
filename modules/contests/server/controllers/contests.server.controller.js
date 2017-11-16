@@ -8,7 +8,6 @@ var path = require('path'),
   Contest = mongoose.model('Contest'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
-
 /**
  * Create a Contest
  */
@@ -26,6 +25,8 @@ exports.create = function(req, res) {
     }
   });
 };
+
+
 
 /**
  * Show the current Contest
