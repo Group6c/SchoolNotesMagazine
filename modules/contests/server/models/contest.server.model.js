@@ -76,11 +76,11 @@ var ContestSchema = new Schema({
       default: ''
     },
     picture:{
-      type: String
+      type: String,
       default: ''
     },
     art:{
-      type: String
+      type: String,
       default: ''
     },
     created:{
