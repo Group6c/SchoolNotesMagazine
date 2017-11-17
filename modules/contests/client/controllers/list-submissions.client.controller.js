@@ -5,10 +5,11 @@
     .module('contests')
     .controller('SubmissionsListController', SubmissionsListController);
 
-  SubmissionsListController.$inject = ['SubmissionsService'];
+  SubmissionsListController.$inject = ['SubmissionsService', 'contestResolve'];
 
-  function SubmissionsListController(SubmissionsService) {
+  function SubmissionsListController(SubmissionsService, contest) {
     var vm = this;
+    vm.contest = contest;
 
     vm.submissions = SubmissionsService.query();
   }

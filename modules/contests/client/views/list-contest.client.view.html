@@ -16,6 +16,7 @@
       <h4 class="list-group-item-heading" ng-bind="contest.name"></h4>
       <p>{{contest.description | limitTo:150}}</p>
       <p>Due date: {{contest.date}}</p>
+      
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.contests.$resolved && !vm.contests.length">

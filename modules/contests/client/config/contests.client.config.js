@@ -28,5 +28,11 @@
       state: 'contests.create',
       roles: ['admin']
     });
+
+    // menuService.addSubMenuItem('topbar', 'contests', {
+    //   title: 'View Submissions',
+    //   state: 'contests.listSubmissions',
+    //   roles: ['admin']
+    // });
   }
 }());

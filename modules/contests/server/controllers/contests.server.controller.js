@@ -37,6 +37,9 @@ exports.read = function(req, res) {
   var contest = req.contest ? req.contest.toJSON() : {};
 
   console.log("var contest");
+  //console.log(req.user.roles[0]);
+  contest.isAdmin = req.user && contest.user && req.user.roles && req.user.roles[0] == 'admin';
+  console.log(contest.isAdmin);
   // Add a custom field to the Article, for determining if the current User is the "owner".
   // NOTE: This field is NOT persisted to the database, since it doesn't exist in the Article model.
   contest.isCurrentUserOwner = req.user && contest.user && contest.user._id.toString() === req.user._id.toString();
@@ -196,15 +199,15 @@ exports.deleteSubmission = function(req, res) {
  */
 exports.listSubmission = function(req, res) {
   console.log("In list Submission");
-  // Contest.find().sort('-created').populate('user', 'displayName').exec(function(err, contests) {
-  //   if (err) {
-  //     return res.status(400).send({
-  //       message: errorHandler.getErrorMessage(err)
-  //     });
-  //   } else {
-  //     res.jsonp(contests);
-  //   }
-  // });
+  Submission.find().sort('-created').populate('user', 'displayName').exec(function(err, submissions) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(submissions);
+    }
+  });
 };
 
 /**

@@ -90,6 +90,16 @@ var SubmissionSchema = new Schema({
     type: String,
     default: ''
   },
+  contestName: {
+    type: String,
+    default: '',
+    required: 'Please fill Contest name',
+    trim: true
+  },
+  // date:{
+  //   type: String,
+  //   default:''
+  // },
   created: {
     type: Date,
     default: Date.now

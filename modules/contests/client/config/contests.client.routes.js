@@ -37,10 +37,13 @@
         }
       })
       .state('contests.listSubmissions', {
-        url: '/submission',
+        url: '/submissions/:contestId',
         templateUrl: '/modules/contests/client/views/list-submissions.client.view.html',
         controller: 'SubmissionsListController',
         controllerAs: 'vm',
+        resolve: {
+          contestResolve: getContest
+        },
         data: {
           roles: ['admin'],
           pageTitle: 'Submissions List'

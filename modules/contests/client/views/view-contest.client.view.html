@@ -4,6 +4,7 @@
     <div ng-bind="vm.contest.description"><h3><span ng-bind="vm.contest.name"></span></h3></div>
     <h1>Due by: </h1>
     <h1 ng-bind="vm.contest.date"></h1>
+    <h1 ng-bind="vm.contest.user.lastName">{{vm.contest.user.lastName}}</h1>
   </div>
   <div class="pull-right"
        ng-show="vm.contest.isCurrentUserOwner">
@@ -30,4 +31,10 @@
   </small>
           <a class="btn btn-primary" ui-sref="contests.createSubmission"> Create Submission</a>
           <p class="lead" ng-bind="vm.contest.content"></p>
+
+<div ng-show="vm.contest.isAdmin">
+  <a class="btn btn-primary"
+       ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
+</div>
+  <p class="lead" ng-bind="vm.contest.content"></p>
 </section>

@@ -6,9 +6,9 @@
     .module('contests')
     .controller('SubmissionsController', SubmissionsController);
 
-  SubmissionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'submissionResolve', '$timeout'];
+  SubmissionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'submissionResolve', 'ContestsService', '$timeout'];
 
-  function SubmissionsController ($scope, $state, $window, Authentication, submission, $timeout) {
+  function SubmissionsController ($scope, $state, $window, Authentication, submission, ContestsService, $timeout) {
     var vm = this;
 
     vm.authentication = Authentication;
@@ -17,7 +17,8 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-    console.log("submissionid" + submission._id);
+    vm.contests = ContestsService.query();
+    console.log("contests" + vm.contests);
 
     // Remove existing Contest
     function remove() {
