@@ -14,6 +14,9 @@
     <a class="btn btn-primary" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
+    <a class="btn btn-primary" ui-sref="contests.listSubmissions">
+      <i class="glyphicon glyphicon-search"></i>
+    </a>
   </div>
   <small>
     <em class="text-muted">
@@ -25,7 +28,6 @@
       <span ng-if="!vm.contest.user">Deleted User</span>
     </em>
   </small>
-          <a class="btn btn-primary"
-       ui-sref="contests.createSubmission">
-  <p class="lead" ng-bind="vm.contest.content"></p>
+          <a class="btn btn-primary" ui-sref="contests.createSubmission"> Create Submission</a>
+          <p class="lead" ng-bind="vm.contest.content"></p>
 </section>

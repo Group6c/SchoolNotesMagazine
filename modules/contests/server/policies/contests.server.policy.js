@@ -13,12 +13,18 @@ acl = new acl(new acl.memoryBackend());
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
-    roles: ['user', 'admin'],
+    roles: ['admin'],
     allows: [{
       resources: '/api/contests',
       permissions: '*'
     }, {
       resources: '/api/contests/:contestId',
+      permissions: '*'
+    },{
+      resources: '/api/contests/submissions',
+      permissions: '*'
+    }, {
+      resources: '/api/contests/submissions/:submissionId',
       permissions: '*'
     }]
   }, {
@@ -29,6 +35,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/contests/:contestId',
       permissions: ['get']
+    },{
+      resources: '/api/contests/submissions/:submissionId',
+      permissions: ['post']
     }]
   }, {
     roles: ['guest'],
@@ -38,33 +47,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/contests/:contestId',
       permissions: ['get']
-    }]
-  }, {
-    roles: ['admin'],
-    allows: [{
-      resources: '/api/contests/submissions',
-      permissions: '*'
-    }, {
+    },{
       resources: '/api/contests/submissions/:submissionId',
-      permissions: '*'
-    }]
-  }, {
-    roles: ['user'],
-    allows: [{
-      resources: '/api/contests/submissions',
-      permissions: '*'
-    }, {
-      resources: '/api/contests/submissions/:submissionId',
-      permissions: '*'
-    }]
-  }, {
-    roles: ['guest'],
-    allows: [{
-      resources: '/api/contests/submissions',
-      permissions: ['get']
-    }, {
-      resources: '/api/contests/submissions/:submissionId',
-      permissions: ['get']
+      permissions: ['post']
     }]
   }]);
 };
