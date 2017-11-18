@@ -45,7 +45,7 @@
 </head>
 
 <body class="ng-cloak">
- <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'"></header>
+ <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
 <section class="test">
  <section class="container">
       {{{block "content"}}}
@@ -54,7 +54,7 @@
   <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="grid_12">  
+      <div class="grid_12">
         <div class="socials">
           <a href="#" class="fa fa-twitter"></a>
           <a href="#" class="fa fa-facebook"></a>
@@ -65,7 +65,7 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 </footer>
   <noscript>
     <style>
@@ -89,7 +89,7 @@
 
   <!--Application JavaScript Files-->
     {{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
-  
+
   <!--owasp config sync-->
   <script type="text/javascript">
     var sharedConfig = {{{ sharedConfig }}};
