@@ -2,56 +2,56 @@
   <div class="page-header">
     <h1>{{vm.submission._id ? 'Edit Submission' : 'New Submission'}}</h1>
   </div>
-  <div class="col-md-12">
+  <div class="col-md-12"  style="form.css">
     <form name="vm.form.submissionForm" class="form-horizontal" ng-submit="vm.save(vm.form.submissionForm.$valid)" novalidate>
       <fieldset>
 
         <div class="form-group" show-errors>
           <label  class="control-label" for="name">Name</label>
           <input  name="name" type="text" ng-model="vm.submission.name" id="name" class="form-control" placeholder="name" required>
-          
+
 
         <div class="form-group" show-errors>
           <label  class="control-label" for="studentFirstName">Student's First Name</label>
           <input  name="studentFirstName" type="text" ng-model="vm.submission.studentFirstName" id="studentFirstName" class="form-control" placeholder="First Name" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="studentLastName">Student's Last Name</label>
           <input  name="studentLastName" type="text" ng-model="vm.submission.studentLastName" id="studentLastName" class="form-control" placeholder="Last Name" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="teacherFirstName">Teacher's First Name</label>
           <input  name="teacherFirstName" type="text" ng-model="vm.submission.teacherFirstName" id="teacherFirstName" class="form-control" placeholder="First Name" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="teacherLastName">Teacher's Last Name</label>
           <input  name="teacherLastName" type="text" ng-model="vm.submission.teacherLastName" id="teacherLastName" class="form-control" placeholder="Last Name" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="school">School Name</label>
           <input  name="school" type="text" ng-model="vm.submission.school" id="school" class="form-control" placeholder="School Name" required>
-         
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="grade">Grade</label>
           <input  name="grade" type="text" ng-model="vm.submission.grade" id="grade" class="form-control" placeholder="Grade Name" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="email">Email</label>
           <input  name="email" type="text" ng-model="vm.submission.email" id="email" class="form-control" placeholder="Email" required>
-          
+
         <div class="form-group" show-errors>
           <label  class="control-label" for="notes">Notes</label>
           <input  name="notes" type="text" ng-model="vm.submission.notes" id="notes" class="form-control" placeholder="Notes" required>
-          
-        
+
+
         <div class="well">
 
- 
+
           <label>UPLOAD PHOTO (3 MB MIN)*</label> <br>
           <label class="btn btn-success">Browse
             <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
           </label>
-  
+
         <div style="font-size:10px;">Max file size: 20MB</div>
         <div ng-show="uploading" class="progress">
           <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
@@ -60,7 +60,7 @@
         </div>
 
         <img class="mythumbnail" ng-src="{{ art || vm.submission.art  }}" />
-     
+
         <br>
 
       </div>
@@ -82,7 +82,7 @@
         </div>
 
         <img class="mythumbnail" ng-src="{{ picture || vm.submission.picture  }}" />
-     
+
         <br>
 
       </div>
@@ -107,12 +107,12 @@
               <div class="text1 color1">
                   <time datetime="contest.date">{{contest.date}}</time>
                   <br>
-                  
+
               </div>
             <div class="block3">
-              
+
               <div class="extra_wrapper">
-                {{contest.description | limitTo: 150}} 
+                {{contest.description | limitTo: 150}}
               </div>
               <br>
             </div>
