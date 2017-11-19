@@ -32,6 +32,9 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/contests',
       permissions: ['get', 'post']
+    },{
+      resources: '/api/contests/submissions',
+      permissions: ['get', 'post']
     }, {
       resources: '/api/contests/:contestId',
       permissions: ['get']

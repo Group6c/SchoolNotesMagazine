@@ -7,61 +7,42 @@
       <fieldset>
 
         <div class="form-group" show-errors>
+          <label  class="control-label" for="name">Name</label>
+          <input  name="name" type="text" ng-model="vm.submission.name" id="name" class="form-control" placeholder="name" required>
+          
+
+        <div class="form-group" show-errors>
           <label  class="control-label" for="studentFirstName">Student's First Name</label>
           <input  name="studentFirstName" type="text" ng-model="vm.submission.studentFirstName" id="studentFirstName" class="form-control" placeholder="First Name" required>
-          <div ng-messages="vm.form.submissionForm.studentFirstName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="studentLastName">Student's Last Name</label>
           <input  name="studentLastName" type="text" ng-model="vm.submission.studentLastName" id="studentLastName" class="form-control" placeholder="Last Name" required>
-          <div ng-messages="vm.form.submissionForm.studentLastName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="teacherFirstName">Teacher's First Name</label>
           <input  name="teacherFirstName" type="text" ng-model="vm.submission.teacherFirstName" id="teacherFirstName" class="form-control" placeholder="First Name" required>
-          <div ng-messages="vm.form.submissionForm.teacherFirstName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="teacherLastName">Teacher's Last Name</label>
           <input  name="teacherLastName" type="text" ng-model="vm.submission.teacherLastName" id="teacherLastName" class="form-control" placeholder="Last Name" required>
-          <div ng-messages="vm.form.submissionForm.teacherLastName.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="school">School Name</label>
           <input  name="school" type="text" ng-model="vm.submission.school" id="school" class="form-control" placeholder="School Name" required>
-          <div ng-messages="vm.form.submissionForm.school.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+         
         <div class="form-group" show-errors>
           <label  class="control-label" for="grade">Grade</label>
           <input  name="grade" type="text" ng-model="vm.submission.grade" id="grade" class="form-control" placeholder="Grade Name" required>
-          <div ng-messages="vm.form.submissionForm.grade.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="email">Email</label>
           <input  name="email" type="text" ng-model="vm.submission.email" id="email" class="form-control" placeholder="Email" required>
-          <div ng-messages="vm.form.submissionForm.email.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         <div class="form-group" show-errors>
           <label  class="control-label" for="notes">Notes</label>
           <input  name="notes" type="text" ng-model="vm.submission.notes" id="notes" class="form-control" placeholder="Notes" required>
-          <div ng-messages="vm.form.submissionForm.notes.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
-            <br><br>
-        </div>
+          
         
         <div class="well">
 
@@ -118,6 +99,7 @@
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>
+
       </fieldset>
     </form>
     <!-- <div ng-repeat="contest in vm.contests">

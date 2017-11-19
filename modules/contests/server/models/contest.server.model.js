@@ -82,11 +82,11 @@ var SubmissionSchema = new Schema({
     type: String,
     default: ''
   },
-  picture:{
+  pictureImageString:{
     type: String,
     default: ''
   },
-  art:{
+  artImageString:{
     type: String,
     default: ''
   },
