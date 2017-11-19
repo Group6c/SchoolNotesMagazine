@@ -15,7 +15,7 @@
     <a class="btn btn-primary" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
-    <a class="btn btn-primary" ui-sref="contests.listSubmissions">
+    <a class="btn btn-primary" ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">
       <i class="glyphicon glyphicon-search"></i>
     </a>
   </div>
@@ -32,9 +32,9 @@
           <a class="btn btn-primary" ui-sref="contests.createSubmission"> Create Submission</a>
           <p class="lead" ng-bind="vm.contest.content"></p>
 
-<div ng-show="vm.contest.isAdmin">
+<!-- <div ng-show="vm.contest.isAdmin">
   <a class="btn btn-primary"
        ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
-</div>
+</div> -->
   <p class="lead" ng-bind="vm.contest.content"></p>
 </section>

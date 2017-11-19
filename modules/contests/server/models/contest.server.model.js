@@ -25,6 +25,10 @@ var ContestSchema = new Schema({
   thumbnail: {
     type: String
   },
+  winner:{
+      type: String,
+      default:"1sadasdasd"
+  },
   date:{
     type: String,
     default:''
@@ -40,12 +44,6 @@ var ContestSchema = new Schema({
 });
 
 var SubmissionSchema = new Schema({
-  name: {
-    type: String,
-    default: '',
-    required: 'Please fill Submission name',
-    trim: true
-  },
   studentFirstName:{
     type: String,
     default: ''
@@ -94,7 +92,6 @@ var SubmissionSchema = new Schema({
     type: String,
     default: '',
     required: 'Please fill Contest name',
-    trim: true
   },
   // date:{
   //   type: String,
