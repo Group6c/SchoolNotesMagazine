@@ -1026,3 +1026,14 @@ header h1 a img {
 .selection{
     width:100%;
 }
+
+.typo {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;    
+  color: #585858;
+  text-decoration: none;
+  option {
+    font-size: 30px;
+  }  
+}
