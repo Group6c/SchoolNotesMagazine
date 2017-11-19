@@ -62,7 +62,7 @@
             <p class="help-block error-text" ng-message="required">Submission name is required.</p></div>
             <br><br>
         </div>
-        <!-- 
+        
         <div class="well">
 
  
@@ -106,7 +106,7 @@
 
       </div>
       {{vm.submission.picture}}
-      <br><br> -->
+      <br><br>
           <label  class="control-label" for="contestName">Contest Name</label>
           <select name="contestName" ng-model="vm.submission.contestName" id="contestName" class="form-control" required >
             <option ng-repeat="contest in vm.contests" value = {{contest._id}}> {{contest.name}}</option>

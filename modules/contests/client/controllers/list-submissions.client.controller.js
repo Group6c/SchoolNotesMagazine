@@ -14,7 +14,7 @@
     vm.save = save;
     vm.error = null;
     vm.form = {};
-
+    
     function save(isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.contestForm');

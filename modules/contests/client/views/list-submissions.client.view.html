@@ -1,5 +1,5 @@
 <section> 
-  <div class="page-header">
+<!--   <div class="page-header">
     <h1>Submissions for {{vm.contest.name}}</h1>
   </div>
   <div class="list-group">
@@ -21,7 +21,39 @@
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
     No Submissions yet, why don't you <a ui-sref="contests.createSubmission">create one</a>?
+  </div> -->
+<div class="page-header">
+  <h1 ng-bind="vm.contest.name"></h1>
+  <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
+    <select size = "10" ng-model="vm.contest.winner">
+        <div class="list-group">
+      <option ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
+         class="list-group-item" value = {{submission._id}}>
+            {{$index + 1}} 
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="submission.created | date:'mediumDate'"></span>
+          by
+         <span ng-bind="submission.studentFirstName"></span>
+       <span ng-bind="submission.studentLastName"></span>
+          <span ng-if="!submission.user">Deleted User</span>
+        </small>
+
+        <h4 class="list-group-item-heading" ng-bind="submission.name"></h4>
+        <p>{{submission.contestName | limitTo:150}}</p>
+      </option>
+    </div>
+    </select>
+
+  <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
+    No Submissions yet
   </div>
 
+        <div class="form-group">
+          <button type="submit" class="btn btn-default"> Pick Winner</button>
+        </div>
+    </form>
+    <a> showing winner to see if it can be changed :{{vm.contest.winner}}</a>
+</div>
 
 </section>

@@ -80,7 +80,8 @@
         controller: 'SubmissionsController',
         controllerAs: 'vm',
         resolve: {
-          submissionResolve: getSubmission
+          submissionResolve: getSubmission,
+          //contestResolve: getContest
         },
         data: {
           roles: ['admin'],
