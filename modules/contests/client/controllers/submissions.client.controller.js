@@ -17,7 +17,7 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
-    vm.contests = ContestsService.query();
+    vm.contest = ContestsService.query();
     console.log("contests" + vm.contests);
 
     // Remove existing Contest
@@ -31,6 +31,7 @@
     function save(isValid) {
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.submissionForm');
+        $scope.$broadcast('show-errors-check-validity', 'vm.form.contestForm');
         return false;
       }
 
@@ -44,6 +45,21 @@
       function successCallback(res) {
         $state.go('contests.list', {
           submissionId: res._id
+        });
+      }
+
+      function errorCallback(res) {
+        vm.error = res.data.message;
+      }
+
+      if (vm.contest._id) {
+        vm.contest.$update(successCallback, errorCallback);
+      } else {
+        vm.contest.$save(successCallback, errorCallback);
+      }
+      function successCallback(res) {
+        $state.go('contests.view', {
+          contestId: res._id
         });
       }
 
