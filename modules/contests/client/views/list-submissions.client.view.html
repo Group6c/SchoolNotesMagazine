@@ -1,6 +1,6 @@
 <section>
   <div class="list-group">
-    <div ng-repeat="submission in vm.submissions"
+    <div ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
        class="list-group-item">
       <small class="list-group-item-text">
         Posted on
@@ -11,8 +11,49 @@
       </small>
       <h4 class="list-group-item-heading" ng-bind="submission.name"></h4>
       <p>{{submission.contestName | limitTo:150}}</p>
+
+      <p><strong>Submission Title: </strong></p>
+      <span ng-bind="submission.name"><p ng-bind="submission.name"> {{submission.name}} </p>
+      </span>
       
-    </a>
+      <br> <br>
+
+      <p><strong>Student name: </strong></p>
+      <span ng-bind="submission.studentFirstName"><p ng-bind="submission.studentFirstName"> {{submission.studentFirstName}} </p>
+      </span>
+      <span ng-bind="submission.studentLastName"><p ng-bind="submission.studentLastName">{{submission.studentLastName}} </p></span>
+      <br> <br>
+      <p><strong>Teacher name: </strong></p>
+      <span ng-bind="submission.teacherFirstName"><p ng-bind="submission.teacherFirstName"> {{submission.teacherFirstName}} </p>
+      </span>
+      <span ng-bind="submission.teacherLastName"><p ng-bind="submission.teacherLastName">{{submission.teacherLastName}} </p></span>
+      <br> <br>
+      <p><strong>School: </strong></p>
+      <span ng-bind="submission.school"><p ng-bind="submission.school"> {{submission.school}} </p>
+      </span>
+      <br> <br>
+      <p><strong>Grade: </strong></p>
+      <span ng-bind="submission.grade"><p ng-bind="submission.grade"> {{submission.grade}} </p>
+      </span>
+      <br> <br>
+      <p><strong>Email: </strong></p>
+      <span ng-bind="submission.email"><p ng-bind="submission.email"> {{submission.email}} </p>
+      </span>
+      <br> <br>
+      <p><strong>Notes: </strong></p>
+      <span ng-bind="submission.notes"><p ng-bind="submission.notes"> {{submission.notes}} </p>
+      </span>
+      <br> <br>
+      <p><strong>Work of Art: </strong></p>
+      
+      <img data-ng-src="{{submission.artImageString}}"  alt="" class="img-responsive">
+
+      <br> <br>
+      <p><strong>Student Photo: </strong></p>
+      
+      <img data-ng-src="{{submission.pictureImageString}}"  alt="" class="img-responsive">
+      
+    
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
     No Submissions yet
