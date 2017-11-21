@@ -16,7 +16,7 @@
       <h4 class="list-group-item-heading" ng-bind="contest.name"></h4>
       <p>{{contest.description | limitTo:150}}</p>
       <p>Due date: {{contest.date}}</p>
-      
+      <div style = "padding-left: 2px"> <button  class="submitButton" ui-sref="contests.view({ contestId: contest._id })">Enter Contest</button> </div>
     </a>
   </div>
 
