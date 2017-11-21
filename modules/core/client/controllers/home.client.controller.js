@@ -23,8 +23,8 @@ function HomeController($scope, $state, Authentication, menuService, EventsServi
 
     //Get the events for the front page
     hc.events = EventsService.query();
-    console.log("Events");
-    console.log(hc.events);
+    //console.log("Events");
+    // console.log(hc.events);
 
     $scope.$on('$stateChangeSuccess', stateChangeSuccess);
 

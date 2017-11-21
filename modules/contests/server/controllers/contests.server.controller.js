@@ -10,6 +10,37 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
+
+var multer = require('multer');
+var multiparty = require('multiparty'),
+    fs = require('fs');
+
+    var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './modules/contests/client/img/');
+    console.log("storage called"); // where to store it
+  },
+  filename: function (req, file, cb) {
+    if(!file.originalname.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
+      console.log("filename error");
+      var err = new Error();
+      err.code = 'filetype'; // to check on file type
+      return cb(err);
+    } else {
+      console.log("produced filename");
+      var day = new Date();
+      var d = day.getDay();
+      var h = day.getHours();
+      var fileNamee = d + '_' + h + '_' + file.originalname;
+      console.log("filename produced is: " + fileNamee);
+      cb(null, fileNamee);
+    }
+  }
+});
+    var upload = multer({
+  storage: storage,
+  limits: { fileSize: 20971520 } // Max file size: 20MB
+}).single('myfile'); // name in form
 /**
  * Create a Contest
  */
