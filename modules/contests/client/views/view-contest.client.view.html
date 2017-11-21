@@ -1,7 +1,10 @@
 <section>
   <div class="page-header">
-<div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">      <h1 ng-bind="vm.contest.name"></h1> </div>
+    <h1 ng-bind="vm.contest.name"></h1>
     <div ng-bind="vm.contest.description"><h3><span ng-bind="vm.contest.name"></span></h3></div>
+    <h1>Due by: </h1>
+    <h1 ng-bind="vm.contest.date"></h1>
+    <h1 ng-bind="vm.contest.user.lastName">{{vm.contest.user.lastName}}</h1>
   </div>
   <div class="pull-right"
        ng-show="vm.contest.isCurrentUserOwner">
@@ -12,15 +15,26 @@
     <a class="btn btn-primary" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
+    <a class="btn btn-primary" ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">
+      <i class="glyphicon glyphicon-search"></i>
+    </a>
   </div>
   <small>
     <em class="text-muted">
-  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;">      Posted on</div>
-  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >      <span ng-bind="vm.contest.created | date:'mediumDate'"></span></div>
-      <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" > by</div>
-<div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >     <span ng-if="vm.contest.user" ng-bind="vm.contest.user.displayName"></span> </div>
-<div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" >      <span ng-if="!vm.contest.user">Deleted User</span> </div>
+      Posted on
+      <span ng-bind="vm.contest.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.contest.user"
+            ng-bind="vm.contest.user.displayName"></span>
+      <span ng-if="!vm.contest.user">Deleted User</span>
     </em>
   </small>
+          <a class="btn btn-primary" ui-sref="contests.createSubmission"> Create Submission</a>
+          <p class="lead" ng-bind="vm.contest.content"></p>
+
+<!-- <div ng-show="vm.contest.isAdmin">
+  <a class="btn btn-primary"
+       ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
+</div> -->
   <p class="lead" ng-bind="vm.contest.content"></p>
 </section>

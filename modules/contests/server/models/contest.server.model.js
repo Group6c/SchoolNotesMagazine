@@ -22,8 +22,15 @@ var ContestSchema = new Schema({
     required: 'Please fill Contest description',
     trim: true
   },
-  Dates:{
-    type: Date,
+  thumbnail: {
+    type: String
+  },
+  winner:{
+      type: String,
+      default:"1sadasdasd"
+  },
+  date:{
+    type: String,
     default:''
   },
   created: {
@@ -36,4 +43,69 @@ var ContestSchema = new Schema({
   }
 });
 
+var SubmissionSchema = new Schema({
+  studentFirstName:{
+    type: String,
+    default: ''
+  },
+  studentLastName:{
+    type: String,
+    default: ''
+  },
+  teacherFirstName:{
+    type: String,
+    default: ''
+  },
+  teacherLastName:{
+    type: String,
+    default: ''
+  },
+  school:{
+    type: String,
+    default:''
+  },
+  grade:{
+    type: String,
+    default:''
+  },
+  email:{
+    type: String,
+    default:''
+  },
+  description: {
+    type: String,
+    default: ''
+  },
+  notes: {
+    type: String,
+    default: ''
+  },
+  picture:{
+    type: String,
+    default: ''
+  },
+  art:{
+    type: String,
+    default: ''
+  },
+  contestName: {
+    type: String,
+    default: '',
+    required: 'Please fill Contest name',
+  },
+  // date:{
+  //   type: String,
+  //   default:''
+  // },
+  created: {
+    type: Date,
+    default: Date.now
+  },
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  }
+});
+
 mongoose.model('Contest', ContestSchema);
+mongoose.model('Submission', SubmissionSchema);

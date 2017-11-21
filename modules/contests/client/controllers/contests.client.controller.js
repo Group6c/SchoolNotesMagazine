@@ -13,6 +13,7 @@
 
     vm.authentication = Authentication;
     vm.contest = contest;
+    // vm.submission = submission;
     vm.error = null;
     vm.form = {};
     vm.remove = remove;

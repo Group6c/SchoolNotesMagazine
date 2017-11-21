@@ -12,6 +12,15 @@ module.exports = function(app) {
     .get(contests.list)
     .post(contests.create);
 
+  app.route('/api/contests/submissions').all(contestsPolicy.isAllowed)
+    .get(contests.listSubmission)
+    .post(contests.createSubmission);
+
+  app.route('/api/contests/submissions/:submissionId').all(contestsPolicy.isAllowed)
+    .get(contests.readSubmission)
+    .put(contests.updateSubmission)
+    .delete(contests.deleteSubmission);
+
   app.route('/api/contests/:contestId').all(contestsPolicy.isAllowed)
     .get(contests.read)
     .put(contests.update)
@@ -19,4 +28,5 @@ module.exports = function(app) {
 
   // Finish by binding the Contest middleware
   app.param('contestId', contests.contestByID);
+  app.param('submissionId', contests.submissionByID);
 };

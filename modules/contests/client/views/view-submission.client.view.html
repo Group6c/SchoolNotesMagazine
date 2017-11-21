@@ -1,0 +1,72 @@
+<!-- <section>
+ <div class="page-header"> 
+    {{contest.name}}++{{vm.contest.name}}++
+    {{contests.name}}++{{vm.contests.name}}++
+    <h1 ng-bind="vm.submission.created"></h1>
+
+    <h1>Due by: </h1>
+    <h1 ng-bind="vm.contest.date"></h1> 
+  </div>
+  <div class="pull-right"
+       ng-show="vm.submission.isCurrentUserOwner">
+<a class="btn btn-primary"
+       ui-sref="submission.edit({ submissionId: vm.contest._id })"> 
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.submission.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.submission.user"
+            ng-bind="vm.submission.user.displayName"></span>
+      <span ng-if="!vm.submission.user">Deleted User</span>
+    </em>
+  </small>
+
+<div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.contest._id ? 'Update' : 'Create'}}</button>
+        </div> 
+
+
+
+  <p class="lead" ng-bind="vm.submission.content"></p>
+ 
+  <div class="page-header">
+  <h1 ng-bind="vm.contest.name"></h1>
+  <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
+    <select size = "10" ng-model="vm.contest.winner">
+        <div class="list-group">
+      <option ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
+         class="list-group-item" value = {{submission._id}}>
+            {{$index + 1}} 
+        <small class="list-group-item-text">
+          Posted on
+          <span ng-bind="submission.created | date:'mediumDate'"></span>
+          by
+          <span ng-if="submission.user" ng-bind="submission.user.displayName"></span>
+          <span ng-if="!submission.user">Deleted User</span>
+        </small>
+
+        <h4 class="list-group-item-heading" ng-bind="submission.name"></h4>
+        <p>{{submission.contestName | limitTo:150}}</p>
+      </option>
+    </div>
+    </select>
+
+  <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
+    No Submissions yet
+  </div>
+
+        <div class="form-group">
+          <button type="submit" class="btn btn-default"> Pick Winner</button>
+        </div>
+    </form>
+    <a> showing winner to see if it can be changed :{{vm.contest.winner}}</a>
+</div> 
+</section>
+ -->
