@@ -1068,7 +1068,22 @@ header h1 a img {
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#77a809', endColorstr='#89c403',GradientType=0);
 	background-color:#77a809;
 }
+
 .submitButton:active {
 	position:relative;
 	top:1px;
+}
+.selection{
+    width:100%;
+}
+
+.typo {
+  font-size: 60px;
+  font-weight: 700;
+  font-family: 'Source Sans Pro', sans-serif;    
+  color: #585858;
+  text-decoration: none;
+  option {
+    font-size: 30px;
+  }  
 }
