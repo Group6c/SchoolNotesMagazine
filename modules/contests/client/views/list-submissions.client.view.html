@@ -1,7 +1,8 @@
 <section>
   <div class="list-group">
-    <div ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
-       class="list-group-item">
+    <div ng-repeat="submission in vm.submissions"
+       class="list-group-item" ng-if="submission.contestName == vm.contest.name">
+      
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="submission.created | date:'mediumDate'"></span>
@@ -53,7 +54,6 @@
       
       <img data-ng-src="{{submission.pictureImageString}}"  alt="" class="img-responsive">
       
-    
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
     No Submissions yet
