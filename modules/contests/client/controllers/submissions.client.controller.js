@@ -37,7 +37,7 @@
     vm.remove = remove;
     vm.save = save;
     vm.contests = ContestsService.query();
-    console.log("contests" + vm.contests);
+    //console.log("contests" + vm.contests);
 
     // Remove existing Contest
     function remove() {

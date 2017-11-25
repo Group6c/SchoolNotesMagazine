@@ -1,26 +1,32 @@
 <section>
   <div class="page-header">
-    <h1>Contests</h1>
+    <h2>Family Quests</h2>
+    <h4>These are activities that your child can submit and win awesome prizes!!</h4>
   </div>
-  <div class="list-group">
-    <a ng-repeat="contest in vm.contests"
-       ui-sref="contests.view({ contestId: contest._id })"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="contest.created | date:'mediumDate'"></span>
-        by
-        <span ng-if="contest.user" ng-bind="contest.user.displayName"></span>
+  <div ng-repeat="contest in (vm.contests | limitTo: 5)" class="grid_8">
+    <div class="row">
+      <div class="col-md-3">
+        <div max-width="100em">
+          <a ui-sref="contests.view({ contestId: contest._id })">
+            <img data-ng-src="{{contest.thumbnail}}"  alt="" class="img-responsive">
+          </a>
+        </div>
+      </div>
+        <div class="col-md-5">
+          <div class="text1 tx__1"><a ui-sref="contests.view({ contestId: contest._id })"><h2>{{ contest.name }}</h2></a></div>
+          by
+          <span ng-if="contest.user" ng-bind="contest.user.displayName"></span>
         <span ng-if="!contest.user">Deleted User</span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4>
-      <p>{{contest.description | limitTo:150}}</p>
-      <p>Due date: {{contest.date}}</p>
-      <div style = "padding-left: 2px"> <button  class="submitButton" ui-sref="contests.view({ contestId: contest._id })">Enter Contest</button> </div>
-    </a>
+         ~
+         <time datetime="2014-01-01">Due by: {{contest.date}}</time>
+          <p>{{ contest.description | limitTo: 150 }}...</p>
+          <div style = "padding-left: 2px"> <button  class="submitButton" ui-sref="contests.view({ contestId: contest._id })">Enter Contest</button> </div>
+        </div>
+        <div class="clear"></div>
+    <br>
   </div>
-
   <div class="alert alert-warning text-center" ng-if="vm.contests.$resolved && !vm.contests.length">
-    No Contests yet, why don't you <a ui-sref="contests.create">create one</a>?
+    No contests yet, why don't you <a ui-sref="contests.create">create one</a>?
   </div>
+</div>
 </section>
