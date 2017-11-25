@@ -478,7 +478,7 @@ header h1 a img {
 }
 
 .blog img {
-    border: 1px solid #f2f1f2;
+    /*border: 1px solid #f2f1f2;*/
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -o-box-sizing: border-box;
