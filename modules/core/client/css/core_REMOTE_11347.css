@@ -45,17 +45,3 @@ a:hover .header-profile-image {
      margin-right: 0px;
      margin-left: 0px;
 }
-.navbar-inverse{
-      background-color: #0066ff;
-      border-color: #0066ff;
-      background-image: linear-gradient(to bottom, #0066ff 0%, #0066ff 100%);
-}
-
-.navbar-default {
-  background-color:teal;
-  background-image: none;
-  background-repeat: no-repeat;
- }
- .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
-background-image: linear-gradient(to bottom, #0066ff 0%, #0066ff 100%);
-}

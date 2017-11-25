@@ -41,10 +41,6 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
-.form-horizontal .form-group {
-     margin-right: 0px;
-     margin-left: 0px;
-}
 .navbar-inverse{
       background-color: #0066ff;
       border-color: #0066ff;
