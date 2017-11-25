@@ -13,13 +13,14 @@
       title: 'Contests',
       state: 'contests',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // Add the dropdown list item
     menuService.addSubMenuItem('topbar', 'contests', {
       title: 'List Contests',
-      state: 'contests.list'
+      state: 'contests.list',
+      roles: ['admin']
     });
 
     // Add the dropdown create item

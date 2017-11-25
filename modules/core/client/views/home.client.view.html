@@ -24,7 +24,7 @@
             <div class="row">
               <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
                 <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
-                <div class="grid_4" >
+                <div class="grid_4" style="background-color:">
                   <h3>{{event.title}}</h3>
                   <br>
                   
