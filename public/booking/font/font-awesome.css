@@ -171,6 +171,9 @@ a [class*=" icon-"] {
   margin-top: 0;
 }
 /* more sprites.less reset */
+.navbar-custom{
+      background-color:0066ff;
+}
 .icon-white,
 .nav-pills > .active > a > [class^="icon-"],
 .nav-pills > .active > a > [class*=" icon-"],

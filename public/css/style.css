@@ -26,7 +26,7 @@ a[href^="tel:"] {
 
 body {
     position: relative;
-    background-color: #adacac;
+    background-color: #0066ff;
     color: #969696;
     font: 300 14px/20px 'Open Sans', sans-serif;
 }
@@ -1012,7 +1012,7 @@ header h1 a img {
 
 }
 .selfevents{
-    
+    /*height: 110px;*/
     width: 50hv;
     height: 250px;
     overflow: auto;
@@ -1088,4 +1088,5 @@ header h1 a img {
   option {
     font-size: 30px;
   }
+>>>>>>> master
 }

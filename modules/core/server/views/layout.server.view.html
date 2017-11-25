@@ -43,9 +43,10 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/touchTouch.css">
 </head>
-
+<link rel="stylesheet" href="css/touchTouch.css">
 <body class="ng-cloak">
- <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'"></header>
+
+ <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar  navbar-inverse navbar-custom" style = "header.css"></header>
 <section class="test">
  <section class="container">
       {{{block "content"}}}
@@ -54,7 +55,7 @@
   <footer id="footer">
   <div class="container">
     <div class="row">
-      <div class="grid_12">  
+      <div class="grid_12">
         <div class="socials">
           <a href="https://www.facebook.com/SchoolNotesMagazine/" class="fa fa-facebook"></a>
         </div>
@@ -64,7 +65,7 @@
         </div>
       </div>
     </div>
-  </div> 
+  </div>
 </footer>
   <noscript>
     <style>
@@ -88,7 +89,7 @@
 
   <!--Application JavaScript Files-->
     {{#each jsFiles}}<script type="text/javascript" src="/{{this}}"></script>{{/each}}
-  
+
   <!--owasp config sync-->
   <script type="text/javascript">
     var sharedConfig = {{{ sharedConfig }}};

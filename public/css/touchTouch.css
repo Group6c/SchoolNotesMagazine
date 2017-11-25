@@ -12,7 +12,7 @@
 	background-color:rgba(0,0,0,0.8);
 	overflow:hidden;
 	display:none;
-	
+
 	-moz-transition:opacity 1s ease;
 	-webkit-transition:opacity 1s ease;
 	transition:opacity 1s ease;
@@ -26,14 +26,14 @@
 
 #gallerySlider{
 	height:100%;
-	
+
 	left:0;
 	top:0;
-	
+
 	width:100%;
 	white-space: nowrap;
 	position:absolute;
-	
+
 	-moz-transition:left 0.4s ease;
 	-webkit-transition:left 0.4s ease;
 	transition:left 0.4s ease;
@@ -116,10 +116,10 @@
 	position:absolute;
 	width:43px;
 	height:58px;
-	
+
 	top:50%;
 	margin-top:-29px;
-	
+
 	-moz-transition:opacity 0.2s ease;
 	-webkit-transition:opacity 0.2s ease;
 	transition:opacity 0.2s ease;
@@ -137,4 +137,9 @@
 #nextArrow{
 	background-position:right top;
 	right:40px;
+}
+
+.navbar-default{
+     background-color: #0066ff;
+     border-color: #0066ff;
 }
