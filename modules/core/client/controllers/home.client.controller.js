@@ -43,7 +43,7 @@ function HomeController($scope, $state, Authentication, menuService, EventsServi
     var vm = this;
 
     vm.events = EventsService.query();
-    console.log(vm.events);
+    //console.log(vm.events);
 
   }
 

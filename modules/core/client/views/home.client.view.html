@@ -23,15 +23,17 @@
           <center><br><br>
             <div class="row">
               <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
+                <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
                 <div class="grid_4" >
                   <h3>{{event.title}}</h3>
                   <br>
-                  <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
+                  
                     <img data-ng-src="{{event.thumbnail}}"  style="height: 200px; width: auto" alt="" >
-                  </a>
+                  
                   <br><br>
-                  {{event.body | limitTo: 50}}...
+                  {{event.body | limitTo: 35}}...
                 </div>
+                </a>
               </div>
             </div>
 
@@ -57,11 +59,11 @@
       <div class="banner" >
         <div class="gall_block" style="background-color:#0066ff;">
 
-          <div class="middlebutton"style="text-align:center; line-height: 300px ">COMMUNITY</div>
+          <div class="middlebutton" style="text-align:center; line-height: 300px ">COMMUNITY</div>
           <div class="bann_capt ">
             <div class="maxheight" style="height:230px">
 
-              <div class="selfevents">Education starts and ends in the community!
+              <div class="selfevents" style="text-align:center" >Education starts and ends in the community!
                 By turning​ our county into a giant FUN classroom, our kids get to practice real world issues that rely on problem-solving skills, cooperation and interpersonal communication. Education Explorations emphasizes the Arts, ​STEM, ​Nature, Community and Educational & Social Play to establish an enthusiasm for learning. Each of ​​our ​A​dventures​, Magazines​ & Quests is built to get kids excited about learning.</div>
              </div>
           </div>
@@ -76,8 +78,7 @@
             <div class="middlebutton"style="text-align:center; line-height: 300px ">MISSION</div>
           <div class="bann_capt" >
             <div class="maxheight" style="height:230px">
-              <div class="selfevents">The​ mission of Education Explorations is to provide an inspiring, safe, wholesome, and ​​informal learning scenarios inspire children through exciting and well-balanced curriculum. ​​Our ​A​dventures​, Magazines​ & Quests inspire problem solving, ingenuity, and construction.
-All under the guidance of certified teachers​. We encourage kids to take risks! This risk taking promotes independent responsibility while enhancing the appreciation of collaboration, like in the adult workforce. Working as part of a team beefs up innovation, productivity, and lowers personal risks. Yet, each child needs to equally participate to win​ the prize​.  Education Explorations provides an alternative social and learning experience to children age 5-14. We are a group of teacher​s that​ recognize learning is a community ​ welcomes all races, religions and ethnicities to our family adventures!</div>
+              <div class="selfevents">The​ mission of Education Explorations is to provide an inspiring, safe, wholesome, and ​​informal learning scenarios inspire children through exciting and well-balanced curriculum. ​​Our ​A​dventures​, Magazines​ & Quests inspire problem solving, ingenuity, and construction. All under the guidance of certified teachers​. We encourage kids to take risks! This risk taking promotes independent responsibility while enhancing the appreciation of collaboration, like in the adult workforce. Working as part of a team beefs up innovation, productivity, and lowers personal risks. Yet, each child needs to equally participate to win​ the prize​.  Education Explorations provides an alternative social and learning experience to children age 5-14. We are a group of teacher​s that​ recognize learning is a community ​ welcomes all races, religions and ethnicities to our family adventures!</div>
 
             </div>
           </div>
@@ -89,10 +90,10 @@ All under the guidance of certified teachers​. We encourage kids to take risks
       <div class="banner ">
         <div class="gall_block" style="background-color:#0066ff;">
           <!-- <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp OCT 1</a> -->
-          <div class="middlebutton" style="text-align:center;  line-height: 100px ">COMPREHENSIVE CREATIVITY</div>
+          <div class="middlebutton" style="text-align:center;  line-height: 1em; vertical-align: middle; padding: 25% 0; ">COMPREHENSIVE CREATIVITY</div>
           <div class="bann_capt">
             <div class="maxheight" style="height:230px">
-              <div class="selfevents">We inspire young minds with creative activities, adventures, quests and fulfilling relationships with: teachers, artists, parents and mentors.  Our aim is to make learning fun through unique and individualized hands on experiences. We encourage and inspire creativity within each child allowing them to naturally progress without limitations or boundaries of  classroom. Our Earn & Learn Events promote self-esteem, conflict resolution, relationships with peers, problem solving, and motivation to learn. Development of comprehensive creativity is an invaluable skill rooted in personal motivation.  Mastering this one skill gives our youth the ability to compete in the global economy. Education Explorations captures kids’ attention and motivates young minds to think creatively, manage change, and solve complex, open-ended problems.</div>
+              <div class="selfevents" style="position:relative;">We inspire young minds with creative activities, adventures, quests and fulfilling relationships with: teachers, artists, parents and mentors.  Our aim is to make learning fun through unique and individualized hands on experiences. We encourage and inspire creativity within each child allowing them to naturally progress without limitations or boundaries of  classroom. Our Earn & Learn Events promote self-esteem, conflict resolution, relationships with peers, problem solving, and motivation to learn. Development of comprehensive creativity is an invaluable skill rooted in personal motivation.  Mastering this one skill gives our youth the ability to compete in the global economy. Education Explorations captures kids’ attention and motivates young minds to think creatively, manage change, and solve complex, open-ended problems.</div>
             </div>
           </div>
         </div>
