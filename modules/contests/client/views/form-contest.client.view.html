@@ -1,6 +1,6 @@
 <section>
   <div class="page-header">
-    <h1>{{vm.contest._id ? 'Edit Contest' : 'New Contest'}}</h1>
+    <h2>{{vm.contest._id ? 'Edit Contest' : 'New Contest'}}</h2>
   </div>
   <div class="col-md-12">
     <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
@@ -11,13 +11,35 @@
           <input  name="name" type="text" ng-model="vm.contest.name" id="name" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.contestForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Contest name is required.</p></div>
-            <br><br>
+            <br>
           <label class="control-label" for="description">Description</label>
           <textarea  name="description" type="text" ng-model="vm.contest.description" id="title" class="form-control" placeholder="Description" required></textarea>
 
           <label class="control-label" for="date">Date</label>
           <textarea  name="date" type="text" ng-model="vm.contest.date" id="title" class="form-control" placeholder="Date" required></textarea>
         </div>
+        <!-- Contest Photo Upload -->
+        <div class="well">
+
+        <!--<form>-->
+          <label style="font-size:15px;color:#0066ff;">Upload a thumbnail of the contest (Min: 3MB, Max 20MB)</label> <br>
+          <label class="submitButton">Browse
+            <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged2(this.files)" required multiple/>
+          </label>
+
+        <div style="font-size:10px;">Max file size: 20MB</div>
+        <div ng-show="uploading" class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <img class="mythumbnail" ng-src="{{ thumbnail || vm.contest.thumbnail  }}" />
+
+        <br>
+
+      </div>
+              {{vm.contest.thumbnail}}
         <div class="form-group">
           <button type="submit" class="submitButton">{{vm.contest._id ? 'Update' : 'Create'}}</button>
         </div>
