@@ -40,16 +40,18 @@
            ~
             <span ng-bind="vm.event.date | date:'mediumDate'"></span>
           <br>
+          <br>
           <img data-ng-src="{{vm.event.thumbnail}}" height="300px">
           <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
+          <br>
           
           <table>
           <tbody>
             <tr>
               <td>
-                <strong>
+                
                 <div class="fa fa-calendar"></div><span
-                ng-bind="vm.event.date | date:'mediumDate'"></span></strong>
+                ng-bind="vm.event.date | date:'mediumDate'"></span>
                 
               </td>
               <td><div class="fa fa-user"></div><span ng-if="vm.event.user"
@@ -57,7 +59,7 @@
             </tr>
 
             <tr>
-            <td colspan="2"><div class="fa fa-location-arrow"></div><strong> {{vm.event.address}}</td></strong>
+            <td colspan="2"><div class="fa fa-location-arrow"></div>{{vm.event.address}}</td>
             </tr>
             
             
@@ -76,11 +78,17 @@
                   <br>
                   <a ui-sref="events.view({ eventId: ev._id })" ><strong>{{ev.title}}</strong> </a>
               </div>
+              <br>
             <div class="block3">
-              <img data-ng-src="{{ev.thumbnail}}" width="auto" height="50px" class="img_inner fleft inn__1">
+              <div class="col-md-3">
+                <a ui-sref="events.view({ eventId: ev._id })" >
+                  <img data-ng-src="{{ev.thumbnail}}">
+                </a>
+              </div>
               <div class="extra_wrapper">
                 {{ev.body | limitTo: 150}} <a ui-sref="events.view({ eventId: ev._id })" class="color1">[...]</a>
               </div>
+              <br>
               <br>
             </div>
           </div>

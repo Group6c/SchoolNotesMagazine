@@ -157,7 +157,7 @@ a {
 }
 
 a:hover {
-    color: #aaccaa;
+    color: #5fb6f4;
 }
 
 .btn {
@@ -171,8 +171,8 @@ a:hover {
 
 .btn:hover {
     color: #fff;
-    border-color: #aaccaa;
-    background-color: #aaccaa;
+    border-color: #5fb6f4;
+    background-color: #5fb6f4;
 }
 
 .link1 {
@@ -191,7 +191,7 @@ a:hover {
 }
 
 .link1:hover {
-    background-color: #aaccaa;
+    background-color: #5fb6f4;
     color: #fff;
 }
 
@@ -562,7 +562,7 @@ header h1 a img {
 
 .gall_item {
     display: block;
-    background: #aaccaa url(../images/magnify.png) center center no-repeat;
+    background: #5fb6f4 url(../images/magnify.png) center center no-repeat;
 }
 
 .gall_item img {
