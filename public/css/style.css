@@ -990,7 +990,7 @@ header h1 a img {
 
 }
 .selfevents{
-    width: 360px;
+    width: 50hv;
     height: 110px;
     overflow: auto;
     font:30px/35px 'Economica', sans-serif;
