@@ -41,7 +41,10 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
-<<<<<<< HEAD
+.form-horizontal .form-group {
+     margin-right: 0px;
+     margin-left: 0px;
+}
 .navbar-inverse{
       background-color: #0066ff;
       border-color: #0066ff;
@@ -55,9 +58,4 @@ a:hover .header-profile-image {
  }
  .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
 background-image: linear-gradient(to bottom, #0066ff 0%, #0066ff 100%);
-=======
-.form-horizontal .form-group {
-     margin-right: 0px;
-     margin-left: 0px;
->>>>>>> master
 }

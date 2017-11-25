@@ -1012,14 +1012,9 @@ header h1 a img {
 
 }
 .selfevents{
-<<<<<<< HEAD
-    width: 50hv;
-    height: 110px;
-=======
-    
+    /*height: 110px;*/
     width: 50hv;
     height: 250px;
->>>>>>> master
     overflow: auto;
     font:30px/35px 'Economica', sans-serif;
 
@@ -1028,10 +1023,6 @@ header h1 a img {
     font:40px/48px 'Economica', sans-serif;
     color:#0066ff;
 }
-<<<<<<< HEAD
-::-webkit-scrollbar {
-    display: none;
-=======
 
 ::-webkit-scrollbar {
     display: none;
