@@ -1012,10 +1012,12 @@ header h1 a img {
 
 }
 .selfevents{
-    width: 360px;
+    
+    width: 50hv;
     height: 250px;
     overflow: auto;
     font:30px/35px 'Economica', sans-serif;
+
 }
 .selfheader{
     font:40px/48px 'Economica', sans-serif;
@@ -1080,10 +1082,10 @@ header h1 a img {
 .typo {
   font-size: 60px;
   font-weight: 700;
-  font-family: 'Source Sans Pro', sans-serif;    
+  font-family: 'Source Sans Pro', sans-serif;
   color: #585858;
   text-decoration: none;
   option {
     font-size: 30px;
-  }  
+  }
 }
