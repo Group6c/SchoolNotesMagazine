@@ -8,12 +8,12 @@
   menuConfig.$inject = ['menuService'];
 
   function menuConfig(menuService) {
-    // Set top bar menu items
+    //Set top bar menu items
     menuService.addMenuItem('topbar', {
       title: 'Articles',
       state: 'articles',
       type: 'dropdown',
-      roles: ['*']
+      roles: ['admin']
     });
 
     // Add the dropdown list item
@@ -25,8 +25,7 @@
     // Add the dropdown create item
     menuService.addSubMenuItem('topbar', 'articles', {
       title: 'Create Article',
-      state: 'articles.create',
-      roles: ['user']
+      state: 'articles.create'
     });
   }
 }());

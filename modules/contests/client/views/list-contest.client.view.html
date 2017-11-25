@@ -1,29 +1,25 @@
 <section>
   <div class="page-header">
-    <h class="selfheader"><strong>Contests</strong> </h2>
-      <div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">Enter to to win our fun contests!</div>
-
+    <h1>Contests</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="contest in vm.contests"
        ui-sref="contests.view({ contestId: contest._id })"
        class="list-group-item">
       <small class="list-group-item-text">
-
-
-          <div class="selfheader" style = "font: 20px/23px 'Economica', sans-serif;">Quest</div>
-
-          <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;">Posted on</div>
-
-  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" ><span ng-bind="contest.created | date:'mediumDate'"></span>  by</div>
-
-  <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;" > <span ng-if="contest.user" ng-bind="contest.user.displayName"></span></div>
+        Posted on
+        <span ng-bind="contest.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="contest.user" ng-bind="contest.user.displayName"></span>
         <span ng-if="!contest.user">Deleted User</span>
       </small>
-  <div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4></div>
+      <h4 class="list-group-item-heading" ng-bind="contest.name"></h4>
       <p>{{contest.description | limitTo:150}}</p>
+      <p>Due date: {{contest.date}}</p>
+      <div style = "padding-left: 2px"> <button  class="submitButton" ui-sref="contests.view({ contestId: contest._id })">Enter Contest</button> </div>
     </a>
   </div>
+
   <div class="alert alert-warning text-center" ng-if="vm.contests.$resolved && !vm.contests.length">
     No Contests yet, why don't you <a ui-sref="contests.create">create one</a>?
   </div>

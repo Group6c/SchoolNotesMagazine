@@ -1,11 +1,12 @@
 (function () {
   'use strict';
-
+//var fs = require('fs');
   // Articles controller,
   angular
     .module('articles')
     .controller('ArticlesController', ArticlesController)
     .directive('fileModel', fileModel);
+    angular.module('fileUpload', ['ngFileUpload']);
 
   fileModel.$inject = ['$parse'];
 
@@ -36,6 +37,9 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+
+
+   
 
     var upload = function(file){
       console.log("upload called");
@@ -85,7 +89,12 @@
             var day = new Date();
             var d = day.getDay();
             var h = day.getHours();
+            // vm.article.thumbnail = {data: $scope.thumbnail,
+            //   contentType: "image/png",
+            //   path: 'modules/sponsors/client/img/' + d + '_' + h + '_' + files[0].name
+            // };// $scope.thumbnail;
             vm.article.thumbnail = 'modules/articles/client/img/' + d + '_' + h + '_' + files[0].name;
+            vm.article.imageString = $scope.thumbnail;
             $scope.uploading = false;
             $scope.message = false;
           });
@@ -114,11 +123,15 @@
       if (vm.article._id) {
         vm.article.$update(successCallback, errorCallback);
       } else {
+        // vm.article.thumbnail.data = fs.readFileSync(vm.article.thumb);
+        //vm.article.thumbnail.contentType = "image/png";
+        console.log(JSON.stringify(vm.article, null, 4));
+        $scope.uploadSubmit();
         vm.article.$save(successCallback, errorCallback);
       }
 
       function successCallback(res) {
-        $scope.uploadSubmit();
+        
         $state.go('articles.view', {
           articleId: res._id
         });

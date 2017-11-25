@@ -16,7 +16,7 @@
       })
       .state('sponsors.list', {
         url: '',
-        templateUrl: 'modules/sponsors/client/views/list-sponsors.client.view.html',
+        templateUrl: '/modules/sponsors/client/views/list-sponsors.client.view.html',
         controller: 'SponsorsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('sponsors.create', {
         url: '/create',
-        templateUrl: 'modules/sponsors/client/views/form-sponsor.client.view.html',
+        templateUrl: '/modules/sponsors/client/views/form-sponsor.client.view.html',
         controller: 'SponsorsController',
         directive: 'fileModel',
         controllerAs: 'vm',
@@ -39,7 +39,7 @@
       })
         .state('sponsors.manage', {
           url: '/manage',
-          templateUrl: 'modules/sponsors/client/views/manage-sponsors.client.view.html',
+          templateUrl: '/modules/sponsors/client/views/manage-sponsors.client.view.html',
           controller: 'SponsorsManageController',
           data: {
             roles: ['admin'],
@@ -48,7 +48,7 @@
         })
       .state('sponsors.edit', {
         url: '/:sponsorId/edit',
-        templateUrl: 'modules/sponsors/client/views/form-sponsor.client.view.html',
+        templateUrl: '/modules/sponsors/client/views/form-sponsor.client.view.html',
         controller: 'SponsorsController',
         controllerAs: 'vm',
         resolve: {
@@ -61,7 +61,7 @@
       })
       .state('sponsors.view', {
         url: '/:sponsorId',
-        templateUrl: 'modules/sponsors/client/views/view-sponsor.client.view.html',
+        templateUrl: '/modules/sponsors/client/views/view-sponsor.client.view.html',
         controller: 'SponsorsController',
         controllerAs: 'vm',
         resolve: {

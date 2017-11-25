@@ -13,7 +13,7 @@ var SponsorSchema = new Schema({
   name: {
     type: String,
     default: '',
-    required: 'Please fill sponsor name',
+    required: 'Please fill spsonsor name',
     trim: true
   },
   upload: {

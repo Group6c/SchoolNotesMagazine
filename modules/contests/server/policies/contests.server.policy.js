@@ -13,12 +13,18 @@ acl = new acl(new acl.memoryBackend());
  */
 exports.invokeRolesPolicies = function () {
   acl.allow([{
-    roles: ['user'],
+    roles: ['admin'],
     allows: [{
       resources: '/api/contests',
       permissions: '*'
     }, {
       resources: '/api/contests/:contestId',
+      permissions: '*'
+    },{
+      resources: '/api/contests/submissions',
+      permissions: '*'
+    }, {
+      resources: '/api/contests/submissions/:submissionId',
       permissions: '*'
     }]
   }, {
@@ -26,9 +32,15 @@ exports.invokeRolesPolicies = function () {
     allows: [{
       resources: '/api/contests',
       permissions: ['get', 'post']
+    },{
+      resources: '/api/contests/submissions',
+      permissions: ['get', 'post']
     }, {
       resources: '/api/contests/:contestId',
       permissions: ['get']
+    },{
+      resources: '/api/contests/submissions/:submissionId',
+      permissions: ['post']
     }]
   }, {
     roles: ['guest'],
@@ -38,6 +50,9 @@ exports.invokeRolesPolicies = function () {
     }, {
       resources: '/api/contests/:contestId',
       permissions: ['get']
+    },{
+      resources: '/api/contests/submissions/:submissionId',
+      permissions: ['post']
     }]
   }]);
 };

@@ -1,40 +1,70 @@
 <section ng-controller="HomeController">
 <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div><br><br>
+
+ <!--  <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation"> -->
+<center>
   <div class="row">
-    <div class="grid_12">
-          <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >
+    <div class="grid_4" >
+      <button class="buttonPic circle" onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'" ><img src="images/button1.png" ></button>
+    </div>
+    <div class="grid_4" >
+      <button class="buttonPic circle"  onclick="window.location.href='/events'"><img src="images/button2.png" ></button>
+    </div>
+    <div class="grid_4" >
+      <button class="buttonPic circle"  onclick="window.location.href='/contests'"><img src="images/button3.png" ></button>
+    </div>
+  </div>
+</center><br><br>
 
-            <div class="bann_title"><strong>Who we are</strong></div>
+  <div class="row">
+    <div class="selfheader"><strong>Upcoming Events</strong></div>    <br><br>
+      <div class="grid_12">
+        <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >
+          <center><br><br>
+            <div class="row">
+              <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
+                <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
+                <div class="grid_4" >
+                  <h3>{{event.title}}</h3>
+                  <br>
+                  
+                    <img data-ng-src="{{event.thumbnail}}"  style="height: 200px; width: auto" alt="" >
+                  
+                  <br><br>
+                  {{event.body | limitTo: 35}}...
+                </div>
+                </a>
+              </div>
+            </div>
 
-          School Notes Magazine is the only magazine made for parents by teachers!<br>
-          Our digest-sized parenting magazine travels home with students every month. <br>
-          <br>
-        <strong>  What's inside?<br></strong>
-          Educational articles<br>
-          Effective learning strategies<br>
-          Monthly art contest<br>
-          Local advertisers<br>
-          Savings<br><br>
-        <strong>  IT'S NEW. IT'S FRESH. IT'S FUN!<br></strong>
-          Featured article<br>
-          Open the door to educational fun by clicking on out latest front cover
+        <!-- <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)">
+          <div class="grid_4" >
+              <a ui-sref="events.view({ eventId: event._id })">
+                <img data-ng-src="{{event.thumbnail}}"  alt="" class="img-responsive">
+              </a>
+          <div class="clear"></div><br>
           </div>
-          <br><br>
-        <div class="selfheader"><strong>Upcoming Events</strong></div>
+        </div> -->
+
+
+
+          </center><br><br>
+          </div>
       </div>
     </div>
+
 
   <div class="row" >
     <div class="grid_4" >
       <div class="banner" >
         <div class="gall_block" style="background-color:#0066ff;">
-          <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp NOV 7</a>
-          <img style="height: 270px;width:100%;" src="images/event.jpg">
+
+          <div class="middlebutton" style="text-align:center; line-height: 300px ">COMMUNITY</div>
           <div class="bann_capt ">
             <div class="maxheight" style="height:230px">
-              <div class="bann_title">Events Name</div>
-              <div class="selfevents">A day of frighteningly fun activities including treats for kids in costume, games, music and more.A day of frighteningly fun activities including treats for kids in costume, games, music and moreA day of frighteningly fun activities including treats for kids in costume, games, music and more</div>
-               <a href="/articles">more</a>
+
+              <div class="selfevents" style="text-align:center" >Education starts and ends in the community!
+                By turning​ our county into a giant FUN classroom, our kids get to practice real world issues that rely on problem-solving skills, cooperation and interpersonal communication. Education Explorations emphasizes the Arts, ​STEM, ​Nature, Community and Educational & Social Play to establish an enthusiasm for learning. Each of ​​our ​A​dventures​, Magazines​ & Quests is built to get kids excited about learning.</div>
              </div>
           </div>
         </div>
@@ -44,13 +74,12 @@
     <div class="grid_4">
       <div class="banner">
         <div class="gall_block" style="background-color:#0066ff;">
-          <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp OCT 24</a>
-          <img style="height: 270px;width:100%;" src="images/event3.png">
+       <!--    <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp OCT 24</a> -->
+            <div class="middlebutton"style="text-align:center; line-height: 300px ">MISSION</div>
           <div class="bann_capt" >
             <div class="maxheight" style="height:230px">
-              <div class="bann_title">Events Name</div>
-              <div class="selfevents">A day of frighteningly fun activities including treats for kids in costume, games, music and more.A day of frighteningly fun activities including treats for kids in costume, games, music and moreA day of frighteningly fun activities including treats for kids in costume, games, music and more</div>
-               <a href="/articles">more</a>
+              <div class="selfevents">The​ mission of Education Explorations is to provide an inspiring, safe, wholesome, and ​​informal learning scenarios inspire children through exciting and well-balanced curriculum. ​​Our ​A​dventures​, Magazines​ & Quests inspire problem solving, ingenuity, and construction. All under the guidance of certified teachers​. We encourage kids to take risks! This risk taking promotes independent responsibility while enhancing the appreciation of collaboration, like in the adult workforce. Working as part of a team beefs up innovation, productivity, and lowers personal risks. Yet, each child needs to equally participate to win​ the prize​.  Education Explorations provides an alternative social and learning experience to children age 5-14. We are a group of teacher​s that​ recognize learning is a community ​ welcomes all races, religions and ethnicities to our family adventures!</div>
+
             </div>
           </div>
         </div>
@@ -60,20 +89,18 @@
     <div class="grid_4">
       <div class="banner ">
         <div class="gall_block" style="background-color:#0066ff;">
-          <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp OCT 1</a>
-          <img style="height: 270px;width:100%;" src="images/event2.jpg">
+          <!-- <a style="font: 30px/35px 'Economica', sans-serif;color:#fff;"> &nbsp&nbsp&nbsp OCT 1</a> -->
+          <div class="middlebutton" style="text-align:center;  line-height: 1em; vertical-align: middle; padding: 25% 0; ">COMPREHENSIVE CREATIVITY</div>
           <div class="bann_capt">
             <div class="maxheight" style="height:230px">
-              <div class="bann_title">Events Name</div>
-              <div class="selfevents">A day of frighteningly fun activities including treats for kids in costume, games, music and more.A day of frighteningly fun activities including treats for kids in costume, games, music and moreA day of frighteningly fun activities including treats for kids in costume, games, music and more</div>
-               <a href="/articles">more</a>
+              <div class="selfevents" style="position:relative;">We inspire young minds with creative activities, adventures, quests and fulfilling relationships with: teachers, artists, parents and mentors.  Our aim is to make learning fun through unique and individualized hands on experiences. We encourage and inspire creativity within each child allowing them to naturally progress without limitations or boundaries of  classroom. Our Earn & Learn Events promote self-esteem, conflict resolution, relationships with peers, problem solving, and motivation to learn. Development of comprehensive creativity is an invaluable skill rooted in personal motivation.  Mastering this one skill gives our youth the ability to compete in the global economy. Education Explorations captures kids’ attention and motivates young minds to think creatively, manage change, and solve complex, open-ended problems.</div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="grid_12">
+<!--     <div class="grid_12">
       <div class="banner" >
       <div class="gall_block">
           <div class="bann_capt "style="background-color:#85C1E9; font: 25px/30px 'Economica', sans-serif;">
@@ -88,9 +115,9 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-      <div class="grid_4">
+<!--       <div class="grid_4">
         <div class="block1">
         <a href="https://issuu.com/gayleperry/docs/schoolnotes_septoct2016_lowres_void" class="btn">   <img src="images/w16.JPG"  alt=""></a>
           This may come as a shock, but United States residents are not the largest population of people on the planet earth... or even close!
@@ -116,8 +143,8 @@
           <br>
           <a href="https://issuu.com/gayleperry/docs/schoolnotes_augsept2016_pages" class="btn" style = "background-color:#0066ff";>Explore!</a>
         </div>
-      </div>
-      <div class="grid_12">
+      </div> -->
+ <!--      <div class="grid_12">
         <div class="box">
           <div class="row">
             <div class="grid_5 preffix_1">
@@ -133,39 +160,39 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
 
 
       <div class="grid_4">
-        <h2 class="selfheader">Games</h2>
+     <!--    <h2 class="selfheader">Games</h2>
           <img style="width:100px;height:100px" src="images/page1_img7.png" alt="" class="img_inner fleft noresize">
           <div class="extra_wrapper" style="color:#0066ff;">
             <div class="bq_title color1" style="color:#0066ff;">Word Games</div>
             This is a Game.    This is a Game.    This is a Game.     This is a Game. &nbsp
             <a href="games" style="color:#0066ff;text-align:right;"><span class="fa fa-chevron-right" ></span>More Games</a>
           </div>
-        </blockquote>
+        </blockquote> -->
       </div>
 
       <div class="grid_4">
-        <h2 class="selfheader">Bus Stop Info</h2><br>
+<!--         <h2 class="selfheader">Bus Stop Info</h2><br>
         <div class="block2">
            <img style="width:100px;height:100px" src="images/page1_imgss.png" alt="" class="img_inner fleft noresize">
           <div class="extra_wrapper" style="color:#0066ff;">
             <div class="text1"><a href="https://acps.mybusplanner.com/Eligibility.aspx?Page=Transportation">Find your child's bus stop here</a></div>We have the most accurate information for you and your children
           </div>
-        </div>
+        </div> -->
       </div>
+
       <div class="grid_4">
         <h2 class="selfheader">Contact Us</h2>
         <ul style="font-size:20px;color:#0066ff">
           <li>Phone Number: 352-328-4780</li><br>
           <li>Email:​info@schoolnotesmagazine.org</li><br>
           <li>School Notes <br>
-            PO Box 141571 <br>
-Gainesville, FL 32614</li><br>
-          <li><a href="contact" ><span class="fa fa-chevron-right" ></span>More</a>
+            PO Box 141571 <br> Gainesville, FL 32614</li><br>
+<!--           <li><a href="contact" ><span class="fa fa-chevron-right" ></span>More</a> -->
         </ul>
       </div>
     </div>

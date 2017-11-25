@@ -9,11 +9,15 @@ var path = require('path'),
   errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller')),
   _ = require('lodash');
 
+
 var multer = require('multer');
+var multiparty = require('multiparty'),
+    fs = require('fs');
 
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    cb(null, './modules/articles/client/img/'); // where to store it
+    cb(null, './modules/articles/client/img/');
+    console.log("storage called"); // where to store it
   },
   filename: function (req, file, cb) {
     if(!file.originalname.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
@@ -40,6 +44,7 @@ var upload = multer({
 
 exports.uploads = function (req, res) {
   console.log("in uploads");
+  console.log("req" + req);
   upload(req, res, function (err) {
     if (err) {
       if (err.code === 'LIMIT_FILE_SIZE') {
@@ -52,10 +57,14 @@ exports.uploads = function (req, res) {
       }
     } else {
       if (!req.file) {
-        console.log("reached here with !rep.file");
+        
+        console.log("reached here with !req.file");
         var article = new Article(req.body);
         article.user = req.user;
-
+        //console.log("reqbodyimageString" + req.body.imageString);
+        article.thumbnail = req.body.imageString;
+        //article.thumbnail.contentType = "image/png";
+        console.log(article);
         article.save(function (err) {
           if (err) {
             return res.status(400).send({
@@ -67,7 +76,24 @@ exports.uploads = function (req, res) {
         });
       }
       else if (req.file) {
-        console.log("reached here with req.file");
+        console.log("req.file " + req.file);
+        // var article = new Article(req.body);
+        // article.user = req.user;
+        // article.thumbnail.data = fs.readFileSync(req.file.path);
+        // article.thumbnail.contentType = "image/png";
+        // console.log(article);
+        // //res.setHeader("Content-Type", "text/html");
+        // article.save(function (err) {
+        //   if (err) {
+        //     return res.status(400).send({
+        //       message: errorHandler.getErrorMessage(err)
+        //     });
+        //   } else {
+        //     res.jsonp(article);
+        //   }
+        // });
+        // console.log("reached here with req.file");
+       // console.log(req.file);
         res.json({ success: true, message: 'File was uploaded!' });
       }
 
@@ -76,12 +102,15 @@ exports.uploads = function (req, res) {
   });
 };
 
+
+
 /**
  * Create a Article
  */
 exports.create = function(req, res) {
   var article = new Article(req.body);
   article.user = req.user;
+
 
   article.save(function(err) {
     if (err) {
@@ -153,6 +182,7 @@ exports.delete = function(req, res) {
  * List of Articles
  */
 exports.list = function(req, res) {
+  console.log("article list");
   Article.find().sort('-created').populate('user', 'displayName').exec(function(err, articles) {
     if (err) {
       return res.status(400).send({
@@ -168,7 +198,7 @@ exports.list = function(req, res) {
  * Article middleware
  */
 exports.articleByID = function(req, res, next, id) {
-
+console.log("articlebyID " + id);
   if (!mongoose.Types.ObjectId.isValid(id)) {
     return res.status(400).send({
       message: 'Article is invalid'

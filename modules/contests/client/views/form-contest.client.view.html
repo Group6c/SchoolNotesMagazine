@@ -1,27 +1,31 @@
 <section>
   <div class="page-header">
-  <div class="selfheader" style = "font: 25px/20px 'Economica', sans-serif;">{{vm.contest._id ? 'Edit Contest' : 'New Contest'}}</div>
+    <h1>{{vm.contest._id ? 'Edit Contest' : 'New Contest'}}</h1>
   </div>
   <div class="col-md-12">
     <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
       <fieldset>
 
         <div class="form-group" show-errors>
-    <div class="selfheader" style = "font: 15px/20px 'Economica', sans-serif;">          <label  class="control-label" for="name">Name of contest</label><div>
+          <label  class="control-label" for="name">Name</label>
           <input  name="name" type="text" ng-model="vm.contest.name" id="name" class="form-control" placeholder="Name" required>
           <div ng-messages="vm.form.contestForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Contest name is required.</p></div>
             <br><br>
           <label class="control-label" for="description">Description</label>
           <textarea  name="description" type="text" ng-model="vm.contest.description" id="title" class="form-control" placeholder="Description" required></textarea>
+
+          <label class="control-label" for="date">Date</label>
+          <textarea  name="date" type="text" ng-model="vm.contest.date" id="title" class="form-control" placeholder="Date" required></textarea>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-default" style="background-color:#0066ff;">{{vm.contest._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" class="submitButton">{{vm.contest._id ? 'Update' : 'Create'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
         </div>
       </fieldset>
     </form>
+
   </div>
 </section>

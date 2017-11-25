@@ -1,0 +1,139 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.submission._id ? 'Edit Submission' : 'New Submission'}}</h1>
+  </div>
+  <div class="col-md-12"  style="form.css">
+    <form name="vm.form.submissionForm" class="form-horizontal" ng-submit="vm.save(vm.form.submissionForm.$valid)" novalidate>
+      <fieldset>
+<div>
+        <div class="form-group" show-errors>
+      <tr>
+      <th>   <label  class="control-label" for="studentFirstName" style="font-size:20px;color:#0066ff;font-weight: bold;">Student's First Name</label> </th>
+      <th> <label  class="control-label" for="studentLastName" style = "padding-left: 32%; font-size:20px;color:#0066ff;font-weight: bold;">Student's Last Name</label></th>
+      </tr>
+      <tr>
+      <th> <input  name="studentFirstName" type="text" ng-model="vm.submission.studentFirstName"  id="studentFirstName" style="width: 45%; float: left"  class="form-control" placeholder="First Name" required> </th>
+      <th> <input  name="studentLastName" type="text" ng-model="vm.submission.studentLastName" id="studentLastName" style="width: 50%; float: right" style = "padding-left: 45%"  class="form-control" placeholder="Last Name" required> </th>
+     </tr>
+</div>
+<div>
+     <div class="form-group" show-errors>
+   <tr>
+   <th>    <label  class="control-label" for="teacherFirstName" style="font-size:20px;color:#0066ff;font-weight: bold;">Teacher's First Name</label> </th>
+   <th> <label  class="control-label" for="teacherLastName" style = "padding-left: 31.8%; font-size:20px;color:#0066ff;font-weight: bold;">Teacher's Last Name</label></th>
+   </tr>
+   <tr>
+   <th> <input  name="teacherFirstName" type="text" ng-model="vm.submission.teacherFirstName" id="teacherFirstName" style="width: 45%; float: left"  class="form-control" placeholder="First Name" required> </th>
+   <th> <input  name="teacherLastName" type="text" ng-model="vm.submission.teacherLastName" id="teacherLastName" style="width: 50%; float: right" style = "padding-left: 45%"  class="form-control" placeholder="Last Name" required> </th>
+   </tr>
+</div>
+<div>
+   <div class="form-group" show-errors>
+ <tr>
+ <th>   <label  class="control-label" for="school" style="font-size:20px;color:#0066ff;font-weight: bold;">School Name</label> </th>
+ <th> <label  class="control-label" for="grade" style = "padding-left: 38.5%; font-size:20px;color:#0066ff;font-weight: bold;">Student's Grade</label></th>
+ </tr>
+ <tr>
+ <th> <input  name="school" type="text" ng-model="vm.submission.school" id="school" style="width: 45%; float: left"  class="form-control" placeholder="School Name" required> </th>
+ <th> <input  name="grade" type="text" ng-model="vm.submission.grade" id="grade" style="width: 50%; float: right" style = "padding-left: 45%"  class="form-control" placeholder="Grade" required> </th>
+</tr>
+</div>
+
+<div>
+<div class="form-group" show-errors>
+<tr>
+<th>    <label  class="control-label" for="email" style="font-size:20px;color:#0066ff;font-weight: bold;"> Student's Email</label> </th>
+<th> <label  class="control-label" for="notes" style = "padding-left: 40%; font-size:15px;color:#0066ff;font-weight: bold;">Additional Notes</label></th>
+</tr>
+<tr>
+<th> <input   name="email" type="text" ng-model="vm.submission.email" id="email" style="width: 45%; float: left"  class="form-control" placeholder="Email" required> </th>
+<!--<th> <input  name="notes" type="text" ng-model="vm.submission.notes" id="notes" style="width: 50%; float: right" style = "padding-left: 45%"  class="form-control" placeholder="Notes" required> </th>-->
+</tr>
+</div>
+
+<div>
+<div class="form-group" show-errors>
+  <label  class="control-label" for="notes" style="font-size:20px;color:#0066ff;font-weight: bold;">Tell us a little bit about your art</label>
+            <textarea  name="notes" type="text" ng-model="vm.submission.notes" style= " width: 100%; height: 150px; padding: 12px 20px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px;background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;" id="notes" class="form-control"> </textarea>
+</div>
+
+
+        <div class="well">
+
+
+          <label style="font-size:15px;color:#0066ff;">Upload photo of your work (Min: 3MB, Max 20MB)</label> <br>
+          <label class="submitButton">Browse
+            <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
+          </label>
+
+        <div style="font-size:10px;">Max file size: 20MB</div>
+        <div ng-show="uploading" class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <img class="mythumbnail" ng-src="{{ art || vm.submission.art  }}" />
+
+        <br>
+
+      </div>
+      {{vm.submission.art}}
+
+        <div class="well">
+
+        <!--<form>-->
+          <label style="font-size:15px;color:#0066ff;">Upload a great picture of your artist if they are one of our winners! (Min: 3MB, Max 20MB)</label> <br>
+          <label class="submitButton">Browse
+            <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged2(this.files)" required multiple/>
+          </label>
+
+        <div style="font-size:10px;">Max file size: 20MB</div>
+        <div ng-show="uploading" class="progress">
+          <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+            <span class="sr-only"></span>
+          </div>
+        </div>
+
+        <img class="mythumbnail" ng-src="{{ picture || vm.submission.picture  }}" />
+
+        <br>
+
+      </div>
+      {{vm.submission.picture}}
+
+          <label  class="control-label" style="font-size:20px;color:#0066ff" for="contestName">Contest Name</label>
+          <select name="contestName" ng-model="vm.submission.contestName" id="contestName" class="form-control" required >
+            <option ng-repeat="contest in vm.contests" value = {{contest._id}}> {{contest.name}}</option>
+          </select>
+
+
+        <div class="form-group">
+          <button type="submit" class="submitButton" >{{vm.submission._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+
+      </fieldset>
+    </form>
+    <!-- <div ng-repeat="contest in vm.contests">
+          <div ng-hide="contest.name == vm.contest.name">
+              <div class="text1 color1">
+                  <time datetime="contest.date">{{contest.date}}</time>
+                  <br>
+
+              </div>
+            <div class="block3">
+
+              <div class="extra_wrapper">
+                {{contest.description | limitTo: 150}}
+              </div>
+              <br>
+            </div>
+          </div>
+        </div> -->
+  </div>
+</section>

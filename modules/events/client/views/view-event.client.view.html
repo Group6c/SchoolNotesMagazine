@@ -1,0 +1,102 @@
+<section>
+  <!-- <div class="page-header">
+    <h1><span ng-bind="vm.event.title"></span></h1>
+    <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
+    <br>
+    <p>Tags: <strong>{{vm.event.tags}}</strong></p>
+  </div>
+  <div class="pull-right"
+       ng-show="vm.event.isCurrentUserOwner">
+    <a class="btn btn-primary"
+       ui-sref="events.edit({ eventId: vm.event._id })">
+      <i class="glyphicon glyphicon-edit"></i>
+    </a>
+    <a class="btn btn-primary" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+  <small>
+    <em class="text-muted">
+      Posted on
+      <span ng-bind="vm.event.created | date:'mediumDate'"></span>
+      by
+      <span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span>
+      <span ng-if="!vm.event.user">Deleted User</span>
+    </em>
+  </small>
+  <p class="lead" ng-bind="vm.event.content"></p> -->
+<!-- Bliss Template  -->
+<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+  <div class="container">
+    <div class="row">
+      <div class="grid_7">
+        <div class="blog">
+          <div class="blog_title"><a href="#"><strong><span ng-bind="vm.event.title"></span></strong></a></div>
+          By 
+            <span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span>
+           <span ng-if="!vm.event.user">Deleted User</span>
+           ~
+            <span ng-bind="vm.event.date | date:'mediumDate'"></span>
+          <br>
+          <br>
+          <img data-ng-src="{{vm.event.thumbnail}}" height="300px">
+          <div ng-bind="vm.event.body"><h3><span ng-bind="vm.event.title"></span></h3></div>
+          <br>
+          
+          <table>
+          <tbody>
+            <tr>
+              <td>
+                
+                <div class="fa fa-calendar"></div><span
+                ng-bind="vm.event.date | date:'mediumDate'"></span>
+                
+              </td>
+              <td><div class="fa fa-user"></div><span ng-if="vm.event.user"
+            ng-bind="vm.event.user.displayName"></span></td>
+            </tr>
+
+            <tr>
+            <td colspan="2"><div class="fa fa-location-arrow"></div>{{vm.event.address}}</td>
+            </tr>
+            
+            
+          </tbody>
+        </table>
+        </div>
+      </div>
+      
+      <div class="grid_4 preffix_1">
+        
+        <h2>Upcoming Events</h2>
+        <div ng-repeat="ev in (vm.events | limitTo: 3)">
+          <div ng-hide="ev.title == vm.event.title">
+              <div class="text1 color1">
+                  <time datetime="ev.date">{{ev.date}}</time>
+                  <br>
+                  <a ui-sref="events.view({ eventId: ev._id })" ><strong>{{ev.title}}</strong> </a>
+              </div>
+              <br>
+            <div class="block3">
+              <div class="col-md-3">
+                <a ui-sref="events.view({ eventId: ev._id })" >
+                  <img data-ng-src="{{ev.thumbnail}}">
+                </a>
+              </div>
+              <div class="extra_wrapper">
+                {{ev.body | limitTo: 150}} <a ui-sref="events.view({ eventId: ev._id })" class="color1">[...]</a>
+              </div>
+              <br>
+              <br>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bliss Template Ends -->
+</section>

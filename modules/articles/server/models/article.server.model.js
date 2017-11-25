@@ -29,6 +29,7 @@ var ArticleSchema = new Schema({
   },
   thumbnail: {
     type: String
+    //contentType: String
   },
   created: {
     type: Date,
