@@ -1,10 +1,9 @@
 <section>
-<!--   <div class="page-header">
+  <div class="page-header">
     <h1>Submissions for {{vm.contest.name}}</h1>
   </div>
   <div class="list-group">
     <a ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
-       ui-sref="contests.viewSubmissions({ submissionId: submission._id })"
        class="list-group-item">
       <small class="list-group-item-text">
         Posted on
@@ -57,8 +56,8 @@
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
     No Submissions yet, why don't you <a ui-sref="contests.createSubmission">create one</a>?
-  </div> -->
-<div class="page-header">
+  </div>
+<!-- <div class="page-header">
   <h1> Submissions for {{vm.contest.name}}</h1>
   <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
     <select size = "10" ng-model="vm.contest.winner" class="typo">
@@ -69,8 +68,8 @@
         <small class="list-group-item-text">
           Posted on {{submission.created | date:'mediumDate'}}
           <!-- <span ng-bind="vm.submission.created | date:'mediumDate'"></span> -->
-          by
-         <span ng-bind="submission.studentFirstName"></span>
+          
+         <!-- <span ng-bind="submission.studentFirstName"></span>
        <span ng-bind="submission.studentLastName"></span>
           <span ng-if="!submission.user">Deleted User</span>
         </small>
@@ -90,6 +89,6 @@
         </div>
     </form>
     <a> showing winner to see if it can be changed :{{vm.contest.winner}}</a>
-</div>
+</div> --> 
 
 </section>
