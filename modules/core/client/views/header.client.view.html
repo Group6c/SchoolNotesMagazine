@@ -9,7 +9,7 @@
       <span class="icon-bar"></span>
     </button>
 
-      <a ui-sref="home"><img src="images/brand2.png" alt="Logo alt"></a>
+      <a ui-sref="home"><img src="images/EE-logo.png" alt="Logo alt"></a>
 
 <div class="navigation" style="color:white;font:bold 20px/25px 'Economica', sans-serif;">
   <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
@@ -39,7 +39,7 @@
     <ul class="nav navbar-nav navbar-right" ng-show="vm.authentication.user">
       <li class="dropdown" uib-dropdown>
         <a class="dropdown-toggle user-header-dropdown-toggle" uib-dropdown-toggle role="button">
-          <img ng-src="{{vm.authentication.user.profileImageURL}}" class="header-profile-image" />
+          <img ng-src="/{{vm.authentication.user.profileImageURL}}" class="header-profile-image" />
           <span ng-bind="vm.authentication.user.displayName"></span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu" role="menu">
