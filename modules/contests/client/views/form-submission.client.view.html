@@ -65,7 +65,7 @@
 
           <label style="font-size:15px;color:#0066ff;">Upload photo of your work (Min: 3MB, Max 20MB)</label> <br>
           <label class="submitButton">Browse
-            <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
+            <input id="firstPic" type="file" ng-model="vm.submission.art" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
           </label>
 
         <div style="font-size:10px;">Max file size: 20MB</div>
@@ -87,7 +87,7 @@
         <!--<form>-->
           <label style="font-size:15px;color:#0066ff;">Upload a great picture of your artist if they are one of our winners! (Min: 3MB, Max 20MB)</label> <br>
           <label class="submitButton">Browse
-            <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged2(this.files)" required multiple/>
+            <input id="secondPic" type="file" ng-model="vm.submission.picture" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged2(this.files)" required multiple/>
           </label>
 
         <div style="font-size:10px;">Max file size: 20MB</div>
@@ -111,7 +111,7 @@
 
 
         <div class="form-group">
-          <button type="submit" class="submitButton" >{{vm.submission._id ? 'Update' : 'Create'}}</button>
+          <button type="submit" id="submissionSubmit" class="submitButton" >{{vm.submission._id ? 'Update' : 'Create'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">
           <strong ng-bind="vm.error"></strong>
