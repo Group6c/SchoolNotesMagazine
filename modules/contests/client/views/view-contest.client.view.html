@@ -47,10 +47,9 @@
         </small>
         <br> <br>
         <a class="submitButton" id="createSubmission" ui-sref="contests.createSubmission"> Create Submission</a>
-
+<br><br>
     <div ng-show="vm.contest.isAdmin">
-  <a class="btn btn-primary"
-       ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
+  <a class="submitButton"  ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
       </div>
               <br><br>
           <div class="pull-left"
