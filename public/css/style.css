@@ -983,8 +983,8 @@ header h1 a img {
 .buttonPic{
     background-color:#85C1E9;
     background-size: 100px 130px;
-    height: 250px;
-    width: 250px;
+    height: 150px;
+    width: 150px;
 
 }
 
@@ -1093,5 +1093,4 @@ header h1 a img {
   option {
     font-size: 30px;
   }
->>>>>>> master
 }
