@@ -46,6 +46,7 @@
 <link rel="stylesheet" href="css/touchTouch.css">
 <body class="ng-cloak">
 
+
  <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar  navbar-inverse navbar-custom" style = "header.css"></header>
 <section class="test">
  <section class="container">
@@ -95,6 +96,11 @@
     var sharedConfig = {{{ sharedConfig }}};
     owaspPasswordStrengthTest.config(sharedConfig.owasp);
   </script>
+  <script>
+function setWinner() {
+    alert("Successful Setup New Winner");
+}
+</script>
 
   {{#if livereload}}
   <!--Livereload script rendered -->

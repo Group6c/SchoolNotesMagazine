@@ -980,28 +980,56 @@ header h1 a img {
 
 /* self-made */
 
-.buttonPic{
-    background-color:#85C1E9;
-    background-size: 100px 130px;
+
+.buttonPic2 {
     height: 150px;
-    width: 150px;
-
+    width: 180px;
+    border-radius:50%;
 }
 
-.circle {
-    border-radius: 50%;
-    border-style: solid;
-    border-width: 2px;
-    border-color: #85C1E9;
+.buttonPic3 {
+    height: 150px;
+    width: 180px;
+    border-radius:50%;
 }
-.buttonPic:hover, .circle:hover
+
+
+
+.buttonPic2:hover
+{
+  -webkit-transform: scale(1.2) rotate(0deg);
+        -ms-transform: scale(1.2) rotate(0deg);
+        transform: scale(1.2) rotate(0deg);
+        transition-duration: 0.3s;
+
+}
+.buttonPic3:hover
 {
   -webkit-transform: scale(1.2) rotate(6deg);
         -ms-transform: scale(1.2) rotate(6deg);
         transform: scale(1.2) rotate(6deg);
         transition-duration: 0.3s;
+
+}
+
+.buttonPic{
+
+    height: 150px;
+    width: 180px;
+    border-radius: 50%;
+
+}
+
+
+.buttonPic:hover
+{
+  -webkit-transform: scale(1.2) rotate(-6deg);
+        -ms-transform: scale(1.2) rotate(-6deg);
+        transform: scale(1.2) rotate(-6deg);
+        transition-duration: 0.3s;
         border-color: #0066ff;
 }
+
 .square {
     border-radius: 2px;
 }
@@ -1085,12 +1113,12 @@ header h1 a img {
 }
 
 .typo {
-  font-size: 60px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: auto;
   font-family: 'Source Sans Pro', sans-serif;
   color: #585858;
   text-decoration: none;
   option {
-    font-size: 30px;
+    font-size: 10px;
   }
 }

@@ -1,147 +1,88 @@
 <section>
-  <!-- <div class="page-header">
-    <h1>Submissions for {{vm.contest.name}}</h1>
-      <div class="list-group">
-        <button ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
-       class="list-group-item">
-      <small class="list-group-item-text">
-        Posted on
-        <span ng-bind="submission.created | date:'mediumDate'"></span>
-        by
-       <span ng-bind="submission.studentFirstName"></span>
-       <span ng-bind="submission.studentLastName"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="submission.notes"></h4>
-      <p>{{submission.notes | limitTo:150}}</p>
-      <p>Due date: {{vm.contest.date}}</p>
 
-      <br> <br>
-
-      <p><strong>Student name: </strong></p>
-      <span ng-bind="submission.studentFirstName"><p ng-bind="submission.studentFirstName"> {{submission.studentFirstName}} </p>
-      </span>
-      <span ng-bind="submission.studentLastName"><p ng-bind="submission.studentLastName">{{submission.studentLastName}} </p></span>
-      <br> <br>
-      <p><strong>Teacher name: </strong></p>
-      <span ng-bind="submission.teacherFirstName"><p ng-bind="submission.teacherFirstName"> {{submission.teacherFirstName}} </p>
-      </span>
-      <span ng-bind="submission.teacherLastName"><p ng-bind="submission.teacherLastName">{{submission.teacherLastName}} </p></span>
-      <br> <br>
-      <p><strong>School: </strong></p>
-      <span ng-bind="submission.school"><p ng-bind="submission.school"> {{submission.school}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Grade: </strong></p>
-      <span ng-bind="submission.grade"><p ng-bind="submission.grade"> {{submission.grade}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Email: </strong></p>
-      <span ng-bind="submission.email"><p ng-bind="submission.email"> {{submission.email}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Notes: </strong></p>
-      <span ng-bind="submission.notes"><p ng-bind="submission.notes"> {{submission.notes}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Work of Art: </strong></p>
-
-      <img data-ng-src="{{submission.artImageString}}"  alt="" class="img-responsive">
-
-      <br> <br>
-      <p><strong>Student Photo: </strong></p>
-
-      <img data-ng-src="{{submission.pictureImageString}}"  alt="" class="img-responsive">
-
-  </div>
-  <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
-    No Submissions yet, why don't you <a ui-sref="contests.createSubmission">create one</a>?
-  </div>
-
- -->
-
-
-<div class="page-header">
-  <h1> Submissions for {{vm.contest.name}}</h1>
-  <form name="vm.form.contestForm" class="form-horizontal" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
-      <button ng-model="vm.contest.winner" ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true" class="list-group-item"  value = {{submission._id}} >
-<!--         <small class="list-group-item-text">
-          Posted on {{submission.created | date:'mediumDate'}}
-          {{submission.studentFirstName}}
-          {{submission.studentLastName}}
-          <span ng-bind="vm.submission.created | date:'mediumDate'"></span>
-
-         <span ng-bind="submission.studentFirstName"></span>
-       <span ng-bind="submission.studentLastName"></span>
-          <span ng-if="!submission.user">Deleted User</span>
-        </small>
-
-        <h4 class="list-group-item-heading" ng-bind="submission.name"></h4>
-        <p>{{submission.contestName | limitTo:150}}</p> -->
-        <small class="list-group-item-text">
-        Posted on {{submission.created | date:'mediumDate'}} 
-        <span ng-bind="submission.created | date:'mediumDate'"></span>
-        by
-       <span ng-bind="submission.studentFirstName"></span>
-       <span ng-bind="submission.studentLastName"></span>
-      </small>
-      <h4 class="list-group-item-heading" ng-bind="submission.notes"></h4>
-      <p>{{submission.notes | limitTo:150}}</p>
-      <p>Due date: {{vm.contest.date}}</p>
-      <br> <br>
-
-      <p><strong>Student name: </strong></p>
-      <span ng-bind="submission.studentFirstName"><p ng-bind="submission.studentFirstName"> {{submission.studentFirstName}} </p>
-      </span>
-      <span ng-bind="submission.studentLastName"><p ng-bind="submission.studentLastName">{{submission.studentLastName}} </p></span>
-      <br> <br>
-      <p><strong>Teacher name: </strong></p>
-      <span ng-bind="submission.teacherFirstName"><p ng-bind="submission.teacherFirstName"> {{submission.teacherFirstName}} </p>
-      </span>
-      <span ng-bind="submission.teacherLastName"><p ng-bind="submission.teacherLastName">{{submission.teacherLastName}} </p></span>
-      <br> <br>
-      <p><strong>School: </strong></p>
-      <span ng-bind="submission.school"><p ng-bind="submission.school"> {{submission.school}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Grade: </strong></p>
-      <span ng-bind="submission.grade"><p ng-bind="submission.grade"> {{submission.grade}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Email: </strong></p>
-      <span ng-bind="submission.email"><p ng-bind="submission.email"> {{submission.email}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Notes: </strong></p>
-      <span ng-bind="submission.notes"><p ng-bind="submission.notes"> {{submission.notes}} </p>
-      </span>
-      <br> <br>
-      <p><strong>Work of Art: </strong></p>
-
-      <img ng-src="{{submission.artImageString}}"  alt="" class="img-responsive"> 
-
-      <br> <br>
-      <p><strong>Student Photo: </strong></p>
-
-      <img data-ng-src="{{submission.pictureImageString}}"  alt="" class="img-responsive">
-
-
-      <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
-        No Submissions yet
-      </div>
-</button>
-        <div class="form-group">
-          <button type="submit" class="submitButton"> Pick Winner </button>
-        </div>
-    </form>
-    <a> showing winner to see if it can be changed :{{vm.contest.winner}}</a>
-</div> 
-
-<script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Hello World";
+<style>
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
 }
 
-</script>
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
 
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #0066ff;
+    color: white;
+}
+</style>
+
+<div class="page-header">
+    <h2><strong>Submissions for {{vm.contest.name}}</strong></h2> 
+        <div ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true" class="list-group-item">
+          <small class="list-group-item-text">
+            Posted on
+            <span ng-bind="submission.created | date:'mediumDate'"></span>
+            by
+           <span ng-bind="submission.studentFirstName"></span>
+           <span ng-bind="submission.studentLastName"></span>
+           <p>Due date: {{vm.contest.date}}</p>
+          </small>
+          
+          <br>
+          <table id="customers"><tr>
+                <th>Student name:</th>
+                <th>Teacher name:</th>
+                <th>School:</th>
+                <th>Grade:</th>
+                <th>Email:</th>
+              </tr><tr>
+                <td>{{submission.studentFirstName}} &nbsp {{submission.studentLastName}}</td>
+                <td>{{submission.teacherFirstName}} &nbsp {{submission.teacherLastName}}</td>
+                <td>{{submission.school}}</td>
+                <td>{{submission.grade}}</td>
+                <td>{{submission.email}}</td>
+              </tr></table>
+              <table id="customers"><tr>
+                <th>notes:</th>
+              </tr><tr>
+                <td>{{submission.notes}}</td>
+              </tr><tr>
+                <th>Work of Art: </th>
+              </tr><tr>
+                <td><img data-ng-src="{{submission.artImageString}}"  alt="" class="img-responsive"></td>
+              </tr><tr>
+                <th>Student Photo: </th>
+              </tr><tr>
+                <td> <img data-ng-src="{{submission.pictureImageString}}"  alt="" class="img-responsive"></td>
+              </tr></table>
+      </div>
+      <div class="alert alert-warning text-center" ng-if="vm.submissions.$resolved && !vm.submissions.length">
+        No Submissions yet, why don't you <a ui-sref="contests.createSubmission">create one</a>?
+      </div>
+
+ <br><br>
+
+ <form name="vm.form.contestForm" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
+  <table style="margin: auto;width: 80%;"><tr><td style="padding-top: 12px;padding-bottom: 12px;text-align: center;">
+    <select ng-model="vm.contest.winner" style="width:100%" class="typo">
+      <option ng-repeat="submission in vm.submissions | filter: {contestName:vm.contest._id}:true"
+         class="list-group-item" value = {{submission._id}}>
+            {{$index + 1}}        
+         {{submission.studentFirstName}}
+         {{submission.studentLastName}}
+      </option></select>
+    </td>
+      <td style="padding-top: 12px;padding-bottom: 12px;text-align: center;"><div class="form-group">
+          <button  onclick="setWinner()" type="submit" class="submitButton"  style="width:50%;font-size: 15px;"> Pick Winner </button>
+        </div></td></tr></table>
+    </form>
+</div> 
 </section>
 
