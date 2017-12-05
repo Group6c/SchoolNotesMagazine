@@ -1,6 +1,7 @@
 <section>
 
 <style>
+/*here is the css for submission table*/
 #customers {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     border-collapse: collapse;
@@ -36,6 +37,7 @@
           </small>
           
           <br>
+          <!-- tables to display every submission -->
           <table id="customers"><tr>
                 <th>Student name:</th>
                 <th>Teacher name:</th>
@@ -68,7 +70,7 @@
       </div>
 
  <br><br>
-
+<!-- picking winner for contest by student name -->
  <form name="vm.form.contestForm" ng-submit="vm.save(vm.form.contestForm.$valid)" novalidate>
   <table style="margin: auto;width: 80%;"><tr><td style="padding-top: 12px;padding-bottom: 12px;text-align: center;">
     <select ng-model="vm.contest.winner" style="width:100%" class="typo">

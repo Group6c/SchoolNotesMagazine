@@ -43,6 +43,7 @@ var ContestSchema = new Schema({
   }
 });
 
+//submission schema
 var SubmissionSchema = new Schema({
   studentFirstName:{
     type: String,
@@ -80,10 +81,12 @@ var SubmissionSchema = new Schema({
     type: String,
     default: ''
   },
+  //first picture
   pictureImageString:{
     type: String,
     default: ''
   },
+  //second picture
   artImageString:{
     type: String,
     default: ''
@@ -107,5 +110,6 @@ var SubmissionSchema = new Schema({
   }
 });
 
+//making submission schema
 mongoose.model('Contest', ContestSchema);
 mongoose.model('Submission', SubmissionSchema);

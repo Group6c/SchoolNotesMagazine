@@ -1,3 +1,4 @@
+/*we used some part of css from template bliss http://www.free-css.com/free-css-templates/page185/bliss*/
 @import "grid.css";
 @import "font-awesome.css";
 @import "superfish.css";
@@ -978,9 +979,11 @@ header h1 a img {
     }
 }
 
-/* self-made */
+
+/* self-made css */
 
 
+/* 3 hover middle button*/
 .buttonPic2 {
     height: 150px;
     width: 180px;
@@ -1030,6 +1033,7 @@ header h1 a img {
         border-color: #0066ff;
 }
 
+
 .square {
     border-radius: 2px;
 }
@@ -1067,6 +1071,8 @@ header h1 a img {
     color:white;
     font: 50px/60px 'Economica', sans-serif;
 }
+
+/*css for sumbmission button*/
 .submitButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #a4e271;
 	-webkit-box-shadow:inset 0px 1px 0px 0px #a4e271;
@@ -1108,6 +1114,7 @@ header h1 a img {
 	position:relative;
 	top:1px;
 }
+
 .selection{
     width:100%;
 }

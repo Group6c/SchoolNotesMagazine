@@ -1,5 +1,6 @@
 <section>
   <div class="page-header">
+    <!-- check if admin is adding or updating events -->
     <h1>{{vm.event._id ? 'Edit event' : 'New event'}}</h1>
   </div>
   <div class="col-md-12">
@@ -32,7 +33,7 @@
         <br>
   <div class="well">
 
-    <!--<form>-->
+    <!-- here is adding the pictures -->
       <label>UPLOAD PHOTO (3 MB MIN)*</label> <br>
       <label class="btn btn-success">Browse
         <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged(this.files)" required multiple/>
@@ -45,20 +46,12 @@
       </div>
     </div>
 
-    <img class="mythumbnail" ng-src="{{ thumbnail || vm.event.thumbnail  }}" />
-    <!--|| 'modules/artsubmissions/client/img/default.png'-->
+    <img class="mythumbnail" ng-src="{{ thumbnail || vm.event.thumbnail  }}" /><br></div>
 
-    <br>
-    <!--<button class="btn btn-primary" ng-disabled="uploading" ng-click="uploadSubmit();">Upload</button><br><br>-->
-    <!--<div ng-show="message">-->
-      <!--<div ng-class="alert">{{ message }}</div>-->
-    <!--</div>-->
-
-  </div>
   {{vm.event.thumbnail}}
 
-  <br/>
         <div class="form-group">
+          <!-- if the events exist, then update it, if not, create it. -->
           <button type="submit" class="btn btn-default">{{vm.event._id ? 'Update' : 'Create'}}</button>
         </div>
         <div ng-show="vm.error" class="text-danger">

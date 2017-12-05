@@ -11,6 +11,8 @@ acl = new acl(new acl.memoryBackend());
 /**
  * Invoke Contests Permissions
  */
+
+ //only admin can edit contest, see submiision list
 exports.invokeRolesPolicies = function () {
   acl.allow([{
     roles: ['admin'],

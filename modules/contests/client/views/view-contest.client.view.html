@@ -1,10 +1,11 @@
 <section>
 <!-- New contest content -->
-  <div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div>
+  <div class="content">
   <div class="container">
     <div class="row">
       <div class="grid_7">
         <div class="blog">
+          <!-- contest detail -->
           <div class="blog_title"><a href="#"><strong><span ng-bind="vm.contest.name"></span></strong></a></div>
           By 
             <span ng-if="vm.contest.user"
@@ -48,6 +49,7 @@
         <br> <br>
         <a class="submitButton" id="createSubmission" ui-sref="contests.createSubmission"> Create Submission</a>
 <br><br>
+<!-- can only see if admin -->
     <div ng-show="vm.contest.isAdmin">
   <a class="submitButton"  ui-sref="contests.listSubmissions ({ contestId: vm.contest._id })">View Submissions</a>
       </div>
@@ -69,7 +71,7 @@
       </div>
       
 
-
+<!-- Upcoming family quests -->
       <div class="grid_4 preffix_1" style="background-color: #e6f3f7; padding: 2.5em">
         
         <h2>Upcoming Family Quests</h2>
