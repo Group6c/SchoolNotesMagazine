@@ -156,7 +156,7 @@ exports.contestByID = function(req, res, next, id) {
 };
 
 
-
+// function for create submission
 exports.createSubmission = function(req, res) {
   console.log("In create Submission");
   var submission = new Submission(req.body);
@@ -176,6 +176,7 @@ exports.createSubmission = function(req, res) {
 /**
  * Show the current Contest
  */
+ // function for retrieve submission
 exports.readSubmission = function(req, res) {
   // convert mongoose document to JSON
   console.log("In read Submission");
@@ -190,6 +191,7 @@ exports.readSubmission = function(req, res) {
 /**
  * Update a Contest
  */
+  // function for update submission，we dont have update, this can be used for future
 exports.updateSubmission = function(req, res) {
   console.log("In update Submission");
   // var contest = req.contest;
@@ -210,6 +212,7 @@ exports.updateSubmission = function(req, res) {
 /**
  * Delete an Contest
  */
+ // we dont have delete option yet.
 exports.deleteSubmission = function(req, res) {
   console.log("In delete Submission");
   // var contest = req.contest;
@@ -228,6 +231,7 @@ exports.deleteSubmission = function(req, res) {
 /**
  * List of Contests
  */
+ //list submission
 exports.listSubmission = function(req, res) {
   console.log("In list Submission");
   Submission.find().sort('-created').populate('user', 'displayName').exec(function(err, submissions) {
@@ -244,6 +248,7 @@ exports.listSubmission = function(req, res) {
 /**
  * Contest middleware
  */
+ //find submission by id
 exports.submissionByID = function(req, res, next, id) {
 console.log("In SubmissionbyID");
   if (!mongoose.Types.ObjectId.isValid(id)) {

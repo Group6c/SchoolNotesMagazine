@@ -2,13 +2,15 @@
 <div class="ic">More Website Templates @ TemplateMonster.com - July 30, 2014!</div><br><br>
 
  <!--  <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation"> -->
-<center>
+
+
+<center>  <!-- three hover middle buttons -->
   <div class="row">
     <div class="grid_4" >
       <button style="border-color: #fff" id="schoolNotesButton" onclick="window.location.href='https://issuu.com/gayleperry/docs/snac_janfeb2017_ver2.sm'" ><img class="buttonPic" src="/images/button1.png" ></button>
     </div>
     <div class="grid_4" >
-      <!-- <button onclick="window.location.href='/events'"><img style="border-radius:50%" src="/images/Events.png" ></button> -->
+
       <button style="border-color: #fff" onclick="window.location.href='/events'"><img class="buttonPic2" src="/images/Events.png" ></button>
     </div>
     <div class="grid_4" >
@@ -17,12 +19,14 @@
   </div>
 </center><br><br>
 
+<!-- the upcoming events -->
   <div class="row">
     <div class="selfheader"><strong>Upcoming Events</strong></div>    <br><br>
       <div class="grid_12">
         <div class="bann_capt" style="background-color:#85C1E9; font: 20px/23px 'Economica', sans-serif;" >
           <center><br><br>
             <div class="row">
+              <!-- added vm.events in controller allowing retrieving pic from events parts in database -->
               <div ng-repeat="event in (vm.events | limitTo: 3 | orderBy: random)" >
                 <a class="buttonPic square" ui-sref="events.view({ eventId: event._id })">
                 <div class="grid_4" style="background-color:">
@@ -53,7 +57,7 @@
           </div>
       </div>
     </div>
-
+<!-- three main information on home page -->
 
   <div class="row" >
     <div class="grid_4" >
@@ -101,6 +105,10 @@
       </div>
     </div>
 
+
+
+
+    <!-- client wanted delete these information -->
 <!--     <div class="grid_12">
       <div class="banner" >
       <div class="gall_block">
@@ -164,16 +172,16 @@
       </div> -->
 
 
-
+<!-- in order to keep contact alien left we kept these two empty div -->
       <div class="grid_4">
-     <!--    <h2 class="selfheader">Games</h2>
+<!--    <h2 class="selfheader">Games</h2>
           <img style="width:100px;height:100px" src="images/page1_img7.png" alt="" class="img_inner fleft noresize">
           <div class="extra_wrapper" style="color:#0066ff;">
             <div class="bq_title color1" style="color:#0066ff;">Word Games</div>
             This is a Game.    This is a Game.    This is a Game.     This is a Game. &nbsp
             <a href="games" style="color:#0066ff;text-align:right;"><span class="fa fa-chevron-right" ></span>More Games</a>
           </div>
-        </blockquote> -->
+        </blockquote>  -->
       </div>
 
       <div class="grid_4">
@@ -185,7 +193,7 @@
           </div>
         </div> -->
       </div>
-
+<!-- contact information -->
       <div class="grid_4">
         <h2 class="selfheader">Contact Us</h2>
         <ul style="font-size:20px;color:#0066ff">
@@ -197,5 +205,4 @@
         </ul>
       </div>
     </div>
-  </div>
 </section>

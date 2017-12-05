@@ -1,8 +1,10 @@
 <section>
+  <!-- list contest -->
   <div class="page-header">
     <h2>Family Quests</h2>
     <h4>These are activities that your child can submit and win awesome prizes!!</h4>
   </div>
+  <!-- using ng-repeat to show latest five contests -->
   <div ng-repeat="contest in (vm.contests | limitTo: 5)" class="grid_8">
     <div class="row">
       <div class="col-md-3">

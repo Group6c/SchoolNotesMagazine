@@ -9,9 +9,10 @@
 
     fileModel.$inject = ['$parse'];
 
-  function fileModel($parse){
-    return{
-      restrict:'A',
+
+function fileModel($parse){
+  return{
+    restrict:'A',
       link: function(scope, element, attrs) {
         var parsedFile = $parse(attrs.fileModel);
         var parsedFileSetter = parsedFile.assign;
@@ -25,6 +26,7 @@
     };
   }
 
+// controller for submissions
   SubmissionsController.$inject = ['$scope', '$state', '$window', 'Authentication', 'submissionResolve', 'ContestsService', '$timeout', '$http'];
 
   function SubmissionsController ($scope, $state, $window, Authentication, submission, ContestsService, $timeout, $http) {
@@ -45,7 +47,7 @@
         vm.submission.$remove($state.go('contests.list'));
       }
     }
-
+// pictures of art
     $scope.photoChanged = function (files) {
       if (files.length > 0 && files[0].name.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
         $scope.uploading = true;
@@ -73,6 +75,7 @@
         $scope.message = false;
       }
     };
+    //pictures of the person
     $scope.photoChanged2 = function (files) {
       if (files.length > 0 && files[0].name.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
         $scope.uploading = true;

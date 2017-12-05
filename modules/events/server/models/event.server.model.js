@@ -32,6 +32,7 @@ var EventSchema = new Schema({
     default: '',
     trim: true
   },
+  // this is for image
   thumbnail: {
     type: String
   },

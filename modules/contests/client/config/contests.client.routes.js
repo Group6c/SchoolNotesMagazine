@@ -7,6 +7,7 @@
 
   routeConfig.$inject = ['$stateProvider'];
 
+// added our own submission routes here.
   function routeConfig($stateProvider) {
     $stateProvider
       .state('contests', {
@@ -36,6 +37,7 @@
           pageTitle: 'Contests Create'
         }
       })
+      //list submission
       .state('contests.listSubmissions', {
         url: '/submissions/:contestId',
         templateUrl: '/modules/contests/client/views/list-submissions.client.view.html',
@@ -49,6 +51,7 @@
           pageTitle: 'Submissions List'
         }
       })
+      // create submission
       .state('contests.createSubmission', {
         url: '/submission/create',
         templateUrl: '/modules/contests/client/views/form-submission.client.view.html',
@@ -74,6 +77,7 @@
       //     pageTitle: 'Edit Contest {{ contestResolve.name }}'
       //   }
       // })
+      //we wanted to make a viewSubmission like viewContests, but it turned out we could use listSubmission to show submission details and pick winner.
       .state('contests.viewSubmissions', {
         url: '/submission/:submissionId',
         templateUrl: '/modules/contests/client/views/view-submission.client.view.html',

@@ -29,6 +29,7 @@ module.exports = {
       tests: ['public/lib/angular-mocks/angular-mocks.js']
     },
     css: [
+     //we added the uri for css file here, the actual css file is in /public/css
       'modules/*/client/css/*.css',
       'css/stuck.css',
       'css/style.css',
@@ -41,6 +42,7 @@ module.exports = {
       'modules/*/client/scss/*.scss'
     ],
     js: [
+    //we added the uri for js file here, the actual css file is in /public/js
       'modules/core/client/app/config.js',
       'modules/core/client/app/init.js',
       'modules/*/client/*.js',

@@ -38,6 +38,7 @@ var upload = multer({
   limits: { fileSize: 20971520 } // Max file size: 20MB
 }).single('myfile'); // name in form
 
+// added uploading picture function
 exports.uploads = function (req, res) {
   console.log("in uploads");
   upload(req, res, function (err) {

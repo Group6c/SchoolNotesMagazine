@@ -39,6 +39,7 @@
 
 <link rel="icon" href="images/favicon.ico">
 <link rel="shortcut icon" href="images/favicon.ico" />
+<!-- main reference here -->
 <link rel="stylesheet" href="css/stuck.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/touchTouch.css">
@@ -46,13 +47,15 @@
 <link rel="stylesheet" href="css/touchTouch.css">
 <body class="ng-cloak">
 
-
+<!-- reference to header -->
  <header id="stuck_container" ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar  navbar-inverse navbar-custom" style = "header.css"></header>
+ <!-- reference to section -->
 <section class="test">
  <section class="container">
       {{{block "content"}}}
 </section>
 </section>
+<!-- footer for addition information -->
   <footer id="footer">
   <div class="container">
     <div class="row">
@@ -96,6 +99,8 @@
     var sharedConfig = {{{ sharedConfig }}};
     owaspPasswordStrengthTest.config(sharedConfig.owasp);
   </script>
+
+<!--   function that when admin pick a winner -->
   <script>
 function setWinner() {
     alert("Successful Setup New Winner");

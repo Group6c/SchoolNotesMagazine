@@ -71,6 +71,7 @@
       });
     };
 
+    // function for adding pictures into database
     $scope.photoChanged = function (files) {
       if (files.length > 0 && files[0].name.match(/\.(png|jpg|jpeg|pdf|gif)$/)) {
         $scope.uploading = true;

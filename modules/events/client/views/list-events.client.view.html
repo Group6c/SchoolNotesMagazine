@@ -5,7 +5,7 @@
 
 With our things to do, top events, and calendar tabs on our website, Education Exploration provides you with tons of resources to explore every inch of Atlanta with your kids. We’ve rounded up our favorite things to do divided into the four main geographical areas of the metro Atlanta area and listed our must-do picks for summer fun.</h7>
   </div>
-
+<!-- using ng-repeat to show events information from database -->
   <div ng-repeat="event in (vm.events | limitTo: 5)" class="grid_8">
     <div class="row">
       <div class="col-md-3">
@@ -30,6 +30,7 @@ With our things to do, top events, and calendar tabs on our website, Education E
     <br>
     
   </div>
+  <!-- if there is no events in database, then show this -->
   <div class="alert alert-warning text-center" ng-if="vm.events.$resolved && !vm.events.length">
     No events yet, why don't you <a ui-sref="events.create">create one</a>?
   </div>

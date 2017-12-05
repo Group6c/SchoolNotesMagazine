@@ -1,5 +1,6 @@
 <section>
   <div class="page-header">
+    <!-- check to update or add -->
     <h2>{{vm.contest._id ? 'Edit Contest' : 'New Contest'}}</h2>
   </div>
   <div class="col-md-12">
@@ -21,7 +22,7 @@
         <!-- Contest Photo Upload -->
         <div class="well">
 
-        <!--<form>-->
+      <!-- add picture -->
           <label style="font-size:15px;color:#0066ff;">Upload a thumbnail of the contest (Min: 3MB, Max 20MB)</label> <br>
           <label class="submitButton">Browse
             <input type="file" file-model="file.upload" name="myfile" ng-disabled="uploading" style="display: none;" onchange="angular.element(this).scope().photoChanged2(this.files)" required multiple/>

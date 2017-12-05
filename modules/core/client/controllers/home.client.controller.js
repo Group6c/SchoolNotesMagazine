@@ -14,15 +14,17 @@
 
 function HomeController($scope, $state, Authentication, menuService, EventsService) {
     var vm = this;
+    // controller from events, so we can retrieve events picture from database 
     var hc = this;
+
 
     vm.accountMenu = menuService.getMenu('account').items[0];
     vm.authentication = Authentication;
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
+    hc.events = EventsService.query();
 
     //Get the events for the front page
-    hc.events = EventsService.query();
     //console.log("Events");
     // console.log(hc.events);
 
@@ -33,6 +35,8 @@ function HomeController($scope, $state, Authentication, menuService, EventsServi
       vm.isCollapsed = false;
     }
   }
+
+  // controller from events, so we can retrieve events picture from database 
     angular
     .module('events')
     .controller('EventsListController', EventsListController);
