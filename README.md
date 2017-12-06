@@ -250,6 +250,7 @@ We welcome pull requests from the community! Just be sure to read the [contribut
 ## Credits
 Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
 The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and).
+we used some part of css from template bliss http://www.free-css.com/free-css-templates/page185/bliss Those files are in /public, including css, images, js, fonts, lib. 
 
 ## License
 [The MIT License](LICENSE.md)
