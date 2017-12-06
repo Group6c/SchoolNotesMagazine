@@ -1014,25 +1014,47 @@ header h1 a img {
         transition-duration: 0.3s;
 
 }
-
 .buttonPic{
+    background-color:#42C0FB;
 
-    height: 150px;
-    width: 180px;
-    border-radius: 50%;
+    linear,
+        left bottom,
+        left top,
+        color-stop(0, rgb(73,132,180)),
+        color-stop(1, rgb(97,155,203))
+    background-size: 100px 130px;
+    height: 250px;
+    width: 250px;
+
 
 }
 
+.circle {
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #42C0FB;
+    -webkit-box-shadow: 0px 10px 10px #2b638f, 0px 3px 15px rgba(0,0,0,.4);
+-moz-box-shadow: 0px 10px 10px #2b638f, 0px 3px 15px rgba(0,0,0,.4);
+box-shadow: 0px 10px 10px #2b638f, 0px 3px 15px rgba(0,0,0,.4);
 
-.buttonPic:hover
+    -webkit-transform: rotateX(27deg);
+
+
+}
+.buttonPic:hover, .circle:hover
 {
-  -webkit-transform: scale(1.2) rotate(-6deg);
-        -ms-transform: scale(1.2) rotate(-6deg);
-        transform: scale(1.2) rotate(-6deg);
+  -webkit-transform: scale(1.2) rotate(6deg);
+        -ms-transform: scale(1.2) rotate(6deg);
+        transform: scale(1.2) rotate(6deg);
         transition-duration: 0.3s;
         border-color: #0066ff;
-}
+        -webkit-box-shadow: 0px 0px 0px #FFF, 0px 3px 15px rgba(0,0,0,.4);
+    -moz-box-shadow: 0px 0px 0px #FFF, 0px 3px 15px rgba(0,0,0,.4);
+    box-shadow: 0px 0px 0px #FFF, 0px 3px 15px rgba(0,0,0,.4);
 
+   }
+}
 
 .square {
     border-radius: 2px;
