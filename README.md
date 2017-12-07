@@ -268,6 +268,16 @@ Sign out
 Sign in
 Submit to art contest
 
+## Database Connection
+Mongo Database Login Information:
+Username: cen3031group6c
+Password: szechuan1
+
+If you want to change your database username and password: https://mlab.com/databases/schoolnotesmagazine#users
+If you want to review your account visit: https://mlab.com/user?username=cen3031group6c
+This account is the owner of this database, but you will notice four other account users
+listed, those four accounts belong to us four developers and you may remove when you
+are ready.
 
 ## License
 [The MIT License](LICENSE.md)
