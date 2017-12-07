@@ -258,15 +258,20 @@ Other CSS files - /public/css/style.css
 
 ## Features
 Create Events
+![alt text](READMEPICS/event.JPG "")
 Create Contests
+![alt text](READMEPICS/contest.JPG "")
+Enter Contest
+![alt text](READMEPICS/Submission.JPG "")
 Manage Users
+![alt text](READMEPICS/manage.JPG "")
 Mobile
-Change Password
-Change Profile Picture
+![alt text](READMEPICS/mobile.JPG "")
 Edit Profile
-Sign out
-Sign in
-Submit to art contest
+![alt text](READMEPICS/Edit.JPG "")
+Add Profile Picture
+![alt text](READMEPICS/profile.JPG "")
+
 
 ## Database Connection
 Mongo Database Login Information:
@@ -281,4 +286,5 @@ are ready.
 
 ## License
 [The MIT License](LICENSE.md)
+
 
