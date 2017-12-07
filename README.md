@@ -68,7 +68,7 @@ This command does a few things:
 * When the npm packages install process is over, npm will initiate a bower install command to install all the front-end modules needed for the application
 * To update these packages later on, just run `npm update`
 
-## Running Your Application
+## Running Your Application Locally
 
 Run your application using npm:
 
@@ -219,7 +219,7 @@ $ docker run -p 3000:3000 --link db:db_1 mean
 
 By clicking the button below you can signup for Heroku and deploy a working copy of MEANJS to the cloud without having to do the steps above.
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+[![Deploy](http://educationexplorations.herokuapp.com/)
 
 >>>>>>> e64f7d40f35ab26752b0d0c6c1b781e75a7d2a4b
 ### Amazon S3 configuration
@@ -251,6 +251,24 @@ We welcome pull requests from the community! Just be sure to read the [contribut
 Inspired by the great work of [Madhusudhan Srinivasa](https://github.com/madhums/)
 The MEAN name was coined by [Valeri Karpov](http://blog.mongodb.org/post/49262866911/the-mean-stack-mongodb-expressjs-angularjs-and).
 we used some part of css from template bliss http://www.free-css.com/free-css-templates/page185/bliss Those files are in /public, including css, images, js, fonts, lib. 
+Our Template http://www.free-css.com/free-css-templates/page185/bliss
+Bootstrap.css - /public/lib/bootstrap/dist/css/bootstrap.css
+Core.css - /modules/core/client/css/core.css 
+Other CSS files - /public/css/style.css 
+
+## Features
+Create Events
+Create Contests
+Manage Users
+Mobile
+Change Password
+Change Profile Picture
+Edit Profile
+Sign out
+Sign in
+Submit to art contest
+
 
 ## License
 [The MIT License](LICENSE.md)
+
